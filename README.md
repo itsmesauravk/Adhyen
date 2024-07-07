@@ -1,6 +1,3 @@
-Certainly! Here's the README content in a format that you can copy and paste directly into your README.md file:
-
-```
 # Lumina
 
 Lumina is a modern online learning platform built with Next.js, TypeScript, React, Express, PostgreSQL, and Redis. It features interactive courses, video lessons, quizzes, and real-time collaboration tools. Join us in revolutionizing education with intuitive design and robust technology.
@@ -49,7 +46,7 @@ Lumina is a modern online learning platform built with Next.js, TypeScript, Reac
 ```bash
 git clone https://github.com/your-username/lumina.git
 cd lumina
-```
+
 
 ### Install Dependencies
 

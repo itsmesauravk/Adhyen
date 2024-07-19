@@ -1,9 +1,45 @@
+"use client"
+
 import React from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import Image from "next/image"
+import Link from "next/link"
 
 const RegisterPage = () => {
+  const [name, setName] = React.useState("")
+  const [email, setEmail] = React.useState("")
+  const [password, setPassword] = React.useState("")
+  const [confirmPassword, setConfirmPassword] = React.useState("")
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    if (password !== confirmPassword) {
+      alert("Passwords do not match!")
+      return
+    }
+    try {
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/user/register`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name,
+            email,
+            password,
+          }),
+        }
+      )
+      const data = await response.json()
+      console.log(data)
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
       <div className="flex w-full max-w-4xl shadow-md">
@@ -12,7 +48,7 @@ const RegisterPage = () => {
           <h2 className="text-2xl font-bold text-center text-gray-800">
             Create an Account
           </h2>
-          <form className="space-y-4">
+          <form className="space-y-4" onSubmit={handleSubmit}>
             <div>
               <label
                 htmlFor="name"
@@ -25,6 +61,8 @@ const RegisterPage = () => {
                 type="text"
                 placeholder="Name"
                 className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
               />
             </div>
             <div>
@@ -39,6 +77,8 @@ const RegisterPage = () => {
                 type="email"
                 placeholder="Email"
                 className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
             <div>
@@ -53,6 +93,8 @@ const RegisterPage = () => {
                 type="password"
                 placeholder="Password"
                 className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
               />
             </div>
             <div>
@@ -67,12 +109,14 @@ const RegisterPage = () => {
                 type="password"
                 placeholder="Confirm Password"
                 className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
               />
             </div>
             <div className="justify-between items-center">
               <Button
                 type="submit"
-                className="flex items-center w-full mt-2 py-2 px-4 text-white bg-blue-600 rounded-lg hover:bg-blue-700"
+                className="flex items-center w-full mt-2 py-2 px-4 text-white bg-[#A435F0] rounded-lg hover:bg-[#842dc2]"
               >
                 Sign Up
               </Button>
@@ -82,12 +126,15 @@ const RegisterPage = () => {
             <span className="text-sm text-gray-600">
               Already have an account?
             </span>
-            <a href="/login" className="text-sm text-blue-600 hover:underline">
+            <Link
+              href={"/login"}
+              className="text-sm text-[#A435F0] hover:underline"
+            >
               Log In
-            </a>
+            </Link>
           </div>
           <div className="flex items-center justify-center mt-4">
-            <Button className="flex items-center w-full py-2 px-4 text-gray-900 bg-white border border-gray-300 rounded-lg hover:bg-gray-100">
+            <Button variant="login">
               <img
                 src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-icon-png-transparent-background-osteopathy-16.png"
                 alt="Google logo"

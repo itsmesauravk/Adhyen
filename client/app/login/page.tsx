@@ -1,7 +1,10 @@
+"use client"
+
 import React from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import Image from "next/image"
+import Link from "next/link"
 
 const LoginPage = () => {
   return (
@@ -42,12 +45,12 @@ const LoginPage = () => {
               />
             </div>
             <div className=" justify-between items-center">
-              <a href="#" className="text-sm text-blue-600 hover:underline">
+              <a href="#" className="text-sm text-[#A435F0] hover:underline">
                 Forgot password?
               </a>
               <Button
                 type="submit"
-                className="flex items-center w-full mt-2 py-2 px-4 text-gray-900 bg-white border border-gray-300 rounded-lg hover:bg-gray-100"
+                className="flex items-center w-full mt-2 py-2 px-4 text-white bg-[#A435F0] rounded-lg hover:bg-[#842dc2]"
               >
                 Log In
               </Button>
@@ -57,15 +60,15 @@ const LoginPage = () => {
             <span className="text-sm text-gray-600">
               Don't have an account?
             </span>
-            <a
+            <Link
               href="/register"
-              className="text-sm text-blue-600 hover:underline"
+              className="text-sm text-[#A435F0] hover:underline"
             >
               Sign Up
-            </a>
+            </Link>
           </div>
           <div className="flex items-center justify-center mt-4">
-            <Button className="flex items-center w-full py-2 px-4 text-gray-900 bg-white border border-gray-300 rounded-lg hover:bg-gray-100">
+            <Button variant="login">
               <img
                 src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-icon-png-transparent-background-osteopathy-16.png"
                 alt="Google logo"
@@ -84,7 +87,6 @@ const LoginPage = () => {
             className="object-cover w-full h-full rounded-r-lg"
           />
         </div>
-        {/* <Image></Image> */}
       </div>
     </div>
   )

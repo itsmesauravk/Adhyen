@@ -1,0 +1,42 @@
+Prisma setup
+
+npm install @prisma/client
+npm install -D prisma
+
+npx prisma init
+
+DATABASE_URL= ""
+
+#
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id    Int     @id @default(autoincrement())
+  name  String
+  email String  @unique
+}
+
+
+model Product {
+  id Int @id @default(autoincrement())
+  name String
+  price Number
+  quantity Number
+}
+
+#
+
+
+
+npx prisma migrate dev --name init
+
+
+npx prisma generate
+

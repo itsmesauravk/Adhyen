@@ -16,16 +16,19 @@ model User {
   name               String
   password           String
   email              String    @unique
-  avatar             String?
-  contact            String
-  address            String
-  lastFivePasswords  String[]
-  twoFAEnabled       Boolean
-  wrongPassCounter   Int
-  isPassBlockEnable  Boolean
-  refreshToken       String?
+  avatar             String   @default("https://www.kindpng.com/picc/m/24-248253_user-profile-default-image-png-clipart-png-download.png")
+  contact            String   @default("")
+  address            String   @default("")
+  lastFivePasswords  String[] @default([])
+  twoFAEnabled       Boolean  @default(false)
+  wrongPassCounter   Int      @default(0)
+  isPassBlockEnable  Boolean  @default(false)
+  refreshToken       String   @default("")
+  otp                Int      @default(0)
   createdAt          DateTime  @default(now())
 }
+
+
 
 
 

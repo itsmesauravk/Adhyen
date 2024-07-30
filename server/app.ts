@@ -4,6 +4,8 @@ import { PrismaClient } from "@prisma/client"
 
 const prisma = new PrismaClient()
 
+import cors from "cors"
+
 // Connect to PostgreSQL using Prisma
 async function connectToDatabase() {
   try {
@@ -19,6 +21,12 @@ connectToDatabase()
 import userRoutes from "./router/user.routes"
 
 app.use(express.json())
+app.use(
+  cors({
+    origin: "http://localhost:3000",
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
+  })
+)
 app.use("/api/v1/user", userRoutes)
 
 app.get("/", (req: Request, res: Response) => {

@@ -1,3 +1,5 @@
+#-------------------------------------------------#
+
 Prisma setup
 
 npm install @prisma/client
@@ -5,9 +7,12 @@ npm install -D prisma
 
 npx prisma init
 
+#-------------------------------------------------#
+
+
 DATABASE_URL= ""
 
-#
+#-------------------------------------------------#
 generator client {
   provider = "prisma-client-js"
 }
@@ -31,12 +36,22 @@ model Product {
   quantity Number
 }
 
-#
-
-
+#-------------------------------------------------#
+- For migrating prisma model
 
 npx prisma migrate dev --name init
 
 
 npx prisma generate
+
+
+#-------------------------------------------------#
+
+Refrence sites
+
+(homepage)
+https://www.pinterest.com/pin/318911217380511003/
+
+
+#-------------------------------------------------#
 

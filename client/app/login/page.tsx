@@ -1,12 +1,62 @@
 "use client"
 
-import React from "react"
+import React, { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import Image from "next/image"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
+import toast from "react-hot-toast"
 
 const LoginPage = () => {
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const [error, setError] = useState<string | null>(null)
+  const router = useRouter()
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+
+    if (!email || !password) {
+      setError("Email and password are required.")
+      return
+    }
+
+    try {
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/user/login`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email, password }),
+        }
+      )
+
+      const data = await response.json()
+
+      if (data.success && data.twoFAEnabled) {
+        toast.success("Verification code sent to your email.")
+        setTimeout(() => {
+          router.push(`/twoFAverify?validate-token=${data.token}`)
+        }, 500)
+      } else if (data.success && !data.twoFAEnabled) {
+        toast.success("Logged in successfully.")
+        setTimeout(() => {
+          router.push("/")
+        }, 5000)
+      } else {
+        toast.error(data.message || "Login failed.")
+        setError(data.message || "Login failed.")
+      }
+    } catch (error) {
+      toast.error("An error occurred. Please try again.")
+      console.error("Error logging in:", error)
+      setError("An error occurred. Please try again.")
+    }
+  }
+
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
       <div className="flex w-full max-w-4xl shadow-md">
@@ -15,7 +65,7 @@ const LoginPage = () => {
           <h2 className="text-2xl font-bold text-center text-gray-800">
             Welcome Back!
           </h2>
-          <form className="space-y-4">
+          <form className="space-y-4" onSubmit={handleSubmit}>
             <div>
               <label
                 htmlFor="email"
@@ -27,6 +77,8 @@ const LoginPage = () => {
                 id="email"
                 type="email"
                 placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
               />
             </div>
@@ -41,11 +93,16 @@ const LoginPage = () => {
                 id="password"
                 type="password"
                 placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
               />
             </div>
-            <div className=" justify-between items-center">
-              <a href="#" className="text-sm text-[#A435F0] hover:underline">
+            <div className="justify-between items-center">
+              <a
+                href="/forgot-password"
+                className="text-sm text-[#A435F0] hover:underline"
+              >
                 Forgot password?
               </a>
               <Button

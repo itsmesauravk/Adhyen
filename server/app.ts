@@ -10,9 +10,12 @@ import cors from "cors"
 async function connectToDatabase() {
   try {
     await prisma.$connect()
-    console.log("Connected to PostgreSQL database with Prisma")
+    console.log("Connected to PostgreSQL database with Prisma 🐘")
   } catch (error) {
-    console.error("Unable to connect to PostgreSQL database with Prisma", error)
+    console.error(
+      "Unable to connect to PostgreSQL database with Prisma ⚠️",
+      error
+    )
   }
 }
 

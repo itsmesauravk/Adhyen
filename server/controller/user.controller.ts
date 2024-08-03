@@ -87,7 +87,9 @@ const loginUser = async (req: Request, res: Response) => {
 
     // Check if email and password are provided
     if (!email || !password) {
-      throw new ApiError(408, "Email and password are required.")
+      return res
+        .status(400)
+        .json({ success: false, message: "Email and password are required." })
     }
 
     // Find the user by email
@@ -97,17 +99,24 @@ const loginUser = async (req: Request, res: Response) => {
 
     // Check if user exists
     if (!user) {
-      return res.status(404).json(new ApiError(404, "User not found."))
+      return res
+        .status(404)
+        .json({ succss: false, message: "Invalid email or password." })
     }
 
     // Verify the provided password
     const comparePassword = bcrypt.compareSync(password, user.password)
     if (!comparePassword) {
-      return res.status(401).json(new ApiError(401, "Unauthorized User"))
+      return res
+        .status(401)
+        .json({ success: false, message: "Invalid email or password." })
     }
 
+    // Check if 2FA is enabled
     if (!user.twoFAEnabled) {
       // Generate tokens
+
+      console.log(user.id)
       const { accessToken, refreshToken } = generateToken(user.id)
 
       // Store the refresh token in the database
@@ -164,7 +173,7 @@ const loginUser = async (req: Request, res: Response) => {
     }
   } catch (error) {
     console.error("Login error:", error)
-    res.status(500).json(new ApiError(500, "Internal Server Error"))
+    res.status(500).json({ success: false, message: "Internal Server Error" })
   }
 }
 

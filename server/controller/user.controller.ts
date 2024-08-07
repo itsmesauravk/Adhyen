@@ -116,7 +116,15 @@ const loginUser = async (req: Request, res: Response) => {
     if (!user.twoFAEnabled) {
       // Generate tokens
 
-      console.log(user.id)
+      const resUser = await prisma.user.findUnique({
+        where: { id: user.id },
+        select: {
+          id: true,
+          name: true,
+          email: true,
+          avatar: true,
+        },
+      })
       const { accessToken, refreshToken } = generateToken(user.id)
 
       // Store the refresh token in the database
@@ -142,7 +150,7 @@ const loginUser = async (req: Request, res: Response) => {
       return res.status(200).json({
         success: true,
         message: "Login Successful",
-        user,
+        resUser,
         twoFAEnabled: false,
       })
     } else {
@@ -228,10 +236,19 @@ const verify2FA = async (req: Request, res: Response) => {
         secure: true,
         maxAge: 1 * 60 * 60 * 1000, // 1 hour
       })
+      const resUser = await prisma.user.findUnique({
+        where: { id: user.id },
+        select: {
+          id: true,
+          name: true,
+          email: true,
+          avatar: true,
+        },
+      })
 
       return res
         .status(200)
-        .json(new ApiResponse(200, "Login Successful", user))
+        .json(new ApiResponse(200, "Login Successful", resUser))
     } else {
       return res.status(401).json({ success: false, message: "Invalid OTP" })
     }

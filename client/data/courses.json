@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "title": "Introduction to Artificial Intelligence",
+    "description": "This course provides an introduction to the fundamental concepts and techniques in artificial intelligence, including problem-solving, knowledge representation, reasoning, learning, and perception.",
+    "instructor": "Dr. Jane Smith",
+    "duration": "10 weeks",
+    "price": 299.99,
+    "rating": 4.5,
+    "image": "https://emeritus.org/in/wp-content/uploads/sites/3/2023/03/types-of-machine-learning.jpg.optimal.jpg",
+    "category": "Artificial Intelligence",
+    "likes": 1200
+  },
+  {
+    "id": 2,
+    "title": "Machine Learning with Python",
+    "description": "Learn the basics of machine learning using Python. This course covers supervised and unsupervised learning, data preprocessing, model evaluation, and more.",
+    "instructor": "John Doe",
+    "duration": "8 weeks",
+    "price": 199.99,
+    "rating": 4.7,
+    "image": "https://images.prismic.io/turing/652ebe6bfbd9a45bcec81881_Natural_Language_Processing_Functionality_in_AI_95cadec9bc.webp?auto=format,compress",
+    "category": "Machine Learning",
+    "likes": 1500
+  },
+  {
+    "id": 3,
+    "title": "Data Science and Analytics",
+    "description": "Dive into the world of data science and learn how to analyze and visualize data to gain insights and make data-driven decisions.",
+    "instructor": "Dr. Emily Johnson",
+    "duration": "12 weeks",
+    "price": 349.99,
+    "rating": 4.8,
+    "image": "https://www.classcentral.com/report/wp-content/uploads/2022/04/Artificial-Intelligence-Featured-Image.png",
+    "category": "Data Science",
+    "likes": 1800
+  },
+  {
+    "id": 4,
+    "title": "Deep Learning Fundamentals",
+    "description": "Understand the principles of deep learning and neural networks. This course covers convolutional networks, recurrent networks, and practical applications.",
+    "instructor": "Dr. Michael Brown",
+    "duration": "14 weeks",
+    "price": 399.99,
+    "rating": 4.9,
+    "image": "https://www.mouser.com/blog/Portals/11/Dongang_Machine%20Learning_Theme%20Image-min_1.jpg",
+    "category": "Deep Learning",
+    "likes": 1700
+  },
+  {
+    "id": 5,
+    "title": "Natural Language Processing",
+    "description": "Explore the field of natural language processing and learn how to build models for text processing, sentiment analysis, and language generation.",
+    "instructor": "Sarah Davis",
+    "duration": "9 weeks",
+    "price": 249.99,
+    "rating": 4.6,
+    "image": "https://images.prismic.io/turing/652ebe6bfbd9a45bcec81881_Natural_Language_Processing_Functionality_in_AI_95cadec9bc.webp?auto=format,compress",
+    "category": "Natural Language Processing",
+    "likes": 1600
+  },
+  {
+    "id": 6,
+    "title": "Computer Vision Basics",
+    "description": "Gain an understanding of computer vision and learn how to implement image processing techniques, object detection, and face recognition systems.",
+    "instructor": "Dr. Robert Wilson",
+    "duration": "11 weeks",
+    "price": 299.99,
+    "rating": 4.4,
+    "image": "https://www.classcentral.com/report/wp-content/uploads/2022/04/Artificial-Intelligence-Featured-Image.png",
+    "category": "Computer Vision",
+    "likes": 1400
+  }
+]

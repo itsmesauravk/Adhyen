@@ -1,0 +1,422 @@
+[
+  {
+    "id": 1,
+    "name": "Introduction to AI",
+    "slug": "introduction-to-ai",
+    "description": "Basic concepts of artificial intelligence and its applications.",
+    "course_id": 1,
+    "video_links": [
+      "https://www.youtube.com/watch?v=example1",
+      "https://www.youtube.com/watch?v=example2",
+      "https://www.youtube.com/watch?v=example3"
+    ],
+    "likes": 320,
+    "reviews": 50,
+    "topic_views": 2000,
+    "instructor": "John Doe",
+    "learning_outcomes": [
+      "Understand the basic principles of AI.",
+      "Identify key AI applications in various industries.",
+      "Recognize the historical development of AI."
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Knowledge Representation",
+    "slug": "knowledge-representation",
+    "description": "Methods for representing knowledge in AI systems.",
+    "course_id": 1,
+    "video_links": [
+      "https://www.youtube.com/watch?v=example4",
+      "https://www.youtube.com/watch?v=example5",
+      "https://www.youtube.com/watch?v=example6"
+    ],
+    "likes": 280,
+    "reviews": 40,
+    "topic_views": 1800,
+    "instructor": "Jane Doe",
+    "learning_outcomes": [
+      "Understand various methods of knowledge representation.",
+      "Learn how to model knowledge in AI systems.",
+      "Apply knowledge representation techniques to real-world problems."
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Problem-Solving Techniques",
+    "slug": "problem-solving-techniques",
+    "description": "Techniques for solving problems using AI.",
+    "course_id": 1,
+    "video_links": [
+      "https://www.youtube.com/watch?v=example7",
+      "https://www.youtube.com/watch?v=example8",
+      "https://www.youtube.com/watch?v=example9"
+    ],
+    "likes": 350,
+    "reviews": 60,
+    "topic_views": 2200,
+    "instructor": "John Doe",
+    "learning_outcomes": [
+      "Master various AI problem-solving techniques.",
+      "Develop skills to solve complex AI-related problems.",
+      "Learn how to implement AI algorithms for problem-solving."
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Introduction to Machine Learning",
+    "slug": "introduction-to-machine-learning",
+    "description": "Overview of machine learning and its applications.",
+    "course_id": 2,
+    "video_links": [
+      "https://www.youtube.com/watch?v=example10",
+      "https://www.youtube.com/watch?v=example11",
+      "https://www.youtube.com/watch?v=example12"
+    ],
+    "likes": 400,
+    "reviews": 75,
+    "topic_views": 2500,
+    "instructor": "Jane Doe",
+    "learning_outcomes": [
+      "Understand the basic concepts of machine learning.",
+      "Identify the various types of machine learning algorithms.",
+      "Recognize the applications of machine learning across industries."
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Data Preprocessing",
+    "slug": "data-preprocessing",
+    "description": "Techniques for cleaning and preparing data for machine learning.",
+    "course_id": 2,
+    "video_links": [
+      "https://www.youtube.com/watch?v=example13",
+      "https://www.youtube.com/watch?v=example14",
+      "https://www.youtube.com/watch?v=example15"
+    ],
+    "likes": 370,
+    "reviews": 65,
+    "topic_views": 2300,
+    "instructor": "John Doe",
+    "learning_outcomes": [
+      "Learn techniques for data cleaning and preprocessing.",
+      "Understand how to handle missing data in datasets.",
+      "Gain skills in feature selection and engineering for machine learning."
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Model Evaluation",
+    "slug": "model-evaluation",
+    "description": "Methods for evaluating the performance of machine learning models.",
+    "course_id": 2,
+    "video_links": [
+      "https://www.youtube.com/watch?v=example16",
+      "https://www.youtube.com/watch?v=example17",
+      "https://www.youtube.com/watch?v=example18"
+    ],
+    "likes": 330,
+    "reviews": 55,
+    "topic_views": 2100,
+    "instructor": "Jane Doe",
+    "learning_outcomes": [
+      "Learn how to evaluate machine learning models using various metrics.",
+      "Understand the importance of model validation and testing.",
+      "Gain knowledge of cross-validation techniques for model evaluation."
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Data Analysis Techniques",
+    "slug": "data-analysis-techniques",
+    "description": "Methods for analyzing and interpreting data.",
+    "course_id": 3,
+    "video_links": [
+      "https://www.youtube.com/watch?v=example19",
+      "https://www.youtube.com/watch?v=example20",
+      "https://www.youtube.com/watch?v=example21"
+    ],
+    "likes": 420,
+    "reviews": 80,
+    "topic_views": 2700,
+    "instructor": "John Doe",
+    "learning_outcomes": [
+      "Develop skills in analyzing complex datasets.",
+      "Learn methods for interpreting data trends and patterns.",
+      "Gain insights into statistical techniques for data analysis."
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Data Visualization",
+    "slug": "data-visualization",
+    "description": "Techniques for visualizing data using various tools.",
+    "course_id": 3,
+    "video_links": [
+      "https://www.youtube.com/watch?v=example22",
+      "https://www.youtube.com/watch?v=example23",
+      "https://www.youtube.com/watch?v=example24"
+    ],
+    "likes": 390,
+    "reviews": 70,
+    "topic_views": 2500,
+    "instructor": "Jane Doe",
+    "learning_outcomes": [
+      "Learn how to create effective data visualizations.",
+      "Understand the principles of visual data representation.",
+      "Gain proficiency in using tools for data visualization."
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Data-Driven Decision Making",
+    "slug": "data-driven-decision-making",
+    "description": "Using data insights to make informed business decisions.",
+    "course_id": 3,
+    "video_links": [
+      "https://www.youtube.com/watch?v=example25",
+      "https://www.youtube.com/watch?v=example26",
+      "https://www.youtube.com/watch?v=example27"
+    ],
+    "likes": 360,
+    "reviews": 60,
+    "topic_views": 2400,
+    "instructor": "John Doe",
+    "learning_outcomes": [
+      "Understand how to use data insights to drive business decisions.",
+      "Learn methods for interpreting data in a business context.",
+      "Develop skills in making data-driven strategic decisions."
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Neural Networks Basics",
+    "slug": "neural-networks-basics",
+    "description": "Introduction to neural networks and their components.",
+    "course_id": 4,
+    "video_links": [
+      "https://www.youtube.com/watch?v=example28",
+      "https://www.youtube.com/watch?v=example29",
+      "https://www.youtube.com/watch?v=example30"
+    ],
+    "likes": 430,
+    "reviews": 85,
+    "topic_views": 2800,
+    "instructor": "John Doe",
+    "learning_outcomes": [
+      "Understand the structure and functioning of neural networks.",
+      "Learn the key components of neural networks and their roles.",
+      "Gain basic skills in building simple neural network models."
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Convolutional Neural Networks",
+    "slug": "convolutional-neural-networks",
+    "description": "Understanding convolutional networks for image processing.",
+    "course_id": 4,
+    "video_links": [
+      "https://www.youtube.com/watch?v=example31",
+      "https://www.youtube.com/watch?v=example32",
+      "https://www.youtube.com/watch?v=example33"
+    ],
+    "likes": 410,
+    "reviews": 78,
+    "topic_views": 2600,
+    "instructor": "Jane Doe",
+    "learning_outcomes": [
+      "Learn the principles of convolutional neural networks (CNNs).",
+      "Understand the applications of CNNs in image processing.",
+      "Gain skills in implementing CNNs for real-world image recognition tasks."
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Recurrent Neural Networks",
+    "slug": "recurrent-neural-networks",
+    "description": "Principles and applications of recurrent neural networks.",
+    "course_id": 4,
+    "video_links": [
+      "https://www.youtube.com/watch?v=example34",
+      "https://www.youtube.com/watch?v=example35",
+      "https://www.youtube.com/watch?v=example36"
+    ],
+    "likes": 390,
+    "reviews": 72,
+    "topic_views": 2500,
+    "instructor": "John Doe",
+    "learning_outcomes": [
+      "Understand the functioning of recurrent neural networks (RNNs).",
+      "Learn the key applications of RNNs in sequence modeling.",
+      "Gain knowledge of implementing RNNs for tasks like text generation and time series prediction."
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Text Processing",
+    "slug": "text-processing",
+    "description": "Techniques for processing and analyzing text data.",
+    "course_id": 5,
+    "video_links": [
+      "https://www.youtube.com/watch?v=example37",
+      "https://www.youtube.com/watch?v=example38",
+      "https://www.youtube.com/watch?v=example39"
+    ],
+    "likes": 380,
+    "reviews": 68,
+    "topic_views": 2400,
+    "instructor": "Jane Doe",
+    "learning_outcomes": [
+      "Understand the basics of natural language processing (NLP).",
+      "Learn methods for text tokenization and preprocessing.",
+      "Gain skills in implementing text analysis techniques."
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Sentiment Analysis",
+    "slug": "sentiment-analysis",
+    "description": "Analyzing sentiments in text data using AI techniques.",
+    "course_id": 5,
+    "video_links": [
+      "https://www.youtube.com/watch?v=example40",
+      "https://www.youtube.com/watch?v=example41",
+      "https://www.youtube.com/watch?v=example42"
+    ],
+    "likes": 400,
+    "reviews": 70,
+    "topic_views": 2600,
+    "instructor": "John Doe",
+    "learning_outcomes": [
+      "Learn how to perform sentiment analysis on text data.",
+      "Understand the applications of sentiment analysis in various fields.",
+      "Gain knowledge of implementing sentiment analysis models."
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Topic Modeling",
+    "slug": "topic-modeling",
+    "description": "Techniques for identifying topics in large text datasets.",
+    "course_id": 5,
+    "video_links": [
+      "https://www.youtube.com/watch?v=example43",
+      "https://www.youtube.com/watch?v=example44",
+      "https://www.youtube.com/watch?v=example45"
+    ],
+    "likes": 390,
+    "reviews": 65,
+    "topic_views": 2500,
+    "instructor": "Jane Doe",
+    "learning_outcomes": [
+      "Understand the basics of topic modeling.",
+      "Learn various algorithms for topic modeling like LDA.",
+      "Apply topic modeling techniques to uncover hidden themes in text data."
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Deep Learning Basics",
+    "slug": "deep-learning-basics",
+    "description": "Introduction to deep learning concepts and techniques.",
+    "course_id": 6,
+    "video_links": [
+      "https://www.youtube.com/watch?v=example46",
+      "https://www.youtube.com/watch?v=example47",
+      "https://www.youtube.com/watch?v=example48"
+    ],
+    "likes": 450,
+    "reviews": 90,
+    "topic_views": 3000,
+    "instructor": "John Doe",
+    "learning_outcomes": [
+      "Understand the basic principles of deep learning.",
+      "Learn about neural networks and their deep learning variants.",
+      "Gain skills in implementing simple deep learning models."
+    ]
+  },
+  {
+    "id": 17,
+    "name": "Advanced Neural Networks",
+    "slug": "advanced-neural-networks",
+    "description": "Deep dive into complex neural network architectures.",
+    "course_id": 6,
+    "video_links": [
+      "https://www.youtube.com/watch?v=example49",
+      "https://www.youtube.com/watch?v=example50",
+      "https://www.youtube.com/watch?v=example51"
+    ],
+    "likes": 430,
+    "reviews": 85,
+    "topic_views": 2900,
+    "instructor": "Jane Doe",
+    "learning_outcomes": [
+      "Learn about advanced neural network architectures.",
+      "Understand concepts like transfer learning and GANs.",
+      "Gain proficiency in implementing advanced neural network models."
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Reinforcement Learning",
+    "slug": "reinforcement-learning",
+    "description": "Introduction to reinforcement learning and its applications.",
+    "course_id": 7,
+    "video_links": [
+      "https://www.youtube.com/watch?v=example52",
+      "https://www.youtube.com/watch?v=example53",
+      "https://www.youtube.com/watch?v=example54"
+    ],
+    "likes": 440,
+    "reviews": 88,
+    "topic_views": 3100,
+    "instructor": "John Doe",
+    "learning_outcomes": [
+      "Understand the basic principles of reinforcement learning.",
+      "Learn about the exploration-exploitation trade-off.",
+      "Gain skills in implementing reinforcement learning algorithms."
+    ]
+  },
+  {
+    "id": 19,
+    "name": "AI Ethics",
+    "slug": "ai-ethics",
+    "description": "Exploring ethical considerations in AI development.",
+    "course_id": 8,
+    "video_links": [
+      "https://www.youtube.com/watch?v=example55",
+      "https://www.youtube.com/watch?v=example56",
+      "https://www.youtube.com/watch?v=example57"
+    ],
+    "likes": 420,
+    "reviews": 80,
+    "topic_views": 2800,
+    "instructor": "Jane Doe",
+    "learning_outcomes": [
+      "Understand the ethical implications of AI.",
+      "Learn about bias, fairness, and transparency in AI systems.",
+      "Gain insights into responsible AI development practices."
+    ]
+  },
+  {
+    "id": 20,
+    "name": "AI in Healthcare",
+    "slug": "ai-in-healthcare",
+    "description": "Applications of AI in the healthcare industry.",
+    "course_id": 8,
+    "video_links": [
+      "https://www.youtube.com/watch?v=example58",
+      "https://www.youtube.com/watch?v=example59",
+      "https://www.youtube.com/watch?v=example60"
+    ],
+    "likes": 450,
+    "reviews": 90,
+    "topic_views": 3000,
+    "instructor": "John Doe",
+    "learning_outcomes": [
+      "Understand the applications of AI in healthcare.",
+      "Learn about AI-driven diagnostics and treatment planning.",
+      "Gain knowledge of the challenges and opportunities in AI healthcare."
+    ]
+  }
+]

@@ -104,7 +104,7 @@ const Footer = () => {
               className="text-gray-600 ml-1"
               target="_blank"
             >
-              @knyttneve
+              @sauravkarki
             </a>
           </p>
           <span className="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
@@ -137,7 +137,7 @@ const Footer = () => {
                 fill="none"
                 stroke="currentColor"
                 strokeLinecap="round"
-                stroke-linejoin="round"
+                strokeLinejoin="round"
                 strokeWidth="2"
                 className="w-5 h-5"
                 viewBox="0 0 24 24"

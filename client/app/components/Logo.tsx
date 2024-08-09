@@ -1,12 +1,18 @@
+import Link from "next/link"
 import React from "react"
 
-const Logo = () => {
+const Logo: React.FC = () => {
   return (
-    <div>
-      <a className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
-        <img src="/brainstorm.png" alt="logo" className="w-7 h-7" />
-        <span className="ml-3 text-xl">Adhyen</span>
-      </a>
+    <div className="flex items-center">
+      {/* <Link
+        href="/"
+        className="flex items-center text-[#A435F0] font-semibold text-xl hover:text-[#A435F0] transition-colors duration-300"
+      > */}
+      <span className="w-7 h-7 bg-[#A435F0] text-white flex items-center justify-center rounded-full mr-2">
+        A
+      </span>
+      <span>Adhyen</span>
+      {/* </Link> */}
     </div>
   )
 }

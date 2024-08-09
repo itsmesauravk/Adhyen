@@ -24,7 +24,7 @@ const Homepage: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-100">
       <Navbar />
-      <main className="container mx-auto px-4 lg:px-60">
+      <main className="container mx-auto px-4 lg:px-40">
         <HomeLanding />
         <PopularCourses />
         <HireTeacher />

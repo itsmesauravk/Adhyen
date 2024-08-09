@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react"
 import coursesData from "../../data/courses.json"
 import Transition from "./Transition"
+import page from "../view-course/[slug]/page"
+import { useRouter } from "next/navigation"
 
 interface Course {
   id: number
@@ -11,10 +13,28 @@ interface Course {
   likes: number
   rating: number
   duration: string
+  slug: string
+  students_enrolled: number
+  course_views: number
 }
 
 const PopularCourses = () => {
   const [courses, setCourses] = useState<Course[]>([])
+
+  const router = useRouter()
+
+  const viewCourseHandlear = (id: number) => {
+    try {
+      const course = courses.find((course) => course.id === id)
+      if (!course) {
+        throw new Error("Course not found")
+      }
+      // Redirect to the course page
+      router.push(`/view-course/${course.slug}`)
+    } catch (error) {
+      console.log("Error while viewing course : ", error)
+    }
+  }
 
   useEffect(() => {
     // Fetch courses data from JSON file (or an API if needed)
@@ -95,7 +115,10 @@ const PopularCourses = () => {
                   <span className="text-gray-700 font-bold">
                     Rs {course.price}
                   </span>
-                  <button className="bg-[#A435F0] text-white px-4 py-2 rounded hover:bg-[#842dc2]">
+                  <button
+                    className="bg-[#A435F0] text-white px-4 py-2 rounded hover:bg-[#842dc2]"
+                    onClick={() => viewCourseHandlear(course.id)}
+                  >
                     View Course
                   </button>
                 </div>

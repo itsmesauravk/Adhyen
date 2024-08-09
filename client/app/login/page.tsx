@@ -18,7 +18,7 @@ const LoginPage = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    console.log("tt", isLoggedIn)
+    // console.log("tt", isLoggedIn)
     if (!email || !password) {
       setError("Email and password are required.")
       return

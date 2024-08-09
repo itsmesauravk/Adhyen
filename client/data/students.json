@@ -1,0 +1,32 @@
+[
+  {
+    "student_id": 1001,
+    "name": "Alice Johnson",
+    "email": "alice.johnson@example.com"
+  },
+  {
+    "student_id": 1002,
+    "name": "Bob Smith",
+    "email": "bob.smith@example.com"
+  },
+  {
+    "student_id": 1003,
+    "name": "Carol White",
+    "email": "carol.white@example.com"
+  },
+  {
+    "student_id": 1004,
+    "name": "David Brown",
+    "email": "david.brown@example.com"
+  },
+  {
+    "student_id": 1005,
+    "name": "Emma Davis",
+    "email": "emma.davis@example.com"
+  },
+  {
+    "student_id": 1006,
+    "name": "Frank Harris",
+    "email": "frank.harris@example.com"
+  }
+]

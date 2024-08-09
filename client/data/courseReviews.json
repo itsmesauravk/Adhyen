@@ -1,0 +1,42 @@
+[
+  {
+    "course_id": 1,
+    "reviews": [
+      {
+        "student_id": 1001,
+        "rating": 5,
+        "feedback": "Great introduction to AI. The content was well-structured and easy to follow."
+      },
+      {
+        "student_id": 1002,
+        "rating": 4,
+        "feedback": "Dr. Jane Smith explains concepts very clearly. Highly recommend for beginners."
+      },
+      {
+        "student_id": 1003,
+        "rating": 4,
+        "feedback": "The assignments were challenging but very rewarding. I learned a lot."
+      }
+    ]
+  },
+  {
+    "course_id": 2,
+    "reviews": [
+      {
+        "student_id": 1004,
+        "rating": 5,
+        "feedback": "Excellent course on machine learning with Python. John Doe is a fantastic instructor."
+      },
+      {
+        "student_id": 1005,
+        "rating": 5,
+        "feedback": "The practical examples and projects helped solidify my understanding."
+      },
+      {
+        "student_id": 1006,
+        "rating": 4,
+        "feedback": "Loved the hands-on approach. The course is very engaging and informative."
+      }
+    ]
+  }
+]

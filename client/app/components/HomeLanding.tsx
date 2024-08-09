@@ -16,6 +16,7 @@ import "swiper/css/navigation"
 import "swiper/css/pagination"
 import "swiper/css/scrollbar"
 import "swiper/css/autoplay"
+import Image from "next/image"
 
 const HomeLanding = () => {
   return (
@@ -32,16 +33,36 @@ const HomeLanding = () => {
       }}
     >
       <SwiperSlide>
-        <img src="/images/landingimg1.jpg" alt="Slide 1" />
+        <Image
+          src="/images/heroimage1.jpg"
+          alt="Slide 1"
+          width={1920}
+          height={400}
+        />
       </SwiperSlide>
       <SwiperSlide>
-        <img src="/images/landingimg2.jpeg" alt="Slide 2" />
+        <Image
+          src="/images/heroimage3.jpeg"
+          alt="Slide 2"
+          width={1920}
+          height={400}
+        />
       </SwiperSlide>
       <SwiperSlide>
-        <img src="/images/landingimg3.png" alt="Slide 3" />
+        <Image
+          src="/images/landingimg1.jpg"
+          alt="Slide 3"
+          width={1920}
+          height={400}
+        />
       </SwiperSlide>
       <SwiperSlide>
-        <img src="/images/background.jpg" alt="Slide 4" />
+        <Image
+          src="/images/landingimg2.jpeg"
+          alt="Slide 4"
+          width={1920}
+          height={400}
+        />
       </SwiperSlide>
     </Swiper>
   )

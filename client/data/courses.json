@@ -9,7 +9,34 @@
     "rating": 4.5,
     "image": "https://emeritus.org/in/wp-content/uploads/sites/3/2023/03/types-of-machine-learning.jpg.optimal.jpg",
     "category": "Artificial Intelligence",
-    "likes": 1200
+    "likes": 1200,
+    "students_enrolled": 5000,
+    "slug": "introduction-to-artificial-intelligence",
+    "course_views": 15098,
+    "course_level": "Beginner",
+    "provider": "Emeritus",
+    "topics": [
+      {
+        "id": 1,
+        "name": "Introduction to AI",
+        "description": "Basic concepts of artificial intelligence and its applications."
+      },
+      {
+        "id": 2,
+        "name": "Knowledge Representation",
+        "description": "Methods for representing knowledge in AI systems."
+      },
+      {
+        "id": 3,
+        "name": "Problem-Solving Techniques",
+        "description": "Techniques for solving problems using AI."
+      }
+    ],
+    "learning_outcomes": [
+      "Understand the fundamental concepts of AI and its applications.",
+      "Learn techniques for knowledge representation and problem-solving in AI.",
+      "Gain an introductory understanding of reasoning, learning, and perception in AI."
+    ]
   },
   {
     "id": 2,
@@ -21,7 +48,34 @@
     "rating": 4.7,
     "image": "https://images.prismic.io/turing/652ebe6bfbd9a45bcec81881_Natural_Language_Processing_Functionality_in_AI_95cadec9bc.webp?auto=format,compress",
     "category": "Machine Learning",
-    "likes": 1500
+    "likes": 1500,
+    "students_enrolled": 6500,
+    "slug": "machine-learning-with-python",
+    "course_views": 9832,
+    "course_level": "Intermediate",
+    "provider": "Google",
+    "topics": [
+      {
+        "id": 4,
+        "name": "Introduction to Machine Learning",
+        "description": "Overview of machine learning and its applications."
+      },
+      {
+        "id": 5,
+        "name": "Data Preprocessing",
+        "description": "Techniques for cleaning and preparing data for machine learning."
+      },
+      {
+        "id": 6,
+        "name": "Model Evaluation",
+        "description": "Methods for evaluating the performance of machine learning models."
+      }
+    ],
+    "learning_outcomes": [
+      "Understand the basics of machine learning and its applications.",
+      "Learn how to preprocess data for machine learning models.",
+      "Gain skills in evaluating machine learning models using various metrics."
+    ]
   },
   {
     "id": 3,
@@ -33,7 +87,34 @@
     "rating": 4.8,
     "image": "https://www.classcentral.com/report/wp-content/uploads/2022/04/Artificial-Intelligence-Featured-Image.png",
     "category": "Data Science",
-    "likes": 1800
+    "likes": 1800,
+    "students_enrolled": 8000,
+    "slug": "data-science-and-analytics",
+    "course_views": 6078,
+    "course_level": "Advanced",
+    "provider": "Coursera",
+    "topics": [
+      {
+        "id": 7,
+        "name": "Data Analysis Techniques",
+        "description": "Methods for analyzing and interpreting data."
+      },
+      {
+        "id": 8,
+        "name": "Data Visualization",
+        "description": "Techniques for visualizing data using various tools."
+      },
+      {
+        "id": 9,
+        "name": "Data-Driven Decision Making",
+        "description": "Using data insights to make informed business decisions."
+      }
+    ],
+    "learning_outcomes": [
+      "Develop skills in data analysis and interpretation.",
+      "Learn data visualization techniques to present insights clearly.",
+      "Understand how to use data to drive business decisions."
+    ]
   },
   {
     "id": 4,
@@ -45,7 +126,34 @@
     "rating": 4.9,
     "image": "https://www.mouser.com/blog/Portals/11/Dongang_Machine%20Learning_Theme%20Image-min_1.jpg",
     "category": "Deep Learning",
-    "likes": 1700
+    "likes": 1700,
+    "students_enrolled": 7500,
+    "slug": "deep-learning-fundamentals",
+    "course_views": 13400,
+    "course_level": "Advanced",
+    "provider": "Meta",
+    "topics": [
+      {
+        "id": 10,
+        "name": "Neural Networks Basics",
+        "description": "Introduction to neural networks and their components."
+      },
+      {
+        "id": 11,
+        "name": "Convolutional Neural Networks",
+        "description": "Understanding convolutional networks for image processing."
+      },
+      {
+        "id": 12,
+        "name": "Recurrent Neural Networks",
+        "description": "Principles and applications of recurrent neural networks."
+      }
+    ],
+    "learning_outcomes": [
+      "Understand the fundamentals of deep learning and neural networks.",
+      "Gain knowledge of convolutional and recurrent neural networks.",
+      "Learn how to apply deep learning techniques to real-world problems."
+    ]
   },
   {
     "id": 5,
@@ -57,7 +165,34 @@
     "rating": 4.6,
     "image": "https://images.prismic.io/turing/652ebe6bfbd9a45bcec81881_Natural_Language_Processing_Functionality_in_AI_95cadec9bc.webp?auto=format,compress",
     "category": "Natural Language Processing",
-    "likes": 1600
+    "likes": 1600,
+    "students_enrolled": 6000,
+    "slug": "natural-language-processing",
+    "course_views": 1402,
+    "course_level": "Intermediate",
+    "provider": "Udacity",
+    "topics": [
+      {
+        "id": 13,
+        "name": "Text Processing",
+        "description": "Techniques for processing and analyzing text data."
+      },
+      {
+        "id": 14,
+        "name": "Sentiment Analysis",
+        "description": "Building models to determine sentiment in text."
+      },
+      {
+        "id": 15,
+        "name": "Language Generation",
+        "description": "Methods for generating human-like text."
+      }
+    ],
+    "learning_outcomes": [
+      "Learn techniques for processing and analyzing text data.",
+      "Understand how to build models for sentiment analysis.",
+      "Gain skills in generating human-like text using NLP techniques."
+    ]
   },
   {
     "id": 6,
@@ -69,6 +204,33 @@
     "rating": 4.4,
     "image": "https://www.classcentral.com/report/wp-content/uploads/2022/04/Artificial-Intelligence-Featured-Image.png",
     "category": "Computer Vision",
-    "likes": 1400
+    "likes": 1400,
+    "students_enrolled": 5500,
+    "slug": "computer-vision-basics",
+    "course_views": 10000,
+    "course_level": "Beginner",
+    "provider": "edX",
+    "topics": [
+      {
+        "id": 16,
+        "name": "Image Processing Techniques",
+        "description": "Fundamental techniques for processing images."
+      },
+      {
+        "id": 17,
+        "name": "Object Detection",
+        "description": "Methods for detecting objects in images."
+      },
+      {
+        "id": 18,
+        "name": "Face Recognition",
+        "description": "Techniques for recognizing faces in images."
+      }
+    ],
+    "learning_outcomes": [
+      "Understand the fundamentals of computer vision.",
+      "Learn techniques for image processing and object detection.",
+      "Gain skills in implementing face recognition systems."
+    ]
   }
 ]

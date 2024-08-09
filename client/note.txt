@@ -1,0 +1,12 @@
+
+
+
+FOR JSON FILES
+
+extra things to add on 
+
+topics.json 
+- tutor id 
+- reviews-comments
+- for videos or topic add (started/completed)
+

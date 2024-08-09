@@ -42,6 +42,7 @@ interface Course {
   provider: string
   topics: { id: number; name: string; description: string }[]
   learning_outcomes: string[]
+  isPaid: boolean
 }
 
 const ViewCoursePage = () => {
@@ -115,20 +116,47 @@ const ViewCoursePage = () => {
                 </span>
               </div>
               <div className="mt-8">
-                <span className="text-2xl font-semibold text-primary-600">
-                  Rs {courseDetails.price.toFixed(2)}
-                </span>
+                {courseDetails.isPaid ? (
+                  <span className="text-2xl font-semibold text-primary-600">
+                    Rs {courseDetails.price.toFixed(2)}
+                  </span>
+                ) : (
+                  <span className="text-2xl font-semibold text-green-600">
+                    Free
+                  </span>
+                )}
               </div>
 
               {/* this will change and authentication will be added later  */}
 
-              <Link
-                href={`/view-course/${courseDetails.slug}/learn-topic?cid=${courseDetails.id}&tid=${courseDetails.topics[0].id}`}
-              >
-                <button className="mt-6 px-6 py-3 w-40 bg-purple-500 text-white rounded-md hover:bg-purple-600 focus:outline-none focus:ring-2 focus:ring-primary-500">
-                  Join Now
-                </button>
-              </Link>
+              {courseDetails.isPaid ? (
+                <Link href={`/checkout/${courseDetails.id}`}>
+                  <button className="flex items-center gap-2 mt-6 px-6 py-3 w-40 bg-purple-500 text-white rounded-md hover:bg-purple-600 focus:outline-none focus:ring-2 focus:ring-primary-500">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      className="size-5"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M12 1.5a5.25 5.25 0 0 0-5.25 5.25v3a3 3 0 0 0-3 3v6.75a3 3 0 0 0 3 3h10.5a3 3 0 0 0 3-3v-6.75a3 3 0 0 0-3-3v-3c0-2.9-2.35-5.25-5.25-5.25Zm3.75 8.25v-3a3.75 3.75 0 1 0-7.5 0v3h7.5Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    Enroll Now
+                  </button>
+                </Link>
+              ) : (
+                <Link
+                  href={`/view-course/${courseDetails.slug}/learn-topic?cid=${courseDetails.id}&tid=${courseDetails.topics[0].id}`}
+                >
+                  <button className="mt-6 px-6 py-3 w-40 bg-purple-500 text-white rounded-md hover:bg-purple-600 focus:outline-none focus:ring-2 focus:ring-primary-500">
+                    Join Now
+                  </button>
+                </Link>
+              )}
+              {/* course stats  */}
 
               <div className="flex items-center mt-4">
                 <span className="font-bold">

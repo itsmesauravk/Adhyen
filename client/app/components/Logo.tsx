@@ -8,9 +8,14 @@ const Logo: React.FC = () => {
         href="/"
         className="flex items-center text-[#A435F0] font-semibold text-xl hover:text-[#A435F0] transition-colors duration-300"
       >
-        <span className="w-7 h-7 bg-[#A435F0] text-white flex items-center justify-center rounded-full mr-2">
-          A
-        </span>
+        <div className="relative flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-r from-[#A435F0] to-[#6F21B4] shadow-xl mr-2 transform hover:scale-105 transition-transform duration-300 ease-out">
+          <span className="text-white text-xl font-extrabold tracking-wide drop-shadow-lg">
+            𝐀
+          </span>
+          <div className="absolute inset-0 rounded-full border-2 border-white opacity-50 blur-sm"></div>
+          <div className="absolute inset-0 rounded-full border-2 border-white opacity-20"></div>
+        </div>
+
         <span>𝐚𝐝𝐡𝐲𝐞𝐧</span>
       </Link>
     </div>

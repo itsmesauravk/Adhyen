@@ -1,10 +1,8 @@
 "use client"
 
-import Logo from "./Logo"
-
-import * as React from "react"
+import React, { useEffect, useState } from "react"
 import Link from "next/link"
-
+import Logo from "./Logo"
 import { cn } from "@/lib/utils"
 import {
   NavigationMenu,
@@ -15,10 +13,9 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
 import coursesData from "../../data/courses.json"
-
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
 interface Category {
   id: number
@@ -26,78 +23,49 @@ interface Category {
   category: string
 }
 
-const components: { title: string; href: string; description: string }[] = [
-  {
-    title: "Alert Dialog",
-    href: "/docs/primitives/alert-dialog",
-    description:
-      "A modal dialog that interrupts the user with important content and expects a response.",
-  },
-  {
-    title: "Hover Card",
-    href: "/docs/primitives/hover-card",
-    description:
-      "For sighted users to preview content available behind a link.",
-  },
-  {
-    title: "Progress",
-    href: "/docs/primitives/progress",
-    description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
-  },
-  {
-    title: "Scroll-area",
-    href: "/docs/primitives/scroll-area",
-    description: "Visually or semantically separates content.",
-  },
-  {
-    title: "Tabs",
-    href: "/docs/primitives/tabs",
-    description:
-      "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
-  },
-  {
-    title: "Tooltip",
-    href: "/docs/primitives/tooltip",
-    description:
-      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
-  },
-]
-
 const Navbar = () => {
-  const [categories, setCategories] = React.useState<Category[]>([])
+  const [categories, setCategories] = useState<Category[]>([])
+  const [searchQuery, setSearchQuery] = useState("")
 
-  React.useEffect(() => {
+  useEffect(() => {
     setCategories(coursesData as Category[])
   }, [])
 
-  return (
-    <header className=" flex text-gray-600 body-font h-16 border-b-2 fixed w-full z-[100] bg-white px-10">
-      <div className="container mx-auto flex flex-wrap p-2 flex-col md:flex-row items-center">
-        <Logo />
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(e.target.value)
+  }
 
-        <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
+  const handleSearchSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    // Add search logic here
+    console.log("Searching for:", searchQuery)
+  }
+
+  return (
+    <header className="fixed top-0 left-0 w-full h-16 border-b-2 bg-white z-50 shadow-md px-10">
+      <div className="container mx-auto flex items-center justify-between h-full">
+        <Logo />
+        <nav className="flex-1 mx-10">
           <NavigationMenu>
-            <NavigationMenuList>
+            <NavigationMenuList className="flex items-center justify-center space-x-6">
               <NavigationMenuItem>
-                <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
+                <NavigationMenuTrigger>Getting Started</NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                     <li className="row-span-3">
                       <NavigationMenuLink asChild>
                         <a
-                          className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
                           href="/"
+                          className="flex flex-col h-full w-full justify-end p-6 bg-gradient-to-b from-muted/50 to-muted rounded-md no-underline outline-none focus:shadow-md"
                         >
-                          <div className="mb-2 mt-4 text-lg font-medium">
+                          <h3 className="mb-2 mt-4 text-lg font-medium">
                             Adhyen
-                          </div>
-                          <p className="text-sm leading-tight text-muted-foreground">
-                            Lumina is an innovative platform designed to offer
-                            personalized learning experiences through
-                            interactive courses and resources. It provides a
-                            diverse range of educational content, from
-                            foundational to advanced levels.
+                          </h3>
+                          <p className="text-sm text-muted-foreground leading-tight">
+                            <span className="text-main">Adhyen</span> is an
+                            innovative platform designed to offer personalized
+                            learning experiences through interactive courses and
+                            resources.
                           </p>
                         </a>
                       </NavigationMenuLink>
@@ -113,7 +81,7 @@ const Navbar = () => {
                       href="/docs/primitives/typography"
                       title="Typography"
                     >
-                      Styles for headings, paragraphs, lists...etc
+                      Styles for headings, paragraphs, lists...etc.
                     </ListItem>
                   </ul>
                 </NavigationMenuContent>
@@ -123,45 +91,48 @@ const Navbar = () => {
                   Courses Categories
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                    {categories.map((categories) => (
+                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                    {categories.map((category) => (
                       <ListItem
-                        key={categories.id}
-                        title={categories.category}
-                        href={categories.category}
+                        key={category.id}
+                        title={category.category}
+                        href={category.category}
                       >
-                        {categories.title}
+                        {category.title}
                       </ListItem>
                     ))}
                   </ul>
                 </NavigationMenuContent>
               </NavigationMenuItem>
-              <NavigationMenuItem>
-                <Link href="/docs" legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                    Documentation
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
         </nav>
 
-        {/* <Link href="/login">
-          <button className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-[#b87be0] hover:text-white rounded text-base mt-4 md:mt-0">
-            Login
+        <form
+          onSubmit={handleSearchSubmit}
+          className="flex items-center max-w-5xl space-x-2 bg-gray-100 p-2 mr-2 rounded"
+        >
+          <input
+            type="text"
+            placeholder="Search..."
+            value={searchQuery}
+            onChange={handleSearchChange}
+            className="bg-transparent outline-none"
+          />
+          <button type="submit" className="text-gray-600">
+            🔍
           </button>
-        </Link> */}
+        </form>
 
         <Link
-          className="flex p-2 rounded  justify-center items-center hover:bg-[#b87be0] hover:text-white"
-          href="/profile"
+          href="/my-account"
+          className="flex items-center p-1 ml-2 rounded hover:bg-gray-100  transition"
         >
           <Avatar>
             <AvatarImage src="https://github.com/shadcn.png" />
             <AvatarFallback>SK</AvatarFallback>
           </Avatar>
-          <p className="ml-3 ">Saurav Karki</p>
+          <span className="ml-3">My Account</span>
         </Link>
       </div>
     </header>
@@ -180,13 +151,13 @@ const ListItem = React.forwardRef<
         <a
           ref={ref}
           className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+            "block select-none p-3 rounded-md transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
             className
           )}
           {...props}
         >
-          <div className="text-sm font-medium leading-none">{title}</div>
-          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+          <h4 className="text-sm font-medium">{title}</h4>
+          <p className="text-sm text-muted-foreground line-clamp-2">
             {children}
           </p>
         </a>

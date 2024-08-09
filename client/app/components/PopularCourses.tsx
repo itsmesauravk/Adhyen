@@ -16,6 +16,7 @@ interface Course {
   slug: string
   students_enrolled: number
   course_views: number
+  isPaid: boolean
 }
 
 const PopularCourses = () => {
@@ -43,9 +44,15 @@ const PopularCourses = () => {
 
   return (
     <div className="container mx-auto py-8">
-      <h2 className="text-3xl font-bold mb-6 text-center text-gray-800">
-        Popular Courses
-      </h2>
+      <div className="text-center mb-12">
+        <h2 className="text-4xl font-extrabold text-gray-900">
+          Popular Courses
+        </h2>
+        <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+          Explore a wide range of popular courses from top instructors around
+          the world.
+        </p>
+      </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {courses.map((course) => (
@@ -113,7 +120,11 @@ const PopularCourses = () => {
 
                 <div className="mt-4 border-t pt-4 flex justify-between items-center">
                   <span className="text-gray-700 font-bold">
-                    Rs {course.price}
+                    {course.isPaid ? (
+                      `Rs ${course.price}`
+                    ) : (
+                      <span className="text-green-600">Free</span>
+                    )}
                   </span>
                   <button
                     className="bg-[#A435F0] text-white px-4 py-2 rounded hover:bg-[#842dc2]"

@@ -16,6 +16,7 @@
     "course_level": "Beginner",
     "provider": "Emeritus",
     "language": "English",
+    "isPaid": true,
     "topics": [
       {
         "id": 1,
@@ -57,6 +58,7 @@
     "course_level": "Intermediate",
     "provider": "Google",
     "language": "English",
+    "isPaid": true,
     "topics": [
       {
         "id": 4,
@@ -87,7 +89,7 @@
     "description": "Dive into the world of data science and learn how to analyze and visualize data to gain insights and make data-driven decisions.",
     "instructor": "Dr. Emily Johnson",
     "duration": "12 weeks",
-    "price": 349.99,
+    "price": 0,
     "rating": 4.8,
     "image": "https://www.classcentral.com/report/wp-content/uploads/2022/04/Artificial-Intelligence-Featured-Image.png",
     "category": "Data Science",
@@ -98,6 +100,7 @@
     "course_level": "Advanced",
     "provider": "Coursera",
     "language": "English",
+    "isPaid": false,
     "topics": [
       {
         "id": 7,
@@ -139,7 +142,7 @@
     "course_level": "Advanced",
     "provider": "Meta",
     "language": "Nepali",
-
+    "isPaid": true,
     "topics": [
       {
         "id": 10,
@@ -170,7 +173,7 @@
     "description": "Explore the field of natural language processing and learn how to build models for text processing, sentiment analysis, and language generation.",
     "instructor": "Sarah Davis",
     "duration": "9 weeks",
-    "price": 249.99,
+    "price": 0,
     "rating": 4.6,
     "image": "https://images.prismic.io/turing/652ebe6bfbd9a45bcec81881_Natural_Language_Processing_Functionality_in_AI_95cadec9bc.webp?auto=format,compress",
     "category": "Natural Language Processing",
@@ -181,7 +184,7 @@
     "course_level": "Intermediate",
     "provider": "Udacity",
     "language": "English",
-
+    "isPaid": false,
     "topics": [
       {
         "id": 13,
@@ -212,7 +215,7 @@
     "description": "Gain an understanding of computer vision and learn how to implement image processing techniques, object detection, and face recognition systems.",
     "instructor": "Dr. Robert Wilson",
     "duration": "11 weeks",
-    "price": 299.99,
+    "price": 0,
     "rating": 4.4,
     "image": "https://www.classcentral.com/report/wp-content/uploads/2022/04/Artificial-Intelligence-Featured-Image.png",
     "category": "Computer Vision",
@@ -223,7 +226,7 @@
     "course_level": "Beginner",
     "provider": "edX",
     "language": "Hindi",
-
+    "isPaid": false,
     "topics": [
       {
         "id": 16,

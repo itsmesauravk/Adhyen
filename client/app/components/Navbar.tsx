@@ -18,6 +18,8 @@ import {
 
 import coursesData from "../../data/courses.json"
 
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+
 interface Category {
   id: number
   title: string
@@ -72,9 +74,8 @@ const Navbar = () => {
   return (
     <header className=" flex text-gray-600 body-font h-16 border-b-2 fixed w-full z-[100] bg-white px-10">
       <div className="container mx-auto flex flex-wrap p-2 flex-col md:flex-row items-center">
-        <Link href="/">
-          <Logo />
-        </Link>
+        <Logo />
+
         <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
           <NavigationMenu>
             <NavigationMenuList>
@@ -146,23 +147,22 @@ const Navbar = () => {
           </NavigationMenu>
         </nav>
 
-        <Link href="/login">
+        {/* <Link href="/login">
           <button className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-[#b87be0] hover:text-white rounded text-base mt-4 md:mt-0">
             Login
           </button>
-        </Link>
+        </Link> */}
 
-        {/* <Link
+        <Link
           className="flex p-2 rounded  justify-center items-center hover:bg-[#b87be0] hover:text-white"
           href="/profile"
         >
-          <img
-            src="/images/avatar.jpg"
-            alt="avatar"
-            className="w-10 h-10 rounded-full object-cover"
-          />
+          <Avatar>
+            <AvatarImage src="https://github.com/shadcn.png" />
+            <AvatarFallback>SK</AvatarFallback>
+          </Avatar>
           <p className="ml-3 ">Saurav Karki</p>
-        </Link> */}
+        </Link>
       </div>
     </header>
   )

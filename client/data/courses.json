@@ -15,6 +15,7 @@
     "course_views": 15098,
     "course_level": "Beginner",
     "provider": "Emeritus",
+    "language": "English",
     "topics": [
       {
         "id": 1,
@@ -36,7 +37,8 @@
       "Understand the fundamental concepts of AI and its applications.",
       "Learn techniques for knowledge representation and problem-solving in AI.",
       "Gain an introductory understanding of reasoning, learning, and perception in AI."
-    ]
+    ],
+    "brief_description": "This course introduces the foundational concepts of artificial intelligence, including problem-solving, knowledge representation, and perception. Ideal for beginners looking to understand AI basics."
   },
   {
     "id": 2,
@@ -54,6 +56,7 @@
     "course_views": 9832,
     "course_level": "Intermediate",
     "provider": "Google",
+    "language": "English",
     "topics": [
       {
         "id": 4,
@@ -75,7 +78,8 @@
       "Understand the basics of machine learning and its applications.",
       "Learn how to preprocess data for machine learning models.",
       "Gain skills in evaluating machine learning models using various metrics."
-    ]
+    ],
+    "brief_description": "Learn the essentials of machine learning using Python, covering both supervised and unsupervised learning, data preprocessing, and model evaluation. Perfect for intermediate learners."
   },
   {
     "id": 3,
@@ -93,6 +97,7 @@
     "course_views": 6078,
     "course_level": "Advanced",
     "provider": "Coursera",
+    "language": "English",
     "topics": [
       {
         "id": 7,
@@ -114,7 +119,8 @@
       "Develop skills in data analysis and interpretation.",
       "Learn data visualization techniques to present insights clearly.",
       "Understand how to use data to drive business decisions."
-    ]
+    ],
+    "brief_description": "Dive into data science with this course focused on data analysis, visualization, and data-driven decision-making. Suitable for advanced learners aiming to develop practical data science skills."
   },
   {
     "id": 4,
@@ -132,6 +138,8 @@
     "course_views": 13400,
     "course_level": "Advanced",
     "provider": "Meta",
+    "language": "Nepali",
+
     "topics": [
       {
         "id": 10,
@@ -153,7 +161,8 @@
       "Understand the fundamentals of deep learning and neural networks.",
       "Gain knowledge of convolutional and recurrent neural networks.",
       "Learn how to apply deep learning techniques to real-world problems."
-    ]
+    ],
+    "brief_description": "Explore deep learning and neural networks, including convolutional and recurrent networks. This course is designed for advanced learners interested in applying deep learning techniques."
   },
   {
     "id": 5,
@@ -171,6 +180,8 @@
     "course_views": 1402,
     "course_level": "Intermediate",
     "provider": "Udacity",
+    "language": "English",
+
     "topics": [
       {
         "id": 13,
@@ -192,7 +203,8 @@
       "Learn techniques for processing and analyzing text data.",
       "Understand how to build models for sentiment analysis.",
       "Gain skills in generating human-like text using NLP techniques."
-    ]
+    ],
+    "brief_description": "Explore NLP techniques like text processing, sentiment analysis, and language generation. This course is perfect for intermediate learners interested in working with text data."
   },
   {
     "id": 6,
@@ -210,6 +222,8 @@
     "course_views": 10000,
     "course_level": "Beginner",
     "provider": "edX",
+    "language": "Hindi",
+
     "topics": [
       {
         "id": 16,
@@ -231,6 +245,7 @@
       "Understand the fundamentals of computer vision.",
       "Learn techniques for image processing and object detection.",
       "Gain skills in implementing face recognition systems."
-    ]
+    ],
+    "brief_description": "Learn the fundamentals of computer vision, including image processing, object detection, and face recognition. A beginner-friendly course for those interested in visual data processing."
   }
 ]

@@ -6,9 +6,42 @@
     "description": "Basic concepts of artificial intelligence and its applications.",
     "course_id": 1,
     "video_links": [
-      "https://www.youtube.com/watch?v=example1",
-      "https://www.youtube.com/watch?v=example2",
-      "https://www.youtube.com/watch?v=example3"
+      {
+        "video_id": 1,
+        "url": "/video/samplevideo.mp4",
+        "added_on": "2024-01-01",
+        "total_views": 1076,
+        "video_title": "Introduction to AI Concepts",
+        "video_brief_description": "orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+        "comments": [
+          { "user_id": 101, "comment": "Great intro to AI!" },
+          { "user_id": 102, "comment": "Very informative." }
+        ],
+        "completed_by": [201, 202],
+        "started_by": [201, 202, 301, 302, 303],
+        "user_review": [
+          { "user_id": 201, "stars": 5 },
+          { "user_id": 202, "stars": 4 }
+        ]
+      },
+      {
+        "video_id": 2,
+        "url": "/video/samplevideo.mp4",
+        "added_on": "2024-01-01",
+        "total_views": 1098,
+        "video_title": "Fundamentals of AI",
+        "video_brief_description": "orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+        "comments": [
+          { "user_id": 101, "comment": "Great intro to AI!" },
+          { "user_id": 102, "comment": "Very informative." }
+        ],
+        "completed_by": [201, 202],
+        "started_by": [201, 202, 301, 302, 303],
+        "user_review": [
+          { "user_id": 201, "stars": 5 },
+          { "user_id": 202, "stars": 4 }
+        ]
+      }
     ],
     "likes": 320,
     "reviews": 50,
@@ -27,9 +60,18 @@
     "description": "Methods for representing knowledge in AI systems.",
     "course_id": 1,
     "video_links": [
-      "https://www.youtube.com/watch?v=example4",
-      "https://www.youtube.com/watch?v=example5",
-      "https://www.youtube.com/watch?v=example6"
+      {
+        "video_id": 2,
+        "url": "https://www.youtube.com/watch?v=example2",
+        "added_on": "2024-01-02",
+        "total_views": 8500,
+        "video_title": "Knowledge Representation Techniques",
+        "video_brief_description": "orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+        "comments": [{ "user_id": 103, "comment": "Loved the examples." }],
+        "completed_by": [203],
+        "started_by": [203, 304, 305],
+        "user_review": [{ "user_id": 203, "stars": 5 }]
+      }
     ],
     "likes": 280,
     "reviews": 40,
@@ -48,9 +90,19 @@
     "description": "Techniques for solving problems using AI.",
     "course_id": 1,
     "video_links": [
-      "https://www.youtube.com/watch?v=example7",
-      "https://www.youtube.com/watch?v=example8",
-      "https://www.youtube.com/watch?v=example9"
+      {
+        "video_id": 3,
+        "url": "https://www.youtube.com/watch?v=example3",
+        "added_on": "2024-01-03",
+        "total_views": 7500,
+        "video_title": "Future of AI.",
+        "video_brief_description": "orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+
+        "comments": [{ "user_id": 104, "comment": "Exciting prospects!" }],
+        "completed_by": [204],
+        "started_by": [204, 306],
+        "user_review": [{ "user_id": 204, "stars": 4 }]
+      }
     ],
     "likes": 350,
     "reviews": 60,
@@ -69,354 +121,544 @@
     "description": "Overview of machine learning and its applications.",
     "course_id": 2,
     "video_links": [
-      "https://www.youtube.com/watch?v=example10",
-      "https://www.youtube.com/watch?v=example11",
-      "https://www.youtube.com/watch?v=example12"
+      {
+        "video_id": 4,
+        "url": "https://www.youtube.com/watch?v=example4",
+        "added_on": "2024-01-05",
+        "total_views": 9000,
+        "video_title": "Introduction to machine learning concepts.",
+        "video_brief_description": "orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+
+        "comments": [
+          { "user_id": 105, "comment": "Clear explanation of concepts." }
+        ],
+        "completed_by": [205],
+        "started_by": [205, 307, 308],
+        "user_review": [{ "user_id": 205, "stars": 4 }]
+      }
     ],
     "likes": 400,
-    "reviews": 75,
+    "reviews": 70,
     "topic_views": 2500,
     "instructor": "Jane Doe",
     "learning_outcomes": [
-      "Understand the basic concepts of machine learning.",
-      "Identify the various types of machine learning algorithms.",
-      "Recognize the applications of machine learning across industries."
+      "Understand the principles of machine learning.",
+      "Identify key machine learning applications.",
+      "Recognize the future trends in machine learning."
     ]
   },
   {
     "id": 5,
-    "name": "Data Preprocessing",
-    "slug": "data-preprocessing",
-    "description": "Techniques for cleaning and preparing data for machine learning.",
+    "name": "Deep Learning Fundamentals",
+    "slug": "deep-learning-fundamentals",
+    "description": "Basics of deep learning and neural networks.",
     "course_id": 2,
     "video_links": [
-      "https://www.youtube.com/watch?v=example13",
-      "https://www.youtube.com/watch?v=example14",
-      "https://www.youtube.com/watch?v=example15"
+      {
+        "video_id": 5,
+        "url": "https://www.youtube.com/watch?v=example5",
+        "added_on": "2024-01-07",
+        "total_views": 8000,
+        "video_title": "Basics of deep learning.",
+        "video_brief_description": "orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+
+        "comments": [
+          { "user_id": 106, "comment": "Very technical, but well explained." }
+        ],
+        "completed_by": [206],
+        "started_by": [206, 309, 310],
+        "user_review": [{ "user_id": 206, "stars": 5 }]
+      }
     ],
-    "likes": 370,
+    "likes": 350,
     "reviews": 65,
     "topic_views": 2300,
-    "instructor": "John Doe",
+    "instructor": "John Smith",
     "learning_outcomes": [
-      "Learn techniques for data cleaning and preprocessing.",
-      "Understand how to handle missing data in datasets.",
-      "Gain skills in feature selection and engineering for machine learning."
+      "Understand the fundamentals of deep learning.",
+      "Learn about neural networks and their architectures.",
+      "Apply deep learning techniques to real-world problems."
     ]
   },
   {
     "id": 6,
-    "name": "Model Evaluation",
-    "slug": "model-evaluation",
-    "description": "Methods for evaluating the performance of machine learning models.",
+    "name": "Natural Language Processing",
+    "slug": "natural-language-processing",
+    "description": "Techniques and applications of NLP in AI.",
     "course_id": 2,
     "video_links": [
-      "https://www.youtube.com/watch?v=example16",
-      "https://www.youtube.com/watch?v=example17",
-      "https://www.youtube.com/watch?v=example18"
+      {
+        "video_id": 6,
+        "url": "https://www.youtube.com/watch?v=example6",
+        "added_on": "2024-01-10",
+        "total_views": 8500,
+        "video_title": "Introduction to NLP.",
+        "video_brief_description": "orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+
+        "comments": [{ "user_id": 107, "comment": "Practical and useful." }],
+        "completed_by": [207],
+        "started_by": [207, 311],
+        "user_review": [{ "user_id": 207, "stars": 4 }]
+      }
     ],
-    "likes": 330,
+    "likes": 300,
     "reviews": 55,
     "topic_views": 2100,
-    "instructor": "Jane Doe",
+    "instructor": "Jane Smith",
     "learning_outcomes": [
-      "Learn how to evaluate machine learning models using various metrics.",
-      "Understand the importance of model validation and testing.",
-      "Gain knowledge of cross-validation techniques for model evaluation."
+      "Understand the basics of natural language processing.",
+      "Learn about NLP techniques and tools.",
+      "Apply NLP to analyze and process textual data."
     ]
   },
   {
     "id": 7,
-    "name": "Data Analysis Techniques",
-    "slug": "data-analysis-techniques",
-    "description": "Methods for analyzing and interpreting data.",
+    "name": "Reinforcement Learning",
+    "slug": "reinforcement-learning",
+    "description": "Fundamentals and applications of reinforcement learning.",
     "course_id": 3,
     "video_links": [
-      "https://www.youtube.com/watch?v=example19",
-      "https://www.youtube.com/watch?v=example20",
-      "https://www.youtube.com/watch?v=example21"
+      {
+        "video_id": 7,
+        "url": "https://www.youtube.com/watch?v=example7",
+        "added_on": "2024-01-15",
+        "total_views": 9500,
+        "video_title": "Basics of reinforcement learning.",
+        "video_brief_description": "orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+
+        "comments": [{ "user_id": 108, "comment": "Very helpful!" }],
+        "completed_by": [208],
+        "started_by": [208, 312, 313],
+        "user_review": [{ "user_id": 208, "stars": 5 }]
+      }
     ],
-    "likes": 420,
-    "reviews": 80,
-    "topic_views": 2700,
+    "likes": 360,
+    "reviews": 75,
+    "topic_views": 2400,
     "instructor": "John Doe",
     "learning_outcomes": [
-      "Develop skills in analyzing complex datasets.",
-      "Learn methods for interpreting data trends and patterns.",
-      "Gain insights into statistical techniques for data analysis."
+      "Understand the fundamentals of reinforcement learning.",
+      "Learn about key algorithms and their applications.",
+      "Apply reinforcement learning techniques to solve complex problems."
     ]
   },
   {
     "id": 8,
-    "name": "Data Visualization",
-    "slug": "data-visualization",
-    "description": "Techniques for visualizing data using various tools.",
+    "name": "Computer Vision",
+    "slug": "computer-vision",
+    "description": "Techniques and applications of computer vision in AI.",
     "course_id": 3,
     "video_links": [
-      "https://www.youtube.com/watch?v=example22",
-      "https://www.youtube.com/watch?v=example23",
-      "https://www.youtube.com/watch?v=example24"
+      {
+        "video_id": 8,
+        "url": "https://www.youtube.com/watch?v=example8",
+        "added_on": "2024-01-16",
+        "total_views": 8000,
+        "video_title": "Introduction to computer vision.",
+        "video_brief_description": "orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+
+        "comments": [{ "user_id": 109, "comment": "Great techniques." }],
+        "completed_by": [209],
+        "started_by": [209, 314, 315],
+        "user_review": [{ "user_id": 209, "stars": 4 }]
+      }
     ],
-    "likes": 390,
-    "reviews": 70,
-    "topic_views": 2500,
+    "likes": 320,
+    "reviews": 50,
+    "topic_views": 2000,
     "instructor": "Jane Doe",
     "learning_outcomes": [
-      "Learn how to create effective data visualizations.",
-      "Understand the principles of visual data representation.",
-      "Gain proficiency in using tools for data visualization."
+      "Understand the principles of computer vision.",
+      "Learn about image processing and object detection.",
+      "Apply computer vision techniques to real-world problems."
     ]
   },
   {
     "id": 9,
-    "name": "Data-Driven Decision Making",
-    "slug": "data-driven-decision-making",
-    "description": "Using data insights to make informed business decisions.",
+    "name": "Ethics in AI",
+    "slug": "ethics-in-ai",
+    "description": "Understanding the ethical implications of AI technologies.",
     "course_id": 3,
     "video_links": [
-      "https://www.youtube.com/watch?v=example25",
-      "https://www.youtube.com/watch?v=example26",
-      "https://www.youtube.com/watch?v=example27"
+      {
+        "video_id": 9,
+        "url": "https://www.youtube.com/watch?v=example9",
+        "added_on": "2024-01-20",
+        "total_views": 7000,
+        "video_title": "Ethical considerations in AI.",
+        "video_brief_description": "orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+
+        "comments": [{ "user_id": 110, "comment": "Very insightful." }],
+        "completed_by": [210],
+        "started_by": [210, 316],
+        "user_review": [{ "user_id": 210, "stars": 4 }]
+      }
     ],
-    "likes": 360,
-    "reviews": 60,
-    "topic_views": 2400,
-    "instructor": "John Doe",
+    "likes": 290,
+    "reviews": 45,
+    "topic_views": 1900,
+    "instructor": "John Smith",
     "learning_outcomes": [
-      "Understand how to use data insights to drive business decisions.",
-      "Learn methods for interpreting data in a business context.",
-      "Develop skills in making data-driven strategic decisions."
+      "Understand the ethical issues in AI.",
+      "Learn about fairness, transparency, and accountability in AI systems.",
+      "Explore case studies of ethical dilemmas in AI."
     ]
   },
   {
     "id": 10,
-    "name": "Neural Networks Basics",
-    "slug": "neural-networks-basics",
-    "description": "Introduction to neural networks and their components.",
+    "name": "AI in Healthcare",
+    "slug": "ai-in-healthcare",
+    "description": "Applications of AI in the healthcare industry.",
     "course_id": 4,
     "video_links": [
-      "https://www.youtube.com/watch?v=example28",
-      "https://www.youtube.com/watch?v=example29",
-      "https://www.youtube.com/watch?v=example30"
+      {
+        "video_id": 10,
+        "url": "https://www.youtube.com/watch?v=example10",
+        "added_on": "2024-01-25",
+        "total_views": 11000,
+        "video_title": "AI applications in healthcare.",
+        "video_brief_description": "orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+
+        "comments": [{ "user_id": 111, "comment": "Very informative." }],
+        "completed_by": [211],
+        "started_by": [211, 317, 318],
+        "user_review": [{ "user_id": 211, "stars": 5 }]
+      }
     ],
-    "likes": 430,
-    "reviews": 85,
-    "topic_views": 2800,
-    "instructor": "John Doe",
+    "likes": 330,
+    "reviews": 60,
+    "topic_views": 2200,
+    "instructor": "Jane Doe",
     "learning_outcomes": [
-      "Understand the structure and functioning of neural networks.",
-      "Learn the key components of neural networks and their roles.",
-      "Gain basic skills in building simple neural network models."
+      "Understand the role of AI in healthcare.",
+      "Learn about AI applications in diagnosis and treatment.",
+      "Explore case studies of AI in medical research."
     ]
   },
   {
     "id": 11,
-    "name": "Convolutional Neural Networks",
-    "slug": "convolutional-neural-networks",
-    "description": "Understanding convolutional networks for image processing.",
+    "name": "AI in Finance",
+    "slug": "ai-in-finance",
+    "description": "Applications of AI in the financial sector.",
     "course_id": 4,
     "video_links": [
-      "https://www.youtube.com/watch?v=example31",
-      "https://www.youtube.com/watch?v=example32",
-      "https://www.youtube.com/watch?v=example33"
+      {
+        "video_id": 11,
+        "url": "https://www.youtube.com/watch?v=example11",
+        "added_on": "2024-01-30",
+        "total_views": 9500,
+        "video_title": "AI applications in finance.",
+        "video_brief_description": "orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+
+        "comments": [{ "user_id": 112, "comment": "Excellent overview." }],
+        "completed_by": [212],
+        "started_by": [212, 319, 320],
+        "user_review": [{ "user_id": 212, "stars": 4 }]
+      }
     ],
-    "likes": 410,
-    "reviews": 78,
-    "topic_views": 2600,
-    "instructor": "Jane Doe",
+    "likes": 340,
+    "reviews": 65,
+    "topic_views": 2300,
+    "instructor": "John Smith",
     "learning_outcomes": [
-      "Learn the principles of convolutional neural networks (CNNs).",
-      "Understand the applications of CNNs in image processing.",
-      "Gain skills in implementing CNNs for real-world image recognition tasks."
+      "Understand the applications of AI in finance.",
+      "Learn about algorithmic trading and fraud detection.",
+      "Explore case studies of AI in financial services."
     ]
   },
   {
     "id": 12,
-    "name": "Recurrent Neural Networks",
-    "slug": "recurrent-neural-networks",
-    "description": "Principles and applications of recurrent neural networks.",
+    "name": "AI in Education",
+    "slug": "ai-in-education",
+    "description": "Exploring the use of AI in educational settings.",
     "course_id": 4,
     "video_links": [
-      "https://www.youtube.com/watch?v=example34",
-      "https://www.youtube.com/watch?v=example35",
-      "https://www.youtube.com/watch?v=example36"
+      {
+        "video_id": 12,
+        "url": "https://www.youtube.com/watch?v=example12",
+        "added_on": "2024-02-01",
+        "total_views": 10000,
+        "video_title": "AI tools for education.",
+        "video_brief_description": "orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+
+        "comments": [{ "user_id": 113, "comment": "Very engaging content." }],
+        "completed_by": [213],
+        "started_by": [213, 321],
+        "user_review": [{ "user_id": 213, "stars": 4 }]
+      }
     ],
-    "likes": 390,
-    "reviews": 72,
-    "topic_views": 2500,
-    "instructor": "John Doe",
+    "likes": 310,
+    "reviews": 55,
+    "topic_views": 2100,
+    "instructor": "Jane Doe",
     "learning_outcomes": [
-      "Understand the functioning of recurrent neural networks (RNNs).",
-      "Learn the key applications of RNNs in sequence modeling.",
-      "Gain knowledge of implementing RNNs for tasks like text generation and time series prediction."
+      "Understand the impact of AI in education.",
+      "Learn about AI tools for personalized learning.",
+      "Explore case studies of AI in educational technology."
     ]
   },
   {
     "id": 13,
-    "name": "Text Processing",
-    "slug": "text-processing",
-    "description": "Techniques for processing and analyzing text data.",
+    "name": "AI in Robotics",
+    "slug": "ai-in-robotics",
+    "description": "The integration of AI in robotics and automation.",
     "course_id": 5,
     "video_links": [
-      "https://www.youtube.com/watch?v=example37",
-      "https://www.youtube.com/watch?v=example38",
-      "https://www.youtube.com/watch?v=example39"
+      {
+        "video_id": 13,
+        "url": "https://www.youtube.com/watch?v=example13",
+        "added_on": "2024-02-05",
+        "total_views": 9500,
+        "video_title": "AI-driven robotics.",
+        "video_brief_description": "orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+
+        "comments": [{ "user_id": 114, "comment": "Very informative." }],
+        "completed_by": [214],
+        "started_by": [214, 322],
+        "user_review": [{ "user_id": 214, "stars": 5 }]
+      }
     ],
-    "likes": 380,
-    "reviews": 68,
+    "likes": 350,
+    "reviews": 70,
     "topic_views": 2400,
-    "instructor": "Jane Doe",
+    "instructor": "John Doe",
     "learning_outcomes": [
-      "Understand the basics of natural language processing (NLP).",
-      "Learn methods for text tokenization and preprocessing.",
-      "Gain skills in implementing text analysis techniques."
+      "Understand the role of AI in robotics.",
+      "Learn about autonomous robots and their applications.",
+      "Explore case studies of AI in automation."
     ]
   },
   {
     "id": 14,
-    "name": "Sentiment Analysis",
-    "slug": "sentiment-analysis",
-    "description": "Analyzing sentiments in text data using AI techniques.",
+    "name": "AI for Business",
+    "slug": "ai-for-business",
+    "description": "How AI can be leveraged for business growth and efficiency.",
     "course_id": 5,
     "video_links": [
-      "https://www.youtube.com/watch?v=example40",
-      "https://www.youtube.com/watch?v=example41",
-      "https://www.youtube.com/watch?v=example42"
+      {
+        "video_id": 14,
+        "url": "https://www.youtube.com/watch?v=example14",
+        "added_on": "2024-02-10",
+        "total_views": 9000,
+        "video_title": "AI strategies for business.",
+        "video_brief_description": "orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+
+        "comments": [{ "user_id": 115, "comment": "Great business insights." }],
+        "completed_by": [215],
+        "started_by": [215, 323, 324],
+        "user_review": [{ "user_id": 215, "stars": 4 }]
+      }
     ],
-    "likes": 400,
-    "reviews": 70,
-    "topic_views": 2600,
-    "instructor": "John Doe",
+    "likes": 330,
+    "reviews": 60,
+    "topic_views": 2200,
+    "instructor": "Jane Smith",
     "learning_outcomes": [
-      "Learn how to perform sentiment analysis on text data.",
-      "Understand the applications of sentiment analysis in various fields.",
-      "Gain knowledge of implementing sentiment analysis models."
+      "Understand how AI can transform business operations.",
+      "Learn about AI-driven business strategies.",
+      "Explore case studies of AI in various industries."
     ]
   },
   {
     "id": 15,
-    "name": "Topic Modeling",
-    "slug": "topic-modeling",
-    "description": "Techniques for identifying topics in large text datasets.",
+    "name": "AI in Smart Cities",
+    "slug": "ai-in-smart-cities",
+    "description": "Applications of AI in developing smart cities.",
     "course_id": 5,
     "video_links": [
-      "https://www.youtube.com/watch?v=example43",
-      "https://www.youtube.com/watch?v=example44",
-      "https://www.youtube.com/watch?v=example45"
+      {
+        "video_id": 15,
+        "url": "https://www.youtube.com/watch?v=example15",
+        "added_on": "2024-02-15",
+        "total_views": 9500,
+        "video_title": "Smart city technologies using AI.",
+        "video_brief_description": "orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+
+        "comments": [{ "user_id": 116, "comment": "Innovative use of AI." }],
+        "completed_by": [216],
+        "started_by": [216, 325],
+        "user_review": [{ "user_id": 216, "stars": 4 }]
+      }
     ],
-    "likes": 390,
+    "likes": 340,
     "reviews": 65,
-    "topic_views": 2500,
-    "instructor": "Jane Doe",
+    "topic_views": 2300,
+    "instructor": "John Smith",
     "learning_outcomes": [
-      "Understand the basics of topic modeling.",
-      "Learn various algorithms for topic modeling like LDA.",
-      "Apply topic modeling techniques to uncover hidden themes in text data."
+      "Understand the concept of smart cities.",
+      "Learn about AI applications in urban planning and management.",
+      "Explore case studies of AI in smart city initiatives."
     ]
   },
   {
     "id": 16,
-    "name": "Deep Learning Basics",
-    "slug": "deep-learning-basics",
-    "description": "Introduction to deep learning concepts and techniques.",
+    "name": "AI for Cybersecurity",
+    "slug": "ai-for-cybersecurity",
+    "description": "Using AI to enhance cybersecurity measures.",
     "course_id": 6,
     "video_links": [
-      "https://www.youtube.com/watch?v=example46",
-      "https://www.youtube.com/watch?v=example47",
-      "https://www.youtube.com/watch?v=example48"
+      {
+        "video_id": 16,
+        "url": "https://www.youtube.com/watch?v=example16",
+        "added_on": "2024-02-20",
+        "total_views": 10000,
+        "video_title": "AI in cybersecurity strategies.",
+        "video_brief_description": "orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+
+        "comments": [
+          {
+            "user_id": 117,
+            "comment": "Very relevant for today's security needs."
+          }
+        ],
+        "completed_by": [217],
+        "started_by": [217, 326],
+        "user_review": [{ "user_id": 217, "stars": 5 }]
+      }
     ],
-    "likes": 450,
-    "reviews": 90,
-    "topic_views": 3000,
-    "instructor": "John Doe",
+    "likes": 350,
+    "reviews": 70,
+    "topic_views": 2400,
+    "instructor": "Jane Smith",
     "learning_outcomes": [
-      "Understand the basic principles of deep learning.",
-      "Learn about neural networks and their deep learning variants.",
-      "Gain skills in implementing simple deep learning models."
+      "Understand the role of AI in cybersecurity.",
+      "Learn about AI-driven threat detection and prevention.",
+      "Explore case studies of AI in cybersecurity applications."
     ]
   },
   {
     "id": 17,
-    "name": "Advanced Neural Networks",
-    "slug": "advanced-neural-networks",
-    "description": "Deep dive into complex neural network architectures.",
+    "name": "AI in Manufacturing",
+    "slug": "ai-in-manufacturing",
+    "description": "The impact of AI on manufacturing processes and automation.",
     "course_id": 6,
     "video_links": [
-      "https://www.youtube.com/watch?v=example49",
-      "https://www.youtube.com/watch?v=example50",
-      "https://www.youtube.com/watch?v=example51"
+      {
+        "video_id": 17,
+        "url": "https://www.youtube.com/watch?v=example17",
+        "added_on": "2024-02-25",
+        "total_views": 9500,
+        "video_title": "AI applications in manufacturing.",
+        "video_brief_description": "orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+
+        "comments": [
+          { "user_id": 118, "comment": "Excellent overview of AI in industry." }
+        ],
+        "completed_by": [218],
+        "started_by": [218, 327],
+        "user_review": [{ "user_id": 218, "stars": 4 }]
+      }
     ],
-    "likes": 430,
-    "reviews": 85,
-    "topic_views": 2900,
-    "instructor": "Jane Doe",
+    "likes": 320,
+    "reviews": 55,
+    "topic_views": 2100,
+    "instructor": "John Smith",
     "learning_outcomes": [
-      "Learn about advanced neural network architectures.",
-      "Understand concepts like transfer learning and GANs.",
-      "Gain proficiency in implementing advanced neural network models."
+      "Understand AI applications in manufacturing.",
+      "Learn about automation and process optimization using AI.",
+      "Explore case studies of AI in manufacturing industries."
     ]
   },
   {
     "id": 18,
-    "name": "Reinforcement Learning",
-    "slug": "reinforcement-learning",
-    "description": "Introduction to reinforcement learning and its applications.",
-    "course_id": 7,
+    "name": "AI in Transportation",
+    "slug": "ai-in-transportation",
+    "description": "Exploring the role of AI in modern transportation systems.",
+    "course_id": 6,
     "video_links": [
-      "https://www.youtube.com/watch?v=example52",
-      "https://www.youtube.com/watch?v=example53",
-      "https://www.youtube.com/watch?v=example54"
+      {
+        "video_id": 18,
+        "url": "https://www.youtube.com/watch?v=example18",
+        "added_on": "2024-03-01",
+        "total_views": 9800,
+        "video_title": "AI-driven transportation systems.",
+        "video_brief_description": "orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+
+        "comments": [
+          { "user_id": 119, "comment": "Great content on autonomous vehicles." }
+        ],
+        "completed_by": [219],
+        "started_by": [219, 328],
+        "user_review": [{ "user_id": 219, "stars": 4 }]
+      }
     ],
-    "likes": 440,
-    "reviews": 88,
-    "topic_views": 3100,
-    "instructor": "John Doe",
+    "likes": 330,
+    "reviews": 60,
+    "topic_views": 2200,
+    "instructor": "Jane Doe",
     "learning_outcomes": [
-      "Understand the basic principles of reinforcement learning.",
-      "Learn about the exploration-exploitation trade-off.",
-      "Gain skills in implementing reinforcement learning algorithms."
+      "Understand AI's impact on transportation systems.",
+      "Learn about autonomous vehicles and traffic management.",
+      "Explore case studies of AI in transportation solutions."
     ]
   },
   {
     "id": 19,
-    "name": "AI Ethics",
-    "slug": "ai-ethics",
-    "description": "Exploring ethical considerations in AI development.",
-    "course_id": 8,
+    "name": "AI in Agriculture",
+    "slug": "ai-in-agriculture",
+    "description": "The use of AI to enhance agricultural practices and productivity.",
+    "course_id": 7,
     "video_links": [
-      "https://www.youtube.com/watch?v=example55",
-      "https://www.youtube.com/watch?v=example56",
-      "https://www.youtube.com/watch?v=example57"
+      {
+        "video_id": 19,
+        "url": "https://www.youtube.com/watch?v=example19",
+        "added_on": "2024-03-05",
+        "total_views": 9600,
+        "video_title": "AI applications in agriculture.",
+        "video_brief_description": "orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+
+        "comments": [
+          { "user_id": 120, "comment": "Informative and practical." }
+        ],
+        "completed_by": [220],
+        "started_by": [220, 329],
+        "user_review": [{ "user_id": 220, "stars": 4 }]
+      }
     ],
-    "likes": 420,
-    "reviews": 80,
-    "topic_views": 2800,
-    "instructor": "Jane Doe",
+    "likes": 310,
+    "reviews": 55,
+    "topic_views": 2100,
+    "instructor": "John Doe",
     "learning_outcomes": [
-      "Understand the ethical implications of AI.",
-      "Learn about bias, fairness, and transparency in AI systems.",
-      "Gain insights into responsible AI development practices."
+      "Understand AI applications in agriculture.",
+      "Learn about precision farming and crop management.",
+      "Explore case studies of AI in agricultural innovation."
     ]
   },
   {
     "id": 20,
-    "name": "AI in Healthcare",
-    "slug": "ai-in-healthcare",
-    "description": "Applications of AI in the healthcare industry.",
-    "course_id": 8,
+    "name": "AI and Sustainability",
+    "slug": "ai-and-sustainability",
+    "description": "How AI can contribute to sustainable practices and environmental conservation.",
+    "course_id": 7,
     "video_links": [
-      "https://www.youtube.com/watch?v=example58",
-      "https://www.youtube.com/watch?v=example59",
-      "https://www.youtube.com/watch?v=example60"
+      {
+        "video_id": 20,
+        "url": "https://www.youtube.com/watch?v=example20",
+        "added_on": "2024-03-10",
+        "total_views": 9800,
+        "video_title": "AI in sustainability efforts.",
+        "video_brief_description": "orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+
+        "comments": [
+          {
+            "user_id": 121,
+            "comment": "Great insights into AI for sustainability."
+          }
+        ],
+        "completed_by": [221],
+        "started_by": [221, 330],
+        "user_review": [{ "user_id": 221, "stars": 5 }]
+      }
     ],
-    "likes": 450,
-    "reviews": 90,
-    "topic_views": 3000,
-    "instructor": "John Doe",
+    "likes": 340,
+    "reviews": 60,
+    "topic_views": 2300,
+    "instructor": "Jane Doe",
     "learning_outcomes": [
-      "Understand the applications of AI in healthcare.",
-      "Learn about AI-driven diagnostics and treatment planning.",
-      "Gain knowledge of the challenges and opportunities in AI healthcare."
+      "Understand the role of AI in sustainability.",
+      "Learn about AI applications for environmental conservation.",
+      "Explore case studies of AI in sustainable development."
     ]
   }
 ]

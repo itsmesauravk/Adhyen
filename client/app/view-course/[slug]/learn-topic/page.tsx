@@ -25,13 +25,35 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb"
 
+interface Comment {
+  user_id: number
+  comment: string
+}
+
+interface UserReview {
+  user_id: number
+  stars: number
+}
+
+interface VideoLink {
+  video_id: number
+  url: string
+  added_on: string // Use Date type if converting to a date object
+  total_views: number
+  video_brief_description: string
+  comments: Comment[]
+  completed_by: number[]
+  started_by: number[]
+  user_review: UserReview[]
+}
+
 interface Topic {
   id: number
   name: string
   slug: string
   description: string
   course_id: number
-  video_links: string[]
+  video_links: VideoLink[]
   likes: number
   reviews: number
   topic_views: number
@@ -61,43 +83,57 @@ interface Course {
 
 const LearnTopic: React.FC = () => {
   const getToken = useSearchParams()
-  const cId = getToken.get("cid")
+  const cId = getToken.get("cid") // course id
+  const tId = getToken.get("tid") // topic id
 
   const [topics, setTopics] = useState<Topic[]>([])
   const [course, setCourse] = useState<Course | null>(null)
-  const [selected, setSelected] = useState<string | null>(null)
+  const [selected, setSelected] = useState<string | null>(
+    tId ? "ViewTopicData" : null
+  )
+  const [selectedTopicId, setSelectedTopicId] = useState<number | null>(
+    tId ? Number(tId) : null
+  )
 
   const renderDiv = () => {
     switch (selected) {
       case "ViewTopicData": {
-        return <ViewTopicData />
+        return selectedTopicId ? (
+          <ViewTopicData topicId={selectedTopicId} />
+        ) : null
       }
       case "AboutCourse": {
-        return <AboutCourse />
+        return cId ? <AboutCourse courseId={Number(cId)} /> : null
       }
       default: {
-        return <div>Nothing to show</div>
+        return selectedTopicId ? (
+          <ViewTopicData topicId={selectedTopicId} />
+        ) : null
       }
     }
   }
 
   useEffect(() => {
-    const filteredTopics = topicDetails.filter(
-      (topic) => topic.course_id === Number(cId)
-    )
-    setTopics(filteredTopics || [])
+    if (cId) {
+      const filteredTopics = topicDetails.filter(
+        (topic) => topic.course_id === Number(cId)
+      )
+      setTopics(filteredTopics || [])
+    }
   }, [cId])
 
   useEffect(() => {
-    const oneCourse = courseDetail.find((course) => course.id === Number(cId))
-    setCourse(oneCourse || null)
+    if (cId) {
+      const oneCourse = courseDetail.find((course) => course.id === Number(cId))
+      setCourse(oneCourse || null)
+    }
   }, [cId])
 
   return (
     <div>
       <Navbar />
-      <div className="flex flex-col py-20 mx-auto px-4 lg:px-40">
-        <div>
+      <div className="flex flex-col pt-20 mx-auto px-4 lg:px-40">
+        <div className="mb-5">
           <Breadcrumb>
             <BreadcrumbList>
               <BreadcrumbItem>
@@ -109,18 +145,20 @@ const LearnTopic: React.FC = () => {
               </BreadcrumbItem>
               <BreadcrumbSeparator />
               <BreadcrumbItem>
-                <BreadcrumbPage>Course</BreadcrumbPage>
+                <BreadcrumbLink href={`/view-course/${course?.slug}`}>
+                  {course?.title}
+                </BreadcrumbLink>
               </BreadcrumbItem>
               <BreadcrumbSeparator />
               <BreadcrumbItem>
-                <BreadcrumbPage>Topic</BreadcrumbPage>
+                <BreadcrumbPage className="text-main">Learning</BreadcrumbPage>
               </BreadcrumbItem>
             </BreadcrumbList>
           </Breadcrumb>
         </div>
         <div className="flex py-2 w-full">
-          {/* sidebar  */}
-          <div className="w-1/4 p-5">
+          {/* Sidebar */}
+          <div className="w-1/4">
             <div className="bg-white p-6 rounded-lg shadow-md">
               {/* Course Title */}
               <div className="mb-6">
@@ -140,7 +178,10 @@ const LearnTopic: React.FC = () => {
                           <li
                             key={topic.id}
                             className="flex items-center gap-2 text-gray-600 hover:underline cursor-pointer"
-                            onClick={() => setSelected("ViewTopicData")}
+                            onClick={() => {
+                              setSelected("ViewTopicData")
+                              setSelectedTopicId(topic.id)
+                            }}
                           >
                             <Checkbox
                               checked={false}
@@ -220,11 +261,9 @@ const LearnTopic: React.FC = () => {
               </div>
             </div>
           </div>
-          {/* content bar  */}
-          <div className="w-3/4 p-5">
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              {renderDiv()}
-            </div>
+          {/* Content Area */}
+          <div className="w-3/4 ml-5">
+            <div>{renderDiv()}</div>
           </div>
         </div>
       </div>

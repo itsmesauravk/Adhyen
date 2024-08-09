@@ -7,6 +7,20 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
+
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogFooter,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+
 import { Progress } from "@/components/ui/progress"
 import topicDetails from "@/data/topics.json"
 import courseDetail from "@/data/courses.json"
@@ -15,13 +29,35 @@ import { Checkbox } from "@/components/ui/checkbox"
 import ViewTopicData from "./ViewTopicData"
 import AboutCourse from "./AboutCourse"
 
+interface Comment {
+  user_id: number
+  comment: string
+}
+
+interface UserReview {
+  user_id: number
+  stars: number
+}
+
+interface VideoLink {
+  video_id: number
+  url: string
+  added_on: string
+  total_views: number
+  video_brief_description: string
+  comments: Comment[]
+  completed_by: number[]
+  started_by: number[]
+  user_review: UserReview[]
+}
+
 interface Topic {
   id: number
   name: string
   slug: string
   description: string
   course_id: number
-  video_links: string[]
+  video_links: VideoLink[]
   likes: number
   reviews: number
   topic_views: number
@@ -57,14 +93,15 @@ const LeanTopicSidebar: React.FC<LeanTopicSidebarProps> = ({ courseId }) => {
   const [topics, setTopics] = useState<Topic[]>([])
   const [course, setCourse] = useState<Course | null>(null)
   const [selected, setSelected] = useState<string | null>(null)
+  const [selectedTopicId, setSelectedTopicId] = useState<number | null>(null)
 
   const renderDiv = () => {
     switch (selected) {
       case "ViewTopicData": {
-        return <ViewTopicData />
+        return <ViewTopicData topicId={Number(selectedTopicId)} />
       }
       case "AboutCourse": {
-        return <AboutCourse />
+        return <AboutCourse courseId={Number(courseId)} />
       }
       default: {
         return <div>Nothing to show</div>
@@ -104,6 +141,10 @@ const LeanTopicSidebar: React.FC<LeanTopicSidebarProps> = ({ courseId }) => {
                   <li
                     key={topic.id}
                     className="flex items-center gap-2 text-gray-600 hover:underline cursor-pointer"
+                    onClick={() => {
+                      setSelected("ViewTopicData")
+                      setSelectedTopicId(topic.id)
+                    }}
                   >
                     <Checkbox checked={false} disabled={true} className="" />
                     {topic.name}
@@ -169,8 +210,39 @@ const LeanTopicSidebar: React.FC<LeanTopicSidebarProps> = ({ courseId }) => {
           More About Course
         </p>
       </div>
-
-      <hr className="my-4 border-t-1 border-gray-300" />
+      {/* reivew part  */}
+      <div>
+        <Dialog>
+          <DialogTrigger asChild>
+            <Button variant="outline">Edit Profile</Button>
+          </DialogTrigger>
+          <DialogContent className="sm:max-w-[425px]">
+            <DialogHeader>
+              <DialogTitle>Edit profile</DialogTitle>
+              <DialogDescription>
+                Make changes to your profile here. Click save when you're done.
+              </DialogDescription>
+            </DialogHeader>
+            <div className="grid gap-4 py-4">
+              <div className="grid grid-cols-4 items-center gap-4">
+                <Label htmlFor="name" className="text-right">
+                  Name
+                </Label>
+                <Input id="name" value="Pedro Duarte" className="col-span-3" />
+              </div>
+              <div className="grid grid-cols-4 items-center gap-4">
+                <Label htmlFor="username" className="text-right">
+                  Username
+                </Label>
+                <Input id="username" value="@peduarte" className="col-span-3" />
+              </div>
+            </div>
+            <DialogFooter>
+              <Button type="submit">Save changes</Button>
+            </DialogFooter>
+          </DialogContent>
+        </Dialog>
+      </div>
     </div>
   )
 }

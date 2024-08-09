@@ -70,7 +70,7 @@ const ViewCoursePage = () => {
           <div className="flex flex-col md:flex-row items-center">
             {/* course details  */}
             <div className="md:ml-8 mt-4 md:mt-0 md:flex-grow">
-              <div>
+              <div className="mb-5">
                 <Breadcrumb>
                   <BreadcrumbList>
                     <BreadcrumbItem>
@@ -82,7 +82,9 @@ const ViewCoursePage = () => {
                     </BreadcrumbItem>
                     <BreadcrumbSeparator />
                     <BreadcrumbItem>
-                      <BreadcrumbPage>{courseDetails.category}</BreadcrumbPage>
+                      <BreadcrumbPage className="text-main">
+                        {courseDetails.category}
+                      </BreadcrumbPage>
                     </BreadcrumbItem>
                   </BreadcrumbList>
                 </Breadcrumb>
@@ -121,7 +123,7 @@ const ViewCoursePage = () => {
               {/* this will change and authentication will be added later  */}
 
               <Link
-                href={`/view-course/${courseDetails.slug}/learn-topic?cid=${courseDetails.id}`}
+                href={`/view-course/${courseDetails.slug}/learn-topic?cid=${courseDetails.id}&tid=${courseDetails.topics[0].id}`}
               >
                 <button className="mt-6 px-6 py-3 w-40 bg-purple-500 text-white rounded-md hover:bg-purple-600 focus:outline-none focus:ring-2 focus:ring-primary-500">
                   Join Now

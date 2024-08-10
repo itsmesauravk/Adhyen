@@ -7,6 +7,8 @@ import { Progress } from "@/components/ui/progress"
 
 import Transition from "../Transition"
 
+import RecentlyViewedSkeleton from "@/components/ui/skeletions/RecentlyViewedSkeletion"
+
 interface Course {
   id: number
   title: string
@@ -24,11 +26,22 @@ interface Course {
 
 const RecentlyViewed = () => {
   const [continueCourses, setContinueCourses] = useState<Course[]>([])
+  const [viewSize, setViewSize] = useState(3)
+  const [viewAll, setViewAll] = useState(false)
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     // Fetch only the first 2 courses
-    setContinueCourses(learningCourses.slice(-4))
+    setContinueCourses(learningCourses.slice(0, viewSize))
+  }, [viewSize])
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false)
+    }, 500)
   }, [])
+
+  if (loading) return <RecentlyViewedSkeleton />
 
   return (
     <div>
@@ -71,6 +84,27 @@ const RecentlyViewed = () => {
             </Transition>
           ))}
         </div>
+        {viewAll ? (
+          <p
+            className="mt-5 text-end font-semibold text-main hover:cursor-pointer underline"
+            onClick={() => {
+              setViewSize(3)
+              setViewAll(false)
+            }}
+          >
+            View Less
+          </p>
+        ) : (
+          <p
+            className="mt-5 text-end font-semibold text-main hover:cursor-pointer underline"
+            onClick={() => {
+              setViewSize(6)
+              setViewAll(true)
+            }}
+          >
+            View More
+          </p>
+        )}
       </div>
     </div>
   )

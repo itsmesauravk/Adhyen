@@ -10,6 +10,8 @@ import LoadingPage from "./loading"
 
 import Image from "next/image"
 
+import toast from "react-hot-toast"
+
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -158,16 +160,27 @@ const ViewCoursePage = () => {
               )}
               {/* course stats  */}
 
-              <div className="flex items-center mt-4">
+              <div className="flex items-center mt-2">
                 <span className="font-bold">
                   {courseDetails.students_enrolled.toLocaleString()}
                 </span>
                 <span>
-                  <span className="ml-2">students joined</span>
+                  <span className="ml-1">students joined</span>
                 </span>
               </div>
+              <div className="flex items-center mt-5">
+                <p
+                  onClick={() => {
+                    toast.success("Course added to your wishlist")
+                  }}
+                  className="font-semibold hover:cursor-pointer underline"
+                >
+                  {" "}
+                  Add to Wishlist
+                </p>
+              </div>
               {/* course extra details */}
-              <div className="mt-10">
+              <div className="mt-6">
                 <div>
                   <div className="space-y-1">
                     <h4 className="text-sm font-medium leading-none">

@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react"
 import Link from "next/link"
 import Logo from "./Logo"
 import { cn } from "@/lib/utils"
+import toast from "react-hot-toast"
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -11,7 +12,6 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
@@ -37,15 +37,15 @@ const Navbar = () => {
 
   const handleSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // Add search logic here
-    console.log("Searching for:", searchQuery)
+    toast.success(`Darling looking for : ${searchQuery}`)
   }
 
   return (
-    <header className="fixed top-0 left-0 w-full h-16 border-b-2 bg-white z-50 shadow-md px-10">
+    <header className="fixed top-0 left-0 w-full h-16 border-b-2 bg-white z-50 shadow-md px-4 sm:px-6 lg:px-10">
       <div className="container mx-auto flex items-center justify-between h-full">
         <Logo />
-        <nav className="flex-1 mx-10">
+
+        <nav className="hidden md:flex flex-1 mx-10">
           <NavigationMenu>
             <NavigationMenuList className="flex items-center justify-center space-x-6">
               <NavigationMenuItem>
@@ -110,14 +110,14 @@ const Navbar = () => {
 
         <form
           onSubmit={handleSearchSubmit}
-          className="flex items-center max-w-5xl space-x-2 bg-gray-100 p-2 mr-2 rounded"
+          className="flex items-center space-x-2 bg-gray-100 p-2 rounded md:max-w-md lg:max-w-sm mx-2"
         >
           <input
             type="text"
             placeholder="Search..."
             value={searchQuery}
             onChange={handleSearchChange}
-            className="bg-transparent outline-none"
+            className="bg-transparent outline-none flex-1"
           />
           <button type="submit" className="text-gray-600">
             🔍
@@ -126,7 +126,7 @@ const Navbar = () => {
 
         <Link
           href="/my-account"
-          className="flex items-center p-1 ml-2 rounded hover:bg-gray-100  transition"
+          className="hidden md:flex items-center p-1 ml-2 rounded hover:bg-gray-100 transition"
         >
           <Avatar>
             <AvatarImage src="https://github.com/shadcn.png" />

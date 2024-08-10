@@ -7,6 +7,8 @@ import { Progress } from "@/components/ui/progress"
 
 import Transition from "../Transition"
 
+import ContinueLearningSkeleton from "../../../components/ui/skeletions/ContinueLearningSkeletion"
+
 interface Course {
   id: number
   title: string
@@ -24,18 +26,27 @@ interface Course {
 
 const ContinueLearning = () => {
   const [continueCourses, setContinueCourses] = useState<Course[]>([])
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     // Fetch only the first 2 courses
     setContinueCourses(learningCourses.slice(0, 2))
   }, [])
 
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false)
+    }, 500)
+  }, [])
+
+  if (loading) return <ContinueLearningSkeleton />
+
   return (
     <div>
       <div className="">
         <h2 className="text-2xl font-bold text-gray-900">Continue Learning</h2>
         <p className="mt-1 text-lg text-gray-600 max-w-2xl ">
-          Here are some courses that you have started but haven't completed yet.
+          Here are some courses that you have started but havent completed yet.
         </p>
       </div>
       <div className="mt-5">

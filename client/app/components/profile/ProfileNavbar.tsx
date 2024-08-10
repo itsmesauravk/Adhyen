@@ -31,10 +31,10 @@ const ProfileNavbar = () => {
                   href="/my-account/courses"
                   className="text-gray-900 hover:bg-purple-200  px-3 py-2 rounded-md text-sm font-medium"
                 >
-                  My Courses <span className="font-bold">(2)</span>
+                  My Courses <span className="font-bold">(3)</span>
                 </Link>
                 <Link
-                  href="#"
+                  href="/my-account/wishlist"
                   className="text-gray-900 hover:bg-purple-200  px-3 py-2 rounded-md text-sm font-medium"
                 >
                   Wishlist <span className="font-bold">(5)</span>
@@ -95,13 +95,13 @@ const ProfileNavbar = () => {
               href="#"
               className="block text-gray-900 hover:bg-[#6F21B4] hover:text-white px-3 py-2 rounded-md text-base font-medium"
             >
-              My Courses
+              My Courses <span className="font-bold">(3)</span>
             </Link>
             <Link
               href="#"
               className="block text-gray-900 hover:bg-[#6F21B4] hover:text-white px-3 py-2 rounded-md text-base font-medium"
             >
-              Wishlist
+              Wishlist <span className="font-bold">(5)</span>
             </Link>
             <Link
               href="#"

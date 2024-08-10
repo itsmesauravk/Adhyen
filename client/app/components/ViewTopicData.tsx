@@ -2,6 +2,8 @@
 import React, { useEffect, useState } from "react"
 import TopicDetails from "@/data/topics.json"
 
+import ViewTopicDataSkeletion from "@/components/ui/skeletions/ViewTopicDataSkeletion"
+
 import {
   Accordion,
   AccordionContent,
@@ -55,11 +57,20 @@ interface ViewTopicDataProps {
 
 const ViewTopicData: React.FC<ViewTopicDataProps> = ({ topicId }) => {
   const [topic, setTopic] = useState<Topic | null>(null)
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     const filteredTopic = TopicDetails.find((topic) => topic.id === topicId)
     setTopic(filteredTopic || null)
   }, [topicId])
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false)
+    }, 500)
+  }, [])
+
+  if (loading) return <ViewTopicDataSkeletion />
 
   return (
     <div className="container mx-auto p-4 max-h-[500px] overflow-y-auto">

@@ -4,6 +4,8 @@ import React, { useEffect, useState } from "react"
 import { useRouter } from "next/navigation"
 import { useParams } from "next/navigation"
 import coursesData from "../../../data/courses.json"
+import category from "@/data/category.json"
+
 import Navbar from "@/app/components/Navbar"
 
 import LoadingPage from "./loading"
@@ -47,10 +49,16 @@ interface Course {
   isPaid: boolean
 }
 
+interface Category {
+  category: string
+  slug: string
+}
+
 const ViewCoursePage = () => {
   const [courseDetails, setCourseDetails] = useState<Course | null>(null)
   const router = useRouter()
   const { slug } = useParams()
+  const [categoryName, setCategoryName] = useState<Category | null>(null)
 
   useEffect(() => {
     if (slug) {
@@ -61,9 +69,18 @@ const ViewCoursePage = () => {
     }
   }, [slug])
 
+  useEffect(() => {
+    const categoryData = category.find((cat) => {
+      return cat.category === courseDetails?.category
+    })
+    setCategoryName(categoryData || null)
+  }, [courseDetails?.category])
+
   if (!courseDetails) {
     return <LoadingPage />
   }
+
+  console.log(categoryName)
 
   return (
     <div className="flex flex-col min-h-screen bg-gray-50">
@@ -81,12 +98,14 @@ const ViewCoursePage = () => {
                     </BreadcrumbItem>
                     <BreadcrumbSeparator />
                     <BreadcrumbItem>
-                      <BreadcrumbLink href="/provider">Provider</BreadcrumbLink>
+                      <BreadcrumbLink href={`/category/${categoryName?.slug}`}>
+                        {courseDetails.category}
+                      </BreadcrumbLink>
                     </BreadcrumbItem>
                     <BreadcrumbSeparator />
                     <BreadcrumbItem>
                       <BreadcrumbPage className="text-main">
-                        {courseDetails.category}
+                        {courseDetails.title}
                       </BreadcrumbPage>
                     </BreadcrumbItem>
                   </BreadcrumbList>

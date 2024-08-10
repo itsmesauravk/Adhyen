@@ -15,12 +15,12 @@ import {
 } from "@/components/ui/navigation-menu"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
-import coursesData from "../../data/courses.json"
+import categoriesAll from "@/data/category.json"
 
 interface Category {
   id: number
-  title: string
   category: string
+  slug: string
 }
 
 const Navbar = () => {
@@ -28,8 +28,8 @@ const Navbar = () => {
   const [searchQuery, setSearchQuery] = useState("")
 
   useEffect(() => {
-    setCategories(coursesData as Category[])
-  }, [])
+    setCategories(categoriesAll as Category[])
+  }, [categories])
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(e.target.value)
@@ -70,9 +70,11 @@ const Navbar = () => {
                         </a>
                       </NavigationMenuLink>
                     </li>
-                    <ListItem href="/docs" title="Introduction">
-                      Re-usable components built using Radix UI and Tailwind
-                      CSS.
+                    <ListItem href="/category" title="Categories">
+                      <span className="text-main">
+                        Explore our vast categories for your learning and
+                        improving new skills
+                      </span>
                     </ListItem>
                     <ListItem href="/docs/installation" title="Installation">
                       How to install dependencies and structure your app.
@@ -96,10 +98,8 @@ const Navbar = () => {
                       <ListItem
                         key={category.id}
                         title={category.category}
-                        href={category.category}
-                      >
-                        {category.title}
-                      </ListItem>
+                        href={`/category/${category.slug}`}
+                      ></ListItem>
                     ))}
                   </ul>
                 </NavigationMenuContent>

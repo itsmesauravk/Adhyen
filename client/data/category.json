@@ -1,0 +1,84 @@
+[
+  {
+    "id": 1,
+    "category": "Artificial Intelligence",
+    "image": "https://incubator.ucf.edu/wp-content/uploads/2023/07/artificial-intelligence-new-technology-science-futuristic-abstract-human-brain-ai-technology-cpu-central-processor-unit-chipset-big-data-machine-learning-cyber-mind-domination-generative-ai-scaled-1-1500x1000.jpg",
+    "slug": "artificial-intelligence",
+    "description": "Explore the world of Artificial Intelligence, including its fundamental concepts, techniques, and applications in various domains. This category covers introductory to advanced topics in AI.",
+    "courses": [
+      {
+        "id": 1,
+        "title": "Introduction to Artificial Intelligence"
+      },
+      {
+        "id": 7,
+        "title": "Types Of Artificial Intelligence"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "category": "Machine Learning",
+    "image": "https://blog.daway.in/wp-content/uploads/2024/01/1_cG6U1qstYDijh9bPL42e-Q.jpg",
+    "slug": "machine-learning",
+    "description": "Delve into Machine Learning, a subset of AI focused on building algorithms that learn from and make predictions based on data. Courses in this category cover a range of machine learning techniques and tools.",
+    "courses": [
+      {
+        "id": 2,
+        "title": "Machine Learning with Python"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "category": "Data Science",
+    "image": "https://bernardmarr.com/wp-content/uploads/2022/11/The-Top-5-Data-Science-And-Analytics-Trends-In-2023.jpg",
+    "slug": "data-science",
+    "description": "Learn about Data Science, which involves extracting insights and knowledge from data through various methods, including data analysis, visualization, and statistical techniques.",
+    "courses": [
+      {
+        "id": 3,
+        "title": "Data Science and Analytics"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "category": "Deep Learning",
+    "image": "https://d3lkc3n5th01x7.cloudfront.net/wp-content/uploads/2023/06/16031110/Deep-learning.png",
+    "slug": "deep-learning",
+    "description": "Understand Deep Learning, a specialized area within Machine Learning that involves neural networks with many layers. This category focuses on advanced techniques and applications of deep learning.",
+    "courses": [
+      {
+        "id": 4,
+        "title": "Deep Learning Fundamentals"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "category": "Natural Language Processing",
+    "image": "https://cdn.elearningindustry.com/wp-content/uploads/2023/11/The-Role-Of-Generative-AI-In-Natural-Language-Processing.jpg",
+    "slug": "natural-language-processing",
+    "description": "Explore Natural Language Processing (NLP), a field of AI focused on the interaction between computers and human language. Courses cover techniques for text processing, sentiment analysis, and language generation.",
+    "courses": [
+      {
+        "id": 5,
+        "title": "Natural Language Processing"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "category": "Computer Vision",
+    "image": "https://eastgate-software.com/wp-content/uploads/2023/08/computer-vision.png",
+    "slug": "computer-vision",
+    "description": "Dive into Computer Vision, which enables computers to interpret and process visual information from the world. This category includes topics on image processing, object detection, and face recognition.",
+    "courses": [
+      {
+        "id": 6,
+        "title": "Computer Vision Basics"
+      }
+    ]
+  }
+]

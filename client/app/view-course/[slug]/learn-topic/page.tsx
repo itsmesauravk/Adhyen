@@ -16,7 +16,7 @@ import AboutCourse from "@/app/components/AboutCourse"
 import Navbar from "@/app/components/Navbar"
 import { useSearchParams } from "next/navigation"
 
-import LeanTopicSidebarSkeleton from "@/components/ui/skeletions/LearnTopicSidebarSkeletion"
+import category from "@/data/category.json"
 
 import {
   Breadcrumb,
@@ -83,6 +83,11 @@ interface Course {
   learning_outcomes: string[]
 }
 
+interface Category {
+  category: string
+  slug: string
+}
+
 const LearnTopic: React.FC = () => {
   const getToken = useSearchParams()
   const cId = getToken.get("cid") // course id
@@ -98,6 +103,7 @@ const LearnTopic: React.FC = () => {
   )
 
   const [loading, setLoading] = useState(true)
+  const [categoryName, setCategoryName] = useState<Category | null>(null)
 
   const renderDiv = () => {
     switch (selected) {
@@ -134,6 +140,13 @@ const LearnTopic: React.FC = () => {
   }, [cId])
 
   useEffect(() => {
+    const categoryData = category.find((cat) => {
+      return cat.category === course?.category
+    })
+    setCategoryName(categoryData || null)
+  }, [course?.category])
+
+  useEffect(() => {
     setTimeout(() => {
       setLoading(false)
     }, 500)
@@ -151,7 +164,9 @@ const LearnTopic: React.FC = () => {
               </BreadcrumbItem>
               <BreadcrumbSeparator />
               <BreadcrumbItem>
-                <BreadcrumbLink href="/provider">Provider</BreadcrumbLink>
+                <BreadcrumbLink href={`/category/${categoryName?.slug}`}>
+                  {course?.category}
+                </BreadcrumbLink>
               </BreadcrumbItem>
               <BreadcrumbSeparator />
               <BreadcrumbItem>

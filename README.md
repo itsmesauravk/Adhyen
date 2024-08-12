@@ -1,6 +1,6 @@
-# Lumina
+# Adhyen
 
-Lumina is a modern online learning platform built with Next.js, TypeScript, React, Express, PostgreSQL, and Redis. It features interactive courses, video lessons, quizzes, and real-time collaboration tools. Join us in revolutionizing education with intuitive design and robust technology.
+Adhyen is a modern online learning platform built with Next.js, TypeScript, React, Express, PostgreSQL, and Redis. It features interactive courses, video lessons, quizzes, and real-time collaboration tools. Join us in revolutionizing education with intuitive design and robust technology.
 
 ## Table of Contents
 
@@ -44,8 +44,8 @@ Lumina is a modern online learning platform built with Next.js, TypeScript, Reac
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/lumina.git
-cd lumina
+git clone https://github.com/your-username/Adhyen.git
+cd Adhyen
 
 
 ### Install Dependencies
@@ -74,7 +74,7 @@ NEXT_PUBLIC_VIDEO_HOSTING_URL=your-video-hosting-url
 #### Backend (.env)
 
 ```
-DATABASE_URL=postgres://username:password@localhost:5432/lumina
+DATABASE_URL=postgres://username:password@localhost:5432/Adhyen
 REDIS_URL=redis://localhost:6379
 JWT_SECRET=your_jwt_secret
 ```
@@ -118,25 +118,11 @@ Open your browser and navigate to `http://localhost:3000`.
 
 The API documentation is available at `http://localhost:5000/api-docs` (if using Swagger or a similar tool). It includes endpoints for user authentication, course management, quizzes, and more.
 
-## Contributing
 
-We welcome contributions to Lumina! Please follow these steps:
-
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature/your-feature`).
-3. Commit your changes (`git commit -m 'Add your feature'`).
-4. Push to the branch (`git push origin feature/your-feature`).
-5. Open a pull request.
-
-Please ensure your code follows our coding standards and includes appropriate tests.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
 ## Contact
 
-For questions or suggestions, please reach out to us at [your-email@example.com].
+For questions or suggestions, please reach out to us at [sauravkarki10.12@gmail.com].
 ```
 
 Feel free to modify the placeholders (`your-username`, `your-video-hosting-url`, `your_jwt_secret`, `your-email@example.com`) with your actual project details. This README template covers essential sections such as features, technology stack, installation instructions, usage guidelines, API documentation, contribution guidelines, licensing, and contact information. Adjust it further based on your project's specific needs and requirements.

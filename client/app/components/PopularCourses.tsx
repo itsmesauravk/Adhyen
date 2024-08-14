@@ -27,7 +27,7 @@ const PopularCourses = () => {
   const viewCourseHandlear = (id: number) => {
     try {
       const course = courses.find((course) => course.id === id)
-      if (!course) {
+    if (!course) {
         throw new Error("Course not found")
       }
       // Redirect to the course page

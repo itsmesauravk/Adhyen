@@ -27,6 +27,13 @@ const Navbar = () => {
   const [categories, setCategories] = useState<Category[]>([])
   const [searchQuery, setSearchQuery] = useState("")
 
+  // this will be changed  // dynamic role
+  const pid = 1
+
+  const userRole = "instructor"
+
+  // const userRole = "student"
+
   useEffect(() => {
     setCategories(categoriesAll as Category[])
   }, [categories])
@@ -124,16 +131,29 @@ const Navbar = () => {
           </button>
         </form>
 
-        <Link
-          href="/my-account"
-          className="hidden md:flex items-center p-1 ml-2 rounded hover:bg-gray-100 transition"
-        >
-          <Avatar>
-            <AvatarImage src="https://github.com/shadcn.png" />
-            <AvatarFallback>SK</AvatarFallback>
-          </Avatar>
-          <span className="ml-3">My Account</span>
-        </Link>
+        {userRole === "instructor" ? (
+          <Link
+            href={`/provider/${pid}/dashboard`}
+            className="hidden md:flex items-center p-1 ml-2 rounded hover:bg-gray-100 transition"
+          >
+            <Avatar>
+              <AvatarImage src="https://github.com/shadcn.png" />
+              <AvatarFallback>SK</AvatarFallback>
+            </Avatar>
+            <span className="ml-3">My Account</span>
+          </Link>
+        ) : (
+          <Link
+            href="/my-account"
+            className="hidden md:flex items-center p-1 ml-2 rounded hover:bg-gray-100 transition"
+          >
+            <Avatar>
+              <AvatarImage src="https://github.com/shadcn.png" />
+              <AvatarFallback>SK</AvatarFallback>
+            </Avatar>
+            <span className="ml-3">My Account</span>
+          </Link>
+        )}
       </div>
     </header>
   )

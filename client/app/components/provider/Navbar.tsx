@@ -1,33 +1,14 @@
+"use client"
 import Link from "next/link"
-import {
-  Bell,
-  CircleUser,
-  Home,
-  LineChart,
-  Menu,
-  Package,
-  Package2,
-  Search,
-  ShoppingCart,
-  Users,
-} from "lucide-react"
+import { Menu, Package2, Search } from "lucide-react"
 
-import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
 import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
-import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
@@ -36,35 +17,55 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 
 import Logo from "@/app/components/Logo"
 
+import { usePathname } from "next/navigation"
+
 const NavbarProvider = () => {
+  const pathname = usePathname()
+  const currentPath = pathname.split("/").pop()
+
+  const isDashboard = currentPath === "dashboard"
+  const isCourses = currentPath === "courses"
+  const isUsers = currentPath === "users"
+  const isAnalytics = currentPath === "analytics"
+
+  const acitveClass = "text-[#A435F0] font-bold"
+
   const pid = 1
 
   return (
-    <header className="sticky top-0 flex h-16 items-center gap-4 border-b bg-background px-4 md:px-6">
-      <nav className="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
+    <header className="sticky top-0 pl-24 pr-24 flex h-16 items-center gap-4 border-b bg-background px-4 md:px-6">
+      <nav className="hidden flex-col gap-6 text-lg  font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
         <Logo />
         <Link
           href={`/provider/${pid}/dashboard`}
-          className="  transition-colors hover:text-[#842dc2]"
+          className={`transition-colors hover:text-[#842dc2] ${
+            isDashboard ? acitveClass : ""
+          }`}
         >
           Dashboard
         </Link>
 
         <Link
           href={`/provider/${pid}/courses`}
-          className=" transition-colors hover:text-[#A435F0]"
+          className={`transition-colors hover:text-[#842dc2] ${
+            isCourses ? acitveClass : ""
+          }`}
         >
           Courses
         </Link>
         <Link
           href={`/provider/${pid}/users`}
-          className=" transition-colors hover:text-[#A435F0]"
+          className={`transition-colors hover:text-[#842dc2] ${
+            isUsers ? acitveClass : ""
+          }`}
         >
           Users
         </Link>
         <Link
           href={`/provider/${pid}/analytics`}
-          className=" transition-colors hover:text-[#A435F0]"
+          className={`transition-colors hover:text-[#842dc2] ${
+            isAnalytics ? acitveClass : ""
+          }`}
         >
           Analytics
         </Link>
@@ -87,26 +88,30 @@ const NavbarProvider = () => {
             </Link>
             <Link
               href={`/provider/${pid}/dashboard`}
-              className="hover:text-[#842dc2]"
+              className={`hover:text-[#842dc2] ${
+                isDashboard ? acitveClass : ""
+              }`}
             >
               Dashboard
             </Link>
 
             <Link
               href={`/provider/${pid}/courses`}
-              className=" hover:text-[#A435F0]"
+              className={`hover:text-[#842dc2] ${isCourses ? acitveClass : ""}`}
             >
               Courses
             </Link>
             <Link
               href={`/provider/${pid}/users`}
-              className=" hover:text-[#A435F0]"
+              className={`hover:text-[#842dc2] ${isUsers ? acitveClass : ""}`}
             >
               Users
             </Link>
             <Link
               href={`/provider/${pid}/analytics`}
-              className=" hover:text-[#A435F0]"
+              className={`hover:text-[#842dc2] ${
+                isAnalytics ? acitveClass : ""
+              }`}
             >
               Analytics
             </Link>

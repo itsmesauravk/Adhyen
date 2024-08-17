@@ -14,6 +14,7 @@
     "students_enrolled": 5000,
     "slug": "introduction-to-artificial-intelligence",
     "course_views": 15098,
+
     "course_level": "Beginner",
     "provider": "Google",
     "providerId": 1,
@@ -37,6 +38,7 @@
         "description": "Techniques for solving problems using AI."
       }
     ],
+    "topicsIds": [1, 2, 3],
     "learning_outcomes": [
       "Understand the fundamental concepts of AI and its applications.",
       "Learn techniques for knowledge representation and problem-solving in AI.",
@@ -82,6 +84,7 @@
         "description": "Methods for evaluating the performance of machine learning models."
       }
     ],
+    "topicsIds": [4, 5, 6],
     "learning_outcomes": [
       "Understand the basics of machine learning and its applications.",
       "Learn how to preprocess data for machine learning models.",
@@ -127,6 +130,7 @@
         "description": "Using data insights to make informed business decisions."
       }
     ],
+    "topicsIds": [7, 8, 9],
     "learning_outcomes": [
       "Develop skills in data analysis and interpretation.",
       "Learn data visualization techniques to present insights clearly.",
@@ -172,6 +176,7 @@
         "description": "Principles and applications of recurrent neural networks."
       }
     ],
+    "topicsIds": [10, 11, 12],
     "learning_outcomes": [
       "Understand the fundamentals of deep learning and neural networks.",
       "Gain knowledge of convolutional and recurrent neural networks.",
@@ -217,6 +222,7 @@
         "description": "Methods for generating human-like text."
       }
     ],
+    "topicsIds": [13, 14, 15],
     "learning_outcomes": [
       "Learn techniques for processing and analyzing text data.",
       "Understand how to build models for sentiment analysis.",
@@ -262,6 +268,7 @@
         "description": "Techniques for recognizing faces in images."
       }
     ],
+    "topicsIds": [16, 17, 18],
     "learning_outcomes": [
       "Understand the fundamentals of computer vision.",
       "Learn techniques for image processing and object detection.",
@@ -307,6 +314,7 @@
         "description": "Techniques for recognizing faces in images."
       }
     ],
+    "topicsIds": [16, 17, 18],
     "learning_outcomes": [
       "Understand the fundamentals of computer vision.",
       "Learn techniques for image processing and object detection.",

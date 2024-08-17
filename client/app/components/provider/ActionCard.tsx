@@ -86,7 +86,7 @@ const ActionCard: React.FC<ActionCardProps> = ({
 
         <div className="flex mt-4 gap-3">
           <Link
-            href={`/provider/${providerId}/courses/edit?${courseDetail.slug}`}
+            href={`/provider/${providerId}/courses/edit?course=${courseDetail.slug}`}
           >
             <Button
               className="gap-2 bg-green-600 text-white hover:bg-green-700  hover:text-white"

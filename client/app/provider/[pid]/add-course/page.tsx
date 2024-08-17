@@ -1,223 +1,350 @@
-import Link from "next/link"
-import {
-  Bell,
-  CircleUser,
-  Home,
-  LineChart,
-  Menu,
-  Package,
-  Package2,
-  Search,
-  ShoppingCart,
-  Users,
-} from "lucide-react"
+"use client"
 
-import { Badge } from "@/components/ui/badge"
+import React, { useState, ChangeEvent, MouseEvent } from "react"
+
 import { Button } from "@/components/ui/button"
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
 import { Input } from "@/components/ui/input"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import Logo from "@/app/components/Logo"
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
+import { Textarea } from "@/components/ui/textarea"
+import NavbarProvider from "@/app/components/provider/Navbar"
 
-const AddCourse = () => {
+interface Topic {
+  name: string
+  video_link: string
+  description: string
+  learning_outcomes: string[]
+}
+
+interface CourseData {
+  title: string
+  category: string
+  image: File | null
+  price: string
+  instructor: string
+  description: string
+  duration: string
+  course_level: string
+  learning_outcomes: string[]
+  topics: Topic[]
+}
+
+const AddCourse: React.FC = () => {
+  const [courseData, setCourseData] = useState<CourseData>({
+    title: "",
+    category: "",
+    image: null,
+    price: "",
+    instructor: "",
+    description: "",
+    duration: "",
+    course_level: "",
+    learning_outcomes: [""],
+    topics: [
+      { name: "", video_link: "", description: "", learning_outcomes: [""] },
+    ],
+  })
+
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
+    const { name, value } = e.target
+    setCourseData((prev) => ({ ...prev, [name]: value }))
+  }
+
+  const handleLearningOutcomeChange = (index: number, value: string) => {
+    const outcomes = [...courseData.learning_outcomes]
+    outcomes[index] = value
+    setCourseData((prev) => ({ ...prev, learning_outcomes: outcomes }))
+  }
+
+  const handleAddLearningOutcome = () => {
+    setCourseData((prev) => ({
+      ...prev,
+      learning_outcomes: [...prev.learning_outcomes, ""],
+    }))
+  }
+
+  const handleTopicLearningOutcomeChange = (
+    topicIndex: number,
+    outcomeIndex: number,
+    value: string
+  ) => {
+    const topics = [...courseData.topics]
+    const learning_outcomes = [...topics[topicIndex].learning_outcomes]
+    learning_outcomes[outcomeIndex] = value
+    topics[topicIndex] = { ...topics[topicIndex], learning_outcomes }
+    setCourseData((prev) => ({ ...prev, topics }))
+  }
+
+  const handleAddTopicLearningOutcome = (topicIndex: number) => {
+    const topics = [...courseData.topics]
+    topics[topicIndex] = {
+      ...topics[topicIndex],
+      learning_outcomes: [...topics[topicIndex].learning_outcomes, ""],
+    }
+    setCourseData((prev) => ({ ...prev, topics }))
+  }
+
+  const handleTopicChange = (
+    index: number,
+    name: keyof Topic,
+    value: string
+  ) => {
+    const topics = [...courseData.topics]
+    topics[index] = { ...topics[index], [name]: value }
+    setCourseData((prev) => ({ ...prev, topics }))
+  }
+
+  const handleAddTopic = () => {
+    setCourseData((prev) => ({
+      ...prev,
+      topics: [
+        ...prev.topics,
+        { name: "", video_link: "", description: "", learning_outcomes: [""] },
+      ],
+    }))
+  }
+
+  const handleImageChange = (e: ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files) {
+      setCourseData((prev) => ({ ...prev, image: e.target.files[0] }))
+    }
+  }
+
+  const handleSubmit = (e: MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault()
+    // Submit logic here, like sending data to a server
+    console.log("New Course Data:", courseData)
+  }
+
   return (
-    <div className="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
-      <div className="hidden border-r bg-muted/40 md:block">
-        <div className="flex h-full max-h-screen flex-col gap-2">
-          <div className="flex h-14 items-center border-b px-4 lg:h-[60px] lg:px-6">
-            <div>
-              <Logo />
-            </div>
-            <Button variant="outline" size="icon" className="ml-auto h-8 w-8">
-              <Bell className="h-4 w-4" />
-              <span className="sr-only">Toggle notifications</span>
-            </Button>
+    <div>
+      <NavbarProvider />
+      <div className="flex flex-col mx-auto px-4 lg:px-40 mt-8 space-y-8 mb-10">
+        <h1 className="text-2xl font-bold text-[#A435F0] mb-6">
+          Add New Course
+        </h1>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+          <div className="mb-4">
+            <label className="block text-md font-semibold mb-2">
+              Course Title
+            </label>
+            <Input
+              name="title"
+              placeholder="Enter course title"
+              value={courseData.title}
+              onChange={handleChange}
+            />
           </div>
-          <div className="flex-1">
-            <nav className="grid items-start px-2 text-sm font-medium lg:px-4">
-              <Link
-                href="#"
-                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
-              >
-                <Home className="h-4 w-4" />
-                Dashboard
-              </Link>
-              <Link
-                href="#"
-                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
-              >
-                <ShoppingCart className="h-4 w-4" />
-                Orders
-                <Badge className="ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full">
-                  6
-                </Badge>
-              </Link>
-              <Link
-                href="#"
-                className="flex items-center gap-3 rounded-lg bg-muted px-3 py-2 text-primary transition-all hover:text-primary"
-              >
-                <Package className="h-4 w-4" />
-                Products{" "}
-              </Link>
-              <Link
-                href="#"
-                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
-              >
-                <Users className="h-4 w-4" />
-                Customers
-              </Link>
-              <Link
-                href="#"
-                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
-              >
-                <LineChart className="h-4 w-4" />
-                Analytics
-              </Link>
-            </nav>
+
+          <div className="mb-4">
+            <label className="block text-md font-semibold mb-2">Category</label>
+            <Select
+              value={courseData.category}
+              onValueChange={(value) =>
+                setCourseData((prev) => ({ ...prev, category: value }))
+              }
+            >
+              <SelectTrigger className="w-[180px]">
+                <SelectValue placeholder="Category" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="Beginners">Beginners</SelectItem>
+                <SelectItem value="Data Science">Data Science</SelectItem>
+                <SelectItem value="Machine Learning">
+                  Machine Learning
+                </SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+
+          <div className="mb-4">
+            <label className="block text-md font-semibold mb-2">
+              Course Image
+            </label>
+            <Input
+              name="image"
+              type="file"
+              accept="image/*"
+              onChange={handleImageChange}
+            />
+          </div>
+
+          <div className="mb-4">
+            <label className="block text-md font-semibold mb-2">Price</label>
+            <Input
+              name="price"
+              type="number"
+              placeholder="Enter course price"
+              value={courseData.price}
+              onChange={handleChange}
+            />
+          </div>
+
+          <div className="mb-4">
+            <label className="block text-md font-semibold mb-2">
+              Instructor
+            </label>
+            <Input
+              name="instructor"
+              placeholder="Enter instructor name"
+              value={courseData.instructor}
+              onChange={handleChange}
+            />
+          </div>
+
+          <div className="mb-4">
+            <label className="block text-md font-semibold mb-2">Duration</label>
+            <Input
+              name="duration"
+              placeholder="Enter course duration"
+              value={courseData.duration}
+              onChange={handleChange}
+            />
+          </div>
+
+          <div className="mb-4">
+            <label className="block text-md font-semibold mb-2">
+              Course Level
+            </label>
+            <Select
+              value={courseData.course_level}
+              onValueChange={(value) =>
+                setCourseData((prev) => ({ ...prev, course_level: value }))
+              }
+            >
+              <SelectTrigger className="w-[180px]">
+                <SelectValue placeholder="Course Level" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="Beginners">Beginners</SelectItem>
+                <SelectItem value="Intermediate">Intermediate</SelectItem>
+                <SelectItem value="Advance">Advance</SelectItem>
+              </SelectContent>
+            </Select>
           </div>
         </div>
-      </div>
-      <div className="flex flex-col">
-        <header className="flex h-14 items-center gap-4 border-b bg-muted/40 px-4 lg:h-[60px] lg:px-6">
-          <Sheet>
-            <SheetTrigger asChild>
-              <Button
-                variant="outline"
-                size="icon"
-                className="shrink-0 md:hidden"
-              >
-                <Menu className="h-5 w-5" />
-                <span className="sr-only">Toggle navigation menu</span>
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="left" className="flex flex-col">
-              <nav className="grid gap-2 text-lg font-medium">
-                <Link
-                  href="#"
-                  className="flex items-center gap-2 text-lg font-semibold"
-                >
-                  <Package2 className="h-6 w-6" />
-                  <span className="sr-only">Acme Inc</span>
-                </Link>
-                <Link
-                  href="#"
-                  className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
-                >
-                  <Home className="h-5 w-5" />
-                  Dashboard
-                </Link>
-                <Link
-                  href="#"
-                  className="mx-[-0.65rem] flex items-center gap-4 rounded-xl bg-muted px-3 py-2 text-foreground hover:text-foreground"
-                >
-                  <ShoppingCart className="h-5 w-5" />
-                  Orders
-                  <Badge className="ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full">
-                    6
-                  </Badge>
-                </Link>
-                <Link
-                  href="#"
-                  className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
-                >
-                  <Package className="h-5 w-5" />
-                  Products
-                </Link>
-                <Link
-                  href="#"
-                  className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
-                >
-                  <Users className="h-5 w-5" />
-                  Customers
-                </Link>
-                <Link
-                  href="#"
-                  className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
-                >
-                  <LineChart className="h-5 w-5" />
-                  Analytics
-                </Link>
-              </nav>
-              <div className="mt-auto">
-                <Card>
-                  <CardHeader>
-                    <CardTitle>Upgrade to Pro</CardTitle>
-                    <CardDescription>
-                      Unlock all features and get unlimited access to our
-                      support team.
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <Button size="sm" className="w-full">
-                      Upgrade
-                    </Button>
-                  </CardContent>
-                </Card>
-              </div>
-            </SheetContent>
-          </Sheet>
-          <div className="w-full flex-1">
-            <form>
-              <div className="relative">
-                <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
+
+        <div className="mb-6">
+          <label className="block text-md font-semibold mb-2">
+            Description
+          </label>
+          <Textarea
+            name="description"
+            placeholder="Enter course description"
+            value={courseData.description}
+            onChange={handleChange}
+          />
+        </div>
+
+        <div className="mb-6">
+          <label className="block text-md font-semibold mb-2">
+            Learning Outcomes
+          </label>
+          {courseData.learning_outcomes.map((outcome, index) => (
+            <div key={index} className="mb-2 flex items-center space-x-2">
+              <Input
+                placeholder={`Outcome ${index + 1}`}
+                value={outcome}
+                onChange={(e) =>
+                  handleLearningOutcomeChange(index, e.target.value)
+                }
+                className="flex-1"
+              />
+            </div>
+          ))}
+          <Button onClick={handleAddLearningOutcome}>
+            Add Learning Outcome
+          </Button>
+        </div>
+
+        <div className="mb-6">
+          <label className="block text-md font-semibold mb-2">Topics</label>
+          {courseData.topics.map((topic, topicIndex) => (
+            <div key={topicIndex} className="mb-4 border p-4 rounded">
+              <div className="mb-4">
+                <label className="block text-md font-semibold mb-2">
+                  Topic Name
+                </label>
                 <Input
-                  type="search"
-                  placeholder="Search products..."
-                  className="w-full appearance-none bg-background pl-8 shadow-none md:w-2/3 lg:w-1/3"
+                  placeholder={`Topic ${topicIndex + 1}`}
+                  value={topic.name}
+                  onChange={(e) =>
+                    handleTopicChange(topicIndex, "name", e.target.value)
+                  }
+                  className="mb-2"
                 />
               </div>
-            </form>
-          </div>
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="secondary" size="icon" className="rounded-full">
-                <CircleUser className="h-5 w-5" />
-                <span className="sr-only">Toggle user menu</span>
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end">
-              <DropdownMenuLabel>My Account</DropdownMenuLabel>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem>Settings</DropdownMenuItem>
-              <DropdownMenuItem>Support</DropdownMenuItem>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem>Logout</DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
-        </header>
-        <main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6">
-          <div className="flex items-center">
-            <h1 className="text-lg font-semibold md:text-2xl">Inventory</h1>
-          </div>
-          <div
-            className="flex flex-1 items-center justify-center rounded-lg border border-dashed shadow-sm"
-            x-chunk="dashboard-02-chunk-1"
-          >
-            <div className="flex flex-col items-center gap-1 text-center">
-              <h3 className="text-2xl font-bold tracking-tight">
-                You have no products
-              </h3>
-              <p className="text-sm text-muted-foreground">
-                You can start selling as soon as you add a product.
-              </p>
-              <Button className="mt-4">Add Product</Button>
+              <div className="mb-4">
+                <label className="block text-md font-semibold mb-2">
+                  Video Link
+                </label>
+                <Input
+                  placeholder={`Video Link ${topicIndex + 1}`}
+                  value={topic.video_link}
+                  onChange={(e) =>
+                    handleTopicChange(topicIndex, "video_link", e.target.value)
+                  }
+                  className="mb-2"
+                />
+              </div>
+              <div className="mb-4">
+                <label className="block text-md font-semibold mb-2">
+                  Description
+                </label>
+                <Textarea
+                  placeholder={`Topic Description ${topicIndex + 1}`}
+                  value={topic.description}
+                  onChange={(e) =>
+                    handleTopicChange(topicIndex, "description", e.target.value)
+                  }
+                  className="mb-2"
+                />
+              </div>
+              <div className="mb-4">
+                <label className="block text-md font-semibold mb-2">
+                  Learning Outcomes
+                </label>
+                {topic.learning_outcomes.map((outcome, outcomeIndex) => (
+                  <div
+                    key={outcomeIndex}
+                    className="mb-2 flex items-center space-x-2"
+                  >
+                    <Input
+                      placeholder={`Outcome ${outcomeIndex + 1}`}
+                      value={outcome}
+                      onChange={(e) =>
+                        handleTopicLearningOutcomeChange(
+                          topicIndex,
+                          outcomeIndex,
+                          e.target.value
+                        )
+                      }
+                      className="flex-1"
+                    />
+                  </div>
+                ))}
+                <Button
+                  onClick={() => handleAddTopicLearningOutcome(topicIndex)}
+                >
+                  Add Learning Outcome
+                </Button>
+              </div>
             </div>
-          </div>
-        </main>
+          ))}
+          <Button onClick={handleAddTopic}>Add Topic</Button>
+        </div>
+
+        <Button onClick={handleSubmit} className="bg-[#A435F0] text-white">
+          Submit Course
+        </Button>
       </div>
     </div>
   )

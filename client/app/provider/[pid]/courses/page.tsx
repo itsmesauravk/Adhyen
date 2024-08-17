@@ -6,6 +6,9 @@ import React, { useEffect, useState } from "react"
 import courses from "@/data/courses.json"
 import ActionCard from "@/app/components/provider/ActionCard"
 
+import { FaPlus } from "react-icons/fa6"
+import Link from "next/link"
+
 interface Course {
   id: number
   title: string
@@ -45,9 +48,18 @@ const Courses: React.FC = () => {
     <div>
       <NavbarProvider />
       <div className="flex flex-col mx-auto px-4 lg:px-40 mt-8 space-y-8">
-        <h1 className="text-4xl font-extrabold text-center lg:text-left text-gray-800">
-          Courses
-        </h1>
+        <div className="flex justify-between">
+          <h1 className="text-4xl font-extrabold text-center lg:text-left text-gray-800">
+            Courses
+          </h1>
+          <Link
+            href={`/provider/${pid}/courses/add-course`}
+            className="flex gap-2 bg-purple-200 p-2 w-48 rounded-md hover:bg-purple-300"
+          >
+            <FaPlus className="h-6 w-6" />
+            <p className="text-center text-black">Add a new course</p>
+          </Link>
+        </div>
 
         <div className="flex gap-6 flex-wrap">
           {filteredCourses.length > 0 ? (

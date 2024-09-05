@@ -12,6 +12,7 @@ export interface Course {
   description: string
   duration: string
   slug: string
+  isPaid: boolean
   students_enrolled: number
   course_views: number
   course_level: string
@@ -40,7 +41,7 @@ interface UserReview {
 interface VideoLink {
   video_id: number
   url: string
-  added_on: string // Consider using Date type if converting to a date object
+  added_on: string
   total_views: number
   video_brief_description: string
   comments: Comment[]

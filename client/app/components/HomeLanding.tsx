@@ -42,7 +42,7 @@ const HomeLanding = () => {
           </div>
           <div className="hidden md:block">
             <Image
-              src="/images/learning.png"
+              src="/images/hero1.png"
               alt="hero-image"
               width={400}
               height={400}
@@ -51,7 +51,7 @@ const HomeLanding = () => {
         </div>
       </SwiperSlide>
       <SwiperSlide>
-        <div className="flex items-center justify-between px-8 py-12">
+        <div className="flex items-center justify-between px-8 py-20">
           <div className="text-center md:text-left max-w-lg">
             <Logo />
             <p className="text-4xl font-bold  mb-4">
@@ -67,7 +67,7 @@ const HomeLanding = () => {
           </div>
           <div className="hidden md:block">
             <Image
-              src="/images/learning1.png"
+              src="/images/hero2.png"
               alt="hero-image"
               width={400}
               height={400}

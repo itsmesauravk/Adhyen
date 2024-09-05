@@ -5,7 +5,9 @@ const Users = () => {
   return (
     <div>
       <NavbarProvider />
-      <div>My all users will be shown here</div>
+      <div>
+        <h1>User goes here</h1>
+      </div>
     </div>
   )
 }

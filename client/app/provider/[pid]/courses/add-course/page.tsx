@@ -1,353 +1,229 @@
 "use client"
 
-import React, { useState, ChangeEvent, MouseEvent } from "react"
-
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select"
-import { Textarea } from "@/components/ui/textarea"
+import Footer from "@/app/components/Footer"
 import NavbarProvider from "@/app/components/provider/Navbar"
+import React, { useState } from "react"
+import { toast } from "react-hot-toast"
 
-interface Topic {
-  name: string
-  video_link: string
-  description: string
-  learning_outcomes: string[]
-}
-
-interface CourseData {
-  title: string
-  category: string
-  image: File | null
-  price: string
-  instructor: string
-  description: string
-  duration: string
-  course_level: string
-  learning_outcomes: string[]
-  topics: Topic[]
-}
-
-const AddCourse: React.FC = () => {
-  const [courseData, setCourseData] = useState<CourseData>({
+const AddCoursePage = () => {
+  const [showPrice, setShowPrice] = useState(false)
+  const [formData, setFormData] = useState({
     title: "",
-    category: "",
-    image: null,
-    price: "",
-    instructor: "",
     description: "",
+    instructor: "",
     duration: "",
-    course_level: "",
-    learning_outcomes: [""],
-    topics: [
-      { name: "", video_link: "", description: "", learning_outcomes: [""] },
-    ],
+    isPaid: "free",
+    price: 0,
+    image: null,
+    level: "",
+    language: "",
   })
 
-  const handleChange = (
-    e: ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  const handlePaymentChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const isPaid = e.target.value === "paid"
+    setShowPrice(isPaid)
+    setFormData((prev) => ({ ...prev, isPaid: e.target.value }))
+  }
+
+  const handleInputChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
   ) => {
     const { name, value } = e.target
-    setCourseData((prev) => ({ ...prev, [name]: value }))
+    setFormData((prev) => ({ ...prev, [name]: value }))
   }
 
-  const handleLearningOutcomeChange = (index: number, value: string) => {
-    const outcomes = [...courseData.learning_outcomes]
-    outcomes[index] = value
-    setCourseData((prev) => ({ ...prev, learning_outcomes: outcomes }))
-  }
-
-  const handleAddLearningOutcome = () => {
-    setCourseData((prev) => ({
-      ...prev,
-      learning_outcomes: [...prev.learning_outcomes, ""],
-    }))
-  }
-
-  const handleTopicLearningOutcomeChange = (
-    topicIndex: number,
-    outcomeIndex: number,
-    value: string
-  ) => {
-    const topics = [...courseData.topics]
-    const learning_outcomes = [...topics[topicIndex].learning_outcomes]
-    learning_outcomes[outcomeIndex] = value
-    topics[topicIndex] = { ...topics[topicIndex], learning_outcomes }
-    setCourseData((prev) => ({ ...prev, topics }))
-  }
-
-  const handleAddTopicLearningOutcome = (topicIndex: number) => {
-    const topics = [...courseData.topics]
-    topics[topicIndex] = {
-      ...topics[topicIndex],
-      learning_outcomes: [...topics[topicIndex].learning_outcomes, ""],
-    }
-    setCourseData((prev) => ({ ...prev, topics }))
-  }
-
-  const handleTopicChange = (
-    index: number,
-    name: keyof Topic,
-    value: string
-  ) => {
-    const topics = [...courseData.topics]
-    topics[index] = { ...topics[index], [name]: value }
-    setCourseData((prev) => ({ ...prev, topics }))
-  }
-
-  const handleAddTopic = () => {
-    setCourseData((prev) => ({
-      ...prev,
-      topics: [
-        ...prev.topics,
-        { name: "", video_link: "", description: "", learning_outcomes: [""] },
-      ],
-    }))
-  }
-
-  const handleImageChange = (e: ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files) {
-      setCourseData((prev) => ({ ...prev, image: e.target.files[0] }))
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files[0]) {
+      setFormData((prev) => ({ ...prev, image: e.target.files[0] }))
     }
   }
 
-  const handleSubmit = (e: MouseEvent<HTMLButtonElement>) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Submit logic here, like sending data to a server
-    console.log("New Course Data:", courseData)
+    const saveCourse = async () => {
+      // Simulate form submission logic here (use your API call)
+      await new Promise((resolve) => setTimeout(resolve, 2000))
+      return formData
+    }
+
+    toast.promise(saveCourse(), {
+      loading: "Adding course...",
+      success: <b>Course added successfully!</b>,
+      error: <b>Failed to add course.</b>,
+    })
   }
 
   return (
-    <div>
+    <div className="flex flex-col min-h-screen">
+      {/* Navbar */}
       <NavbarProvider />
-      <div className="flex flex-col mx-auto px-4 lg:px-40 mt-8 space-y-8 mb-10">
-        <h1 className="text-2xl font-bold text-[#A435F0] mb-6">
-          Add New Course
-        </h1>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-          <div className="mb-4">
+      <div className="flex-grow container mx-auto px-4 py-10">
+        <h1 className="text-3xl font-bold text-center mb-8">Add New Course</h1>
+
+        {/* Add Course Form */}
+        <form className="space-y-6 max-w-2xl mx-auto" onSubmit={handleSubmit}>
+          {/* Course Title */}
+          <div>
             <label className="block text-md font-semibold mb-2">
               Course Title
             </label>
-            <Input
+            <input
+              type="text"
               name="title"
+              className="w-full p-2 border border-gray-300 rounded-md"
               placeholder="Enter course title"
-              value={courseData.title}
-              onChange={handleChange}
+              onChange={handleInputChange}
+              value={formData.title}
             />
           </div>
 
-          <div className="mb-4">
-            <label className="block text-md font-semibold mb-2">Category</label>
-            <Select
-              value={courseData.category}
-              onValueChange={(value) =>
-                setCourseData((prev) => ({ ...prev, category: value }))
-              }
-            >
-              <SelectTrigger className="w-[180px]">
-                <SelectValue placeholder="Category" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="Beginners">Beginners</SelectItem>
-                <SelectItem value="Data Science">Data Science</SelectItem>
-                <SelectItem value="Machine Learning">
-                  Machine Learning
-                </SelectItem>
-              </SelectContent>
-            </Select>
-          </div>
-
-          <div className="mb-4">
+          {/* Course Description */}
+          <div>
             <label className="block text-md font-semibold mb-2">
-              Course Image
+              Description
             </label>
-            <Input
-              name="image"
-              type="file"
-              accept="image/*"
-              onChange={handleImageChange}
-            />
+            <textarea
+              name="description"
+              className="w-full p-2 border border-gray-300 rounded-md"
+              rows={4}
+              placeholder="Enter course description"
+              onChange={handleInputChange}
+              value={formData.description}
+            ></textarea>
           </div>
 
-          <div className="mb-4">
-            <label className="block text-md font-semibold mb-2">Price</label>
-            <Input
-              name="price"
-              type="number"
-              placeholder="Enter course price"
-              value={courseData.price}
-              onChange={handleChange}
-            />
-          </div>
-
-          <div className="mb-4">
+          {/* Instructor Name */}
+          <div>
             <label className="block text-md font-semibold mb-2">
               Instructor
             </label>
-            <Input
+            <input
+              type="text"
               name="instructor"
+              className="w-full p-2 border border-gray-300 rounded-md"
               placeholder="Enter instructor name"
-              value={courseData.instructor}
-              onChange={handleChange}
+              onChange={handleInputChange}
+              value={formData.instructor}
             />
           </div>
 
-          <div className="mb-4">
+          {/* Duration */}
+          <div>
             <label className="block text-md font-semibold mb-2">Duration</label>
-            <Input
+            <input
+              type="text"
               name="duration"
-              placeholder="Enter course duration"
-              value={courseData.duration}
-              onChange={handleChange}
+              className="w-full p-2 border border-gray-300 rounded-md"
+              placeholder="Enter course duration (e.g., 10 hours)"
+              onChange={handleInputChange}
+              value={formData.duration}
             />
           </div>
 
-          <div className="mb-4">
+          {/* Paid / Free */}
+          <div>
+            <label className="block text-md font-semibold mb-2">
+              Is the course paid?
+            </label>
+            <select
+              className="w-full p-2 border border-gray-300 rounded-md"
+              name="isPaid"
+              onChange={handlePaymentChange}
+              value={formData.isPaid}
+            >
+              <option value="free">Free</option>
+              <option value="paid">Paid</option>
+            </select>
+          </div>
+
+          {/* Price */}
+          {showPrice && (
+            <div>
+              <label className="block text-md font-semibold mb-2">Price</label>
+              <input
+                type="number"
+                name="price"
+                className="w-full p-2 border border-gray-300 rounded-md"
+                placeholder="Enter course price (e.g., $99)"
+                onChange={handleInputChange}
+                value={formData.price}
+              />
+            </div>
+          )}
+
+          {/* Image */}
+          <div>
+            <label className="block text-md font-semibold mb-2">
+              Course Image
+            </label>
+            <input
+              type="file"
+              name="image"
+              className="w-full p-2 border border-gray-300 rounded-md"
+              accept="image/*"
+              onChange={handleFileChange}
+            />
+          </div>
+
+          {/* Course Level */}
+          <div>
             <label className="block text-md font-semibold mb-2">
               Course Level
             </label>
-            <Select
-              value={courseData.course_level}
-              onValueChange={(value) =>
-                setCourseData((prev) => ({ ...prev, course_level: value }))
-              }
+            <select
+              name="level"
+              className="w-full p-2 border border-gray-300 rounded-md"
+              onChange={handleInputChange}
+              value={formData.level}
             >
-              <SelectTrigger className="w-[180px]">
-                <SelectValue placeholder="Course Level" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="Beginners">Beginners</SelectItem>
-                <SelectItem value="Intermediate">Intermediate</SelectItem>
-                <SelectItem value="Advance">Advance</SelectItem>
-              </SelectContent>
-            </Select>
+              <option value="">Select course level</option>
+              <option value="beginner">Beginner</option>
+              <option value="intermediate">Intermediate</option>
+              <option value="advanced">Advanced</option>
+            </select>
           </div>
-        </div>
 
-        <div className="mb-6">
-          <label className="block text-md font-semibold mb-2">
-            Description
-          </label>
-          <Textarea
-            name="description"
-            placeholder="Enter course description"
-            value={courseData.description}
-            onChange={handleChange}
-          />
-        </div>
+          {/* Language */}
+          <div>
+            <label className="block text-md font-semibold mb-2">Language</label>
+            <select
+              name="language"
+              className="w-full p-2 border border-gray-300 rounded-md"
+              onChange={handleInputChange}
+              value={formData.language}
+            >
+              <option value="">Select language</option>
+              <option value="english">English</option>
+              <option value="spanish">Spanish</option>
+              <option value="french">French</option>
+              <option value="german">German</option>
+              <option value="chinese">Chinese</option>
+              <option value="japanese">Japanese</option>
+              <option value="korean">Korean</option>
+              <option value="nepali">Nepali</option>
+              <option value="hindi">Hindi</option>
+            </select>
+          </div>
 
-        <div className="mb-6">
-          <label className="block text-md font-semibold mb-2">
-            Learning Outcomes
-          </label>
-          {courseData.learning_outcomes.map((outcome, index) => (
-            <div key={index} className="mb-2 flex items-center space-x-2">
-              <Input
-                placeholder={`Outcome ${index + 1}`}
-                value={outcome}
-                onChange={(e) =>
-                  handleLearningOutcomeChange(index, e.target.value)
-                }
-                className="flex-1"
-              />
-            </div>
-          ))}
-          <Button onClick={handleAddLearningOutcome}>
-            Add Learning Outcome
-          </Button>
-        </div>
-
-        <div className="mb-6">
-          <label className="block text-md font-semibold mb-2">Topics</label>
-          {courseData.topics.map((topic, topicIndex) => (
-            <div key={topicIndex} className="mb-4 border p-4 rounded">
-              <div className="mb-4">
-                <label className="block text-md font-semibold mb-2">
-                  Topic Name
-                </label>
-                <Input
-                  placeholder={`Topic ${topicIndex + 1}`}
-                  value={topic.name}
-                  onChange={(e) =>
-                    handleTopicChange(topicIndex, "name", e.target.value)
-                  }
-                  className="mb-2"
-                />
-              </div>
-              <div className="mb-4">
-                <label className="block text-md font-semibold mb-2">
-                  Video Link
-                </label>
-                <Input
-                  placeholder={`Video Link ${topicIndex + 1}`}
-                  value={topic.video_link}
-                  onChange={(e) =>
-                    handleTopicChange(topicIndex, "video_link", e.target.value)
-                  }
-                  className="mb-2"
-                />
-              </div>
-              <div className="mb-4">
-                <label className="block text-md font-semibold mb-2">
-                  Description
-                </label>
-                <Textarea
-                  placeholder={`Topic Description ${topicIndex + 1}`}
-                  value={topic.description}
-                  onChange={(e) =>
-                    handleTopicChange(topicIndex, "description", e.target.value)
-                  }
-                  className="mb-2"
-                />
-              </div>
-              <div className="mb-4">
-                <label className="block text-md font-semibold mb-2">
-                  Learning Outcomes
-                </label>
-                {topic.learning_outcomes.map((outcome, outcomeIndex) => (
-                  <div
-                    key={outcomeIndex}
-                    className="mb-2 flex items-center space-x-2"
-                  >
-                    <Input
-                      placeholder={`Outcome ${outcomeIndex + 1}`}
-                      value={outcome}
-                      onChange={(e) =>
-                        handleTopicLearningOutcomeChange(
-                          topicIndex,
-                          outcomeIndex,
-                          e.target.value
-                        )
-                      }
-                      className="flex-1"
-                    />
-                  </div>
-                ))}
-                <Button
-                  onClick={() => handleAddTopicLearningOutcome(topicIndex)}
-                >
-                  Add Learning Outcome
-                </Button>
-              </div>
-            </div>
-          ))}
-          <Button onClick={handleAddTopic}>Add Topic</Button>
-        </div>
-
-        <Button onClick={handleSubmit} className="bg-[#A435F0] text-white">
-          Submit Course
-        </Button>
+          {/* Submit Button */}
+          <div className="text-center">
+            <button
+              type="submit"
+              className="bg-purple-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-purple-700 transition"
+            >
+              Submit Course
+            </button>
+          </div>
+        </form>
       </div>
+
+      {/* Footer */}
+      <Footer />
     </div>
   )
 }
 
-export default AddCourse
+export default AddCoursePage

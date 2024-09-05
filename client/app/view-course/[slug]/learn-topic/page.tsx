@@ -260,7 +260,7 @@ const LearnTopic: React.FC = () => {
                         clipRule="evenodd"
                       />
                     </svg>
-                    <span>Ends on:</span>
+                    <span>Predicted Ends on:</span>
                   </div>
                   <span className="text-gray-600">2021-12-01</span>
                 </div>

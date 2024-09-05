@@ -52,13 +52,29 @@ const Courses: React.FC = () => {
           <h1 className="text-4xl font-extrabold text-center lg:text-left text-gray-800">
             Courses
           </h1>
-          <Link
-            href={`/provider/${pid}/courses/add-course`}
-            className="flex gap-2 bg-purple-200 p-2 w-48 rounded-md hover:bg-purple-300"
-          >
-            <FaPlus className="h-6 w-6" />
-            <p className="text-center text-black">Add a new course</p>
-          </Link>
+          <div className="flex  gap-2">
+            <Link
+              href={`/provider/${pid}/courses/add-course`}
+              className="flex gap-2 bg-purple-200 p-2 w-36 rounded-md hover:bg-purple-300"
+            >
+              <FaPlus className="h-6 w-5" />
+              <p className="text-center text-black">Add Course</p>
+            </Link>
+            <Link
+              href={`/provider/${pid}/courses/add-topic`}
+              className="flex gap-2 bg-purple-200 p-2 w-36 rounded-md hover:bg-purple-300"
+            >
+              <FaPlus className="h-6 w-6" />
+              <p className="text-center text-black">Add Topic</p>
+            </Link>
+            <Link
+              href={`/provider/${pid}/courses/add-video`}
+              className="flex gap-2 bg-purple-200 p-2 w-36 rounded-md hover:bg-purple-300"
+            >
+              <FaPlus className="h-6 w-6" />
+              <p className="text-center text-black">Add Video</p>
+            </Link>
+          </div>
         </div>
 
         <div className="flex gap-6 flex-wrap">

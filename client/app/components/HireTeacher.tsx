@@ -18,7 +18,7 @@ const HireTeacher = () => {
       </div>
       <div className="flex-1 flex justify-center lg:justify-end">
         <img
-          src="https://www.nicepng.com/png/full/258-2585445_happy-girl-with-laptop-professional-girl-image-png.png"
+          src="/images/Professor.png"
           alt="Become an Instructor"
           className="max-w-32 lg:max-w-md max-h-96 rounded-lg object-cover "
         />

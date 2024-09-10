@@ -1,10 +1,10 @@
 import { Request, Response } from "express"
-import prisma from "../utils/prisma"
+import prisma from "../../../utils/prisma"
 import bcrypt from "bcrypt"
-import { ApiError, TokenExpiredError } from "../utils/handleError"
-import ApiResponse from "../utils/ApiResponse"
+import { ApiError, TokenExpiredError } from "../../../utils/handleError"
+import ApiResponse from "../../../utils/ApiResponse"
 import jwt from "jsonwebtoken"
-import { sendOtp2FA, sendForgotPasswordOtp } from "../utils/mails"
+import { sendOtp2FA, sendForgotPasswordOtp } from "../../../utils/mails"
 
 // Register user
 // npx prisma migrate dev --name init

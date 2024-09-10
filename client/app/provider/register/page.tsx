@@ -34,7 +34,7 @@ const RegistrationPage = () => {
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100 py-10 px-6">
-      <div className="flex flex-wrap justify-center items-center rounded-lg w-full max-w-[1200px] p-10 bg-white shadow-lg">
+      <div className="flex flex-wrap justify-center items-center rounded-lg w-full max-w-[1200px] p-2 bg-white shadow-lg">
         {/* Left Section - Form */}
         <div className="w-full lg:w-[55%] flex flex-col justify-center items-center">
           <h1 className="text-4xl font-bold text-gray-800 mb-10 text-center lg:text-left">
@@ -98,13 +98,25 @@ const RegistrationPage = () => {
                     />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="temp-address" className="text-gray-700">
+                    <Label htmlFor="address" className="text-gray-700">
                       Address
                     </Label>
                     <Input
                       id="address"
                       type="text"
                       placeholder="123 Street, City"
+                      className="border-gray-300 focus:border-[#A435F0] focus:ring-[#A435F0]"
+                      required
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="contact" className="text-gray-700">
+                      Contact
+                    </Label>
+                    <Input
+                      id="contact"
+                      type="text"
+                      placeholder="1234567890"
                       className="border-gray-300 focus:border-[#A435F0] focus:ring-[#A435F0]"
                       required
                     />
@@ -206,6 +218,18 @@ const RegistrationPage = () => {
                       id="org-address"
                       type="text"
                       placeholder="456 Organization St, City"
+                      className="border-gray-300 focus:border-[#A435F0] focus:ring-[#A435F0]"
+                      required
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="contact" className="text-gray-700">
+                      Organization Contact
+                    </Label>
+                    <Input
+                      id="contact"
+                      type="text"
+                      placeholder="1234567890"
                       className="border-gray-300 focus:border-[#A435F0] focus:ring-[#A435F0]"
                       required
                     />

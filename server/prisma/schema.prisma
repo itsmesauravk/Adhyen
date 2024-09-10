@@ -37,3 +37,32 @@ model Product {
 }
 
 
+
+// for provider register and login
+
+model Provider {
+  id                Int       @id @default(autoincrement())
+  name              String
+  password          String   @default("")
+  email             String    @unique
+  avatar            String   @default("")
+  contact           String   
+  address           String
+
+  providerType      String   
+
+  documentImage    String   
+
+
+  verified          Boolean  @default(false)
+  createdAt         DateTime  @default(now())
+  lastFivePasswords String[] @default([])
+  twoFAEnabled      Boolean  @default(false)
+  wrongPassCounter  Int      @default(0)
+  isPassBlockEnable Boolean  @default(false)
+  isFirstLogin      Boolean  @default(true)
+  refreshToken      String   @default("")
+  otp               Int      @default(0)
+
+}
+

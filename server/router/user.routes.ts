@@ -9,7 +9,7 @@ import {
   verify2FA,
   forgotPassword,
   resetPassword,
-} from "../controller/user.controller"
+} from "../controllers/user/index"
 
 //routes
 router.post("/register", register)

@@ -1,0 +1,23 @@
+.tabContent {
+  min-height: 500px; /* Ensure content doesn't shrink and jump between tab switches */
+  transition: all 0.3s ease-in-out;
+}
+
+.tabTrigger {
+  padding: 0.75rem;
+  text-align: center;
+  font-weight: 500;
+}
+
+.fadeIn {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

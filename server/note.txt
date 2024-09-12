@@ -55,3 +55,4 @@ https://www.pinterest.com/pin/318911217380511003/
 
 #-------------------------------------------------#
 
+npm install --save-dev @types/multer

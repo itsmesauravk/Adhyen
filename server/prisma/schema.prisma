@@ -51,7 +51,8 @@ model Provider {
 
   providerType      String   
 
-  documentImage    String   
+  documentImage    String 
+  documentImageId  String  
 
 
   verified          Boolean  @default(false)

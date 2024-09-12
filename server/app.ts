@@ -1,5 +1,8 @@
 import express, { Request, Response } from "express"
 const app = express()
+
+import { handleError } from "./middlewares/handleError"
+
 import { PrismaClient } from "@prisma/client"
 
 const prisma = new PrismaClient()
@@ -22,6 +25,7 @@ async function connectToDatabase() {
 connectToDatabase()
 
 import userRoutes from "./router/user.routes"
+import providerRoutes from "./router/provider.routes"
 
 app.use(express.json())
 app.use(
@@ -31,9 +35,14 @@ app.use(
   })
 )
 app.use("/api/v1/user", userRoutes)
+app.use("/api/v1/provider", providerRoutes)
 
-app.get("/", (req: Request, res: Response) => {
-  res.send("Hello World")
+// Error handling middleware (always use after routes)
+app.use(handleError)
+
+//server check
+app.get("/api/v1/", (req: Request, res: Response) => {
+  res.send("Hakuna Matata ")
 })
 
 export default app

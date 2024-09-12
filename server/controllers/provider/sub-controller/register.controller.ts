@@ -1,29 +1,33 @@
-import { Request, Response } from "express"
+import { Request, Response, NextFunction } from "express"
 import prisma from "../../../utils/prisma"
 import { StatusCodes } from "http-status-codes"
+import { uploadFile } from "../../../utils/cloudinary"
 import { Multer } from "multer"
 
-// You need to tell TypeScript that req.files will contain files uploaded by multer
 interface MulterRequest extends Request {
-  files: Express.Multer.File[] // Declaring files as an array of Multer files
+  file?: Express.Multer.File // 'file' for a single file upload
 }
 
-const registerProvider = async (req: MulterRequest, res: Response) => {
+const registerProvider = async (
+  req: MulterRequest,
+  res: Response,
+  next: NextFunction
+) => {
   try {
     const { name, email, address, contact, providerType } = req.body
 
-    // Access the uploaded files (Multer)
-    const documentFiles = req.files // Cast req to MulterRequest to access files
+    // Access the uploaded file (Multer)
+    const documentFile = req.file // Use 'file' for single file
 
-    // Validation: Check if all fields are present
+    console.log(name, email, address, contact, providerType, documentFile)
+
     if (
       !name ||
       !email ||
       !address ||
       !contact ||
       !providerType ||
-      !documentFiles ||
-      documentFiles.length === 0
+      !documentFile
     ) {
       return res.status(StatusCodes.BAD_REQUEST).json({
         success: false,
@@ -31,8 +35,19 @@ const registerProvider = async (req: MulterRequest, res: Response) => {
       })
     }
 
-    // Store only the first file's path as a string
-    const documentImage = documentFiles[0]?.path || "" // If multiple files, only use the first one
+    // Store the file path
+    const documentImage = documentFile.path || ""
+
+    const uploadDocs = await uploadFile(documentImage, "provider")
+
+    if (!uploadDocs) {
+      return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
+        success: false,
+        message: "Failed to upload document",
+      })
+    }
+
+    console.log(uploadDocs)
 
     // Create the provider
     const provider = await prisma.provider.create({
@@ -42,7 +57,8 @@ const registerProvider = async (req: MulterRequest, res: Response) => {
         address,
         contact,
         providerType,
-        documentImage, // Only a single string path is stored here
+        documentImage: uploadDocs.secure_url,
+        documentImageId: uploadDocs.public_id,
       },
     })
 
@@ -56,15 +72,11 @@ const registerProvider = async (req: MulterRequest, res: Response) => {
     res.status(StatusCodes.OK).json({
       success: true,
       message: "Register Request Sent successfully",
-      data: provider,
     })
-  } catch (error) {
+  } catch (error: any) {
     console.log(error)
-    res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
-      success: false,
-      message: "Internal Server Error",
-      error: error.message,
-    })
+
+    next(error)
   }
 }
 

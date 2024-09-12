@@ -35,7 +35,7 @@ const uploadFile = async (file: string, folder: string) => {
 
 // delete file
 
-const deleteFile = async (public_id) => {
+const deleteFile = async (public_id: string) => {
   // console.log(public_id);
   try {
     const result = await cloudinary.uploader.destroy(public_id)
@@ -49,7 +49,4 @@ const deleteFile = async (public_id) => {
   }
 }
 
-module.exports = {
-  uploadFile,
-  deleteFile,
-}
+export { uploadFile, deleteFile }

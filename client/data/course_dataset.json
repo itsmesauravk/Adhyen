@@ -1,0 +1,672 @@
+{
+  "courses": [
+    {
+      "title": "Introduction to Artificial Intelligence",
+      "description": "This course provides an introduction to the fundamental concepts and techniques in artificial intelligence, including problem-solving, knowledge representation, reasoning, learning, and perception.",
+      "instructor": "Dr. Jane Smith",
+      "duration": "10 weeks",
+      "price": 299.99,
+      "category": "Artificial Intelligence",
+      "course_level": "Beginner",
+      "provider": "Google",
+      "language": "English",
+      "isPaid": true,
+
+      "learning_outcomes": [
+        "Understand the fundamental concepts of AI and its applications.",
+        "Learn techniques for knowledge representation and problem-solving in AI.",
+        "Gain an introductory understanding of reasoning, learning, and perception in AI."
+      ],
+      "brief_description": "This course introduces the foundational concepts of artificial intelligence, including problem-solving, knowledge representation, and perception. Ideal for beginners looking to understand AI basics."
+    },
+    {
+      "title": "Advanced Machine Learning",
+      "description": "Dive deeper into machine learning techniques and algorithms, including neural networks, deep learning, and advanced model evaluation.",
+      "instructor": "Dr. Alex Johnson",
+      "duration": "12 weeks",
+      "price": 349.99,
+      "category": "Machine Learning",
+      "course_level": "Intermediate",
+      "provider": "Coursera",
+      "language": "English",
+      "isPaid": true,
+      "learning_outcomes": [
+        "Master advanced machine learning algorithms and techniques.",
+        "Gain proficiency in implementing and evaluating neural networks.",
+        "Understand and apply deep learning methods to real-world problems."
+      ],
+      "brief_description": "A comprehensive course on advanced machine learning methods, focusing on neural networks and deep learning. Perfect for those with a solid foundation in machine learning."
+    },
+    {
+      "title": "Data Science Foundations",
+      "description": "Learn the essentials of data science, including data wrangling, visualization, and statistical analysis.",
+      "instructor": "Dr. Emily Davis",
+      "duration": "8 weeks",
+      "price": 199.99,
+      "category": "Data Science",
+      "course_level": "Beginner",
+      "provider": "Udacity",
+      "language": "English",
+      "isPaid": true,
+
+      "learning_outcomes": [
+        "Understand and apply fundamental data science techniques.",
+        "Develop skills in data wrangling and visualization.",
+        "Perform basic statistical analysis on datasets."
+      ],
+      "brief_description": "This course covers the core concepts and skills in data science, including data wrangling, visualization, and statistical analysis. Ideal for beginners looking to enter the field of data science."
+    },
+    {
+      "title": "Introduction to Cybersecurity",
+      "description": "Explore the basics of cybersecurity, including threat analysis, risk management, and security protocols.",
+      "instructor": "Dr. Michael Lee",
+      "duration": "6 weeks",
+      "price": 249.99,
+      "category": "Cybersecurity",
+      "course_level": "Beginner",
+      "provider": "edX",
+      "language": "English",
+      "isPaid": true,
+
+      "learning_outcomes": [
+        "Learn the fundamentals of cybersecurity and threat analysis.",
+        "Develop skills in risk management and mitigation.",
+        "Understand key security protocols and their applications."
+      ],
+      "brief_description": "An introductory course on cybersecurity covering essential topics such as threat analysis, risk management, and security protocols. Suitable for beginners aiming to understand the basics of cybersecurity."
+    },
+    {
+      "title": "Web Development Bootcamp",
+      "description": "A comprehensive bootcamp that covers front-end and back-end web development technologies, including HTML, CSS, JavaScript, and server-side programming.",
+      "instructor": "Dr. Sarah Wilson",
+      "duration": "14 weeks",
+      "price": 399.99,
+      "category": "Web Development",
+      "course_level": "Beginner to Intermediate",
+      "provider": "Udemy",
+      "language": "English",
+      "isPaid": true,
+
+      "learning_outcomes": [
+        "Acquire skills in both front-end and back-end web development.",
+        "Build and deploy full-stack web applications.",
+        "Understand the full web development lifecycle from design to deployment."
+      ],
+      "brief_description": "A hands-on bootcamp designed to teach both front-end and back-end web development skills. Ideal for beginners and intermediate learners who want to build comprehensive web applications."
+    },
+    {
+      "title": "Fundamentals of Cloud Computing",
+      "description": "An introductory course on cloud computing concepts, services, and deployment models, including practical exercises on major cloud platforms.",
+      "instructor": "Dr. Laura Martinez",
+      "duration": "9 weeks",
+      "price": 279.99,
+      "category": "Cloud Computing",
+      "course_level": "Beginner",
+      "provider": "AWS",
+      "language": "English",
+      "isPaid": true,
+
+      "learning_outcomes": [
+        "Grasp the fundamentals of cloud computing and its benefits.",
+        "Identify and compare various cloud service providers.",
+        "Understand and apply different cloud deployment models."
+      ],
+      "brief_description": "This course covers the basics of cloud computing, including concepts, services, and deployment models. Suitable for beginners looking to get started with cloud technologies."
+    },
+    {
+      "title": "Introduction to Blockchain Technology",
+      "description": "Explore the fundamentals of blockchain technology, including its architecture, consensus mechanisms, and real-world applications.",
+      "instructor": "Dr. Daniel Brown",
+      "duration": "7 weeks",
+      "price": 219.99,
+      "category": "Blockchain",
+      "course_level": "Beginner",
+      "provider": "Blockchain Academy",
+      "language": "English",
+      "isPaid": true,
+
+      "learning_outcomes": [
+        "Understand the basic concepts and architecture of blockchain.",
+        "Learn about different consensus mechanisms and their applications.",
+        "Explore real-world use cases and applications of blockchain technology."
+      ],
+      "brief_description": "A foundational course on blockchain technology, covering its architecture, consensus mechanisms, and practical applications. Ideal for those new to the field."
+    },
+    {
+      "title": "Introduction to Natural Language Processing",
+      "description": "Learn the basics of Natural Language Processing (NLP), including text processing, sentiment analysis, and language modeling techniques.",
+      "instructor": "Dr. Emily Thompson",
+      "duration": "8 weeks",
+      "price": 259.99,
+      "category": "Natural Language Processing",
+      "course_level": "Beginner",
+      "provider": "DataCamp",
+      "language": "English",
+      "isPaid": true,
+
+      "learning_outcomes": [
+        "Master basic techniques in Natural Language Processing.",
+        "Develop skills in text processing and sentiment analysis.",
+        "Understand and apply language modeling techniques."
+      ],
+      "brief_description": "An introductory course on Natural Language Processing covering text processing, sentiment analysis, and language modeling. Ideal for beginners interested in NLP."
+    },
+    {
+      "title": "Introduction to Robotics",
+      "description": "Explore the basics of robotics, including robot kinematics, dynamics, and control systems. Learn how to build and program simple robots.",
+      "instructor": "Dr. Robert Green",
+      "duration": "11 weeks",
+      "price": 289.99,
+      "category": "Robotics",
+      "course_level": "Beginner",
+      "provider": "Robotics Institute",
+      "language": "English",
+      "isPaid": true,
+
+      "learning_outcomes": [
+        "Gain a foundational understanding of robotics concepts.",
+        "Learn about robot kinematics and control systems.",
+        "Develop skills in programming and building simple robots."
+      ],
+      "brief_description": "A beginner-friendly course on robotics, focusing on kinematics, dynamics, and programming. Perfect for those interested in learning about robots and their applications."
+    },
+    {
+      "title": "Digital Marketing Essentials",
+      "description": "Learn the fundamentals of digital marketing, including SEO, content marketing, and social media strategies to build a successful online presence.",
+      "instructor": "Dr. Olivia Adams",
+      "duration": "6 weeks",
+      "price": 229.99,
+      "category": "Digital Marketing",
+      "course_level": "Beginner",
+      "provider": "HubSpot Academy",
+      "language": "English",
+      "isPaid": true,
+
+      "learning_outcomes": [
+        "Understand the basics of digital marketing and SEO.",
+        "Develop content marketing strategies to engage audiences.",
+        "Implement social media strategies to enhance online presence."
+      ],
+      "brief_description": "A comprehensive course on digital marketing, covering SEO, content marketing, and social media strategies. Ideal for beginners looking to build and optimize their online presence."
+    },
+
+    {
+      "title": "Advanced Data Visualization",
+      "description": "Dive into advanced data visualization techniques using tools like Tableau and D3.js. Learn to create interactive and insightful visualizations for complex datasets.",
+      "instructor": "Dr. Kevin White",
+      "duration": "8 weeks",
+      "price": 279.99,
+      "category": "Data Visualization",
+      "course_level": "Intermediate",
+      "provider": "Pluralsight",
+      "language": "English",
+      "isPaid": true,
+
+      "learning_outcomes": [
+        "Master advanced data visualization tools and techniques.",
+        "Create interactive dashboards and custom visualizations.",
+        "Develop skills in data storytelling to convey complex insights."
+      ],
+      "brief_description": "An intermediate course focused on advanced data visualization techniques using Tableau and D3.js. Ideal for those looking to enhance their data visualization skills."
+    },
+    {
+      "title": "Introduction to Quantum Computing",
+      "description": "Explore the basics of quantum computing, including quantum bits, quantum gates, and quantum algorithms. Understand the potential and challenges of this emerging field.",
+      "instructor": "Dr. Alice Cooper",
+      "duration": "10 weeks",
+      "price": 299.99,
+      "category": "Quantum Computing",
+      "course_level": "Beginner",
+      "provider": "Microsoft",
+      "language": "English",
+      "isPaid": true,
+
+      "learning_outcomes": [
+        "Grasp the fundamental concepts of quantum computing.",
+        "Learn about quantum gates, algorithms, and their applications.",
+        "Understand the potential and challenges of quantum computing."
+      ],
+      "brief_description": "A beginner-level course on quantum computing, covering basic principles, quantum gates, and algorithms. Suitable for those new to the field of quantum computing."
+    },
+    {
+      "title": "Data Engineering with Python",
+      "description": "Learn data engineering concepts and techniques using Python. Focus on data pipelines, ETL processes, and working with big data frameworks.",
+      "instructor": "Dr. Michael Hernandez",
+      "duration": "12 weeks",
+      "price": 349.99,
+      "category": "Data Engineering",
+      "course_level": "Intermediate",
+      "provider": "DataCamp",
+      "language": "English",
+      "isPaid": true,
+
+      "learning_outcomes": [
+        "Develop skills in building data pipelines with Python.",
+        "Implement ETL processes for efficient data management.",
+        "Understand and work with big data frameworks and tools."
+      ],
+      "brief_description": "An intermediate course on data engineering using Python, focusing on data pipelines, ETL processes, and big data frameworks. Ideal for those with some Python experience."
+    },
+    {
+      "title": "AI for Healthcare",
+      "description": "Explore the applications of artificial intelligence in healthcare, including diagnostics, treatment planning, and patient care. Learn about AI tools and technologies used in the medical field.",
+      "instructor": "Dr. Sophia Nguyen",
+      "duration": "10 weeks",
+      "price": 319.99,
+      "category": "Healthcare AI",
+      "course_level": "Intermediate",
+      "provider": "Coursera",
+      "language": "English",
+      "isPaid": true,
+
+      "learning_outcomes": [
+        "Understand AI applications in healthcare diagnostics and treatment.",
+        "Explore tools and technologies used in medical AI.",
+        "Apply AI concepts to improve patient care and healthcare workflows."
+      ],
+      "brief_description": "A course on the role of artificial intelligence in healthcare, covering diagnostics, treatment planning, and patient care. Ideal for those interested in AI applications in the medical field."
+    },
+    {
+      "title": "Cybersecurity Risk Management",
+      "description": "Learn strategies and methodologies for managing cybersecurity risks. Focus on risk assessment, mitigation strategies, and developing a cybersecurity risk management plan.",
+      "instructor": "Dr. Ryan Clark",
+      "duration": "8 weeks",
+      "price": 239.99,
+      "category": "Cybersecurity",
+      "course_level": "Intermediate",
+      "provider": "LinkedIn Learning",
+      "language": "English",
+      "isPaid": true,
+
+      "learning_outcomes": [
+        "Conduct thorough cybersecurity risk assessments.",
+        "Develop and implement risk mitigation strategies.",
+        "Create and manage a cybersecurity risk management plan."
+      ],
+      "brief_description": "An intermediate course on managing cybersecurity risks, focusing on assessment, mitigation strategies, and risk management planning. Suitable for professionals looking to enhance their risk management skills."
+    },
+
+    {
+      "title": "Deep Learning Specialization",
+      "description": "A comprehensive specialization in deep learning, covering neural networks, convolutional networks, sequence models, and practical implementation using TensorFlow.",
+      "instructor": "Dr. Natalie Roberts",
+      "duration": "16 weeks",
+      "price": 399.99,
+      "category": "Deep Learning",
+      "course_level": "Advanced",
+      "provider": "Coursera",
+      "language": "English",
+      "isPaid": true,
+
+      "learning_outcomes": [
+        "Gain a deep understanding of neural networks and deep learning algorithms.",
+        "Develop advanced skills in convolutional and sequence models.",
+        "Implement deep learning models using TensorFlow."
+      ],
+      "brief_description": "An advanced specialization covering deep learning techniques, including neural networks, convolutional networks, and sequence models. Ideal for those with a strong background in machine learning."
+    },
+    {
+      "title": "Principles of User Experience Design",
+      "description": "Explore the principles and practices of user experience (UX) design, focusing on user research, wireframing, prototyping, and usability testing.",
+      "instructor": "Dr. Jessica Lee",
+      "duration": "6 weeks",
+      "price": 199.99,
+      "category": "UX Design",
+      "course_level": "Beginner",
+      "provider": "Udemy",
+      "language": "English",
+      "isPaid": true,
+
+      "learning_outcomes": [
+        "Understand the key principles of UX design.",
+        "Develop skills in user research, wireframing, and prototyping.",
+        "Conduct usability tests to evaluate and improve designs."
+      ],
+      "brief_description": "A beginner course on the principles of UX design, including user research, wireframing, prototyping, and usability testing. Suitable for those new to the field of UX design."
+    },
+    {
+      "title": "Introduction to DevOps",
+      "description": "Learn the fundamentals of DevOps practices, including continuous integration, continuous delivery, and automated deployment pipelines.",
+      "instructor": "Dr. William Green",
+      "duration": "8 weeks",
+      "price": 229.99,
+      "category": "DevOps",
+      "course_level": "Beginner",
+      "provider": "Pluralsight",
+      "language": "English",
+      "isPaid": true,
+
+      "learning_outcomes": [
+        "Understand core DevOps principles and practices.",
+        "Implement continuous integration and continuous delivery processes.",
+        "Use automation tools to streamline development and deployment workflows."
+      ],
+      "brief_description": "An introductory course on DevOps practices, focusing on continuous integration, delivery, and automation tools. Ideal for those new to DevOps and looking to improve their software development processes."
+    },
+    {
+      "title": "AI Ethics and Policy",
+      "description": "Examine the ethical implications and policy considerations of artificial intelligence. Explore topics such as bias, fairness, and the societal impact of AI technologies.",
+      "instructor": "Dr. Laura Patel",
+      "duration": "7 weeks",
+      "price": 249.99,
+      "category": "AI Ethics",
+      "course_level": "Intermediate",
+      "provider": "edX",
+      "language": "English",
+      "isPaid": true,
+
+      "learning_outcomes": [
+        "Analyze the ethical implications of AI technologies.",
+        "Identify and address issues of bias and fairness in AI systems.",
+        "Understand and navigate AI policy and regulation frameworks."
+      ],
+      "brief_description": "A course on AI ethics and policy, focusing on the ethical considerations, bias, fairness, and regulatory aspects of artificial intelligence. Ideal for those interested in the societal impact of AI."
+    },
+    {
+      "title": "Introduction to Game Development",
+      "description": "Learn the fundamentals of game development, including game design principles, programming, and using game development engines like Unity or Unreal Engine.",
+      "instructor": "Dr. Henry Adams",
+      "duration": "12 weeks",
+      "price": 289.99,
+      "category": "Game Development",
+      "course_level": "Beginner",
+      "provider": "Udacity",
+      "language": "English",
+      "isPaid": true,
+
+      "learning_outcomes": [
+        "Understand core game design principles and concepts.",
+        "Develop programming skills for game development.",
+        "Gain experience using popular game development engines."
+      ],
+      "brief_description": "An introductory course on game development covering design principles, programming, and game engines. Suitable for beginners interested in creating their own games."
+    },
+
+    {
+      "title": "Introduction to Augmented Reality",
+      "description": "Explore the fundamentals of augmented reality (AR), including AR technologies, design principles, and practical applications in various industries.",
+      "instructor": "Dr. Clara Evans",
+      "duration": "9 weeks",
+      "price": 299.99,
+      "category": "Augmented Reality",
+      "course_level": "Beginner",
+      "provider": "Udemy",
+      "language": "English",
+      "isPaid": true,
+
+      "learning_outcomes": [
+        "Understand the core technologies behind augmented reality.",
+        "Apply design principles to create engaging AR experiences.",
+        "Explore and implement AR applications in diverse fields."
+      ],
+      "brief_description": "A beginner's course on augmented reality covering its technologies, design principles, and applications. Ideal for those new to AR and its potential uses."
+    },
+    {
+      "title": "Financial Modeling and Analysis",
+      "description": "Learn to create and analyze financial models using Excel. Focus on forecasting, valuation, and financial statement analysis for business decisions.",
+      "instructor": "Dr. James Miller",
+      "duration": "10 weeks",
+      "price": 349.99,
+      "category": "Finance",
+      "course_level": "Intermediate",
+      "provider": "LinkedIn Learning",
+      "language": "English",
+      "isPaid": true,
+
+      "learning_outcomes": [
+        "Develop skills in financial modeling and forecasting using Excel.",
+        "Understand and apply valuation methods for various financial scenarios.",
+        "Analyze financial statements to guide business decisions."
+      ],
+      "brief_description": "An intermediate course focused on financial modeling and analysis using Excel, covering forecasting, valuation, and financial statement analysis. Suitable for those with a basic understanding of finance."
+    },
+    {
+      "title": "Introduction to Computational Biology",
+      "description": "Explore the intersection of biology and computer science. Learn about algorithms and tools used in computational biology for analyzing biological data.",
+      "instructor": "Dr. Oliver Scott",
+      "duration": "12 weeks",
+      "price": 319.99,
+      "category": "Computational Biology",
+      "course_level": "Intermediate",
+      "provider": "Coursera",
+      "language": "English",
+      "isPaid": true,
+
+      "learning_outcomes": [
+        "Understand key concepts and techniques in computational biology.",
+        "Apply algorithms to biological data analysis.",
+        "Use bioinformatics tools for research and analysis."
+      ],
+      "brief_description": "An intermediate course on computational biology, focusing on data analysis, algorithms, and bioinformatics tools. Ideal for those interested in the computational aspects of biological research."
+    },
+    {
+      "title": "Introduction to Ethical Hacking",
+      "description": "Learn the basics of ethical hacking, including penetration testing, vulnerability assessment, and ethical considerations in cybersecurity.",
+      "instructor": "Dr. Jason Lee",
+      "duration": "8 weeks",
+      "price": 249.99,
+      "category": "Cybersecurity",
+      "course_level": "Beginner",
+      "provider": "Udacity",
+      "language": "English",
+      "isPaid": true,
+
+      "learning_outcomes": [
+        "Grasp the fundamentals of ethical hacking and penetration testing.",
+        "Perform vulnerability assessments to identify and address security issues.",
+        "Understand ethical and legal considerations in cybersecurity."
+      ],
+      "brief_description": "A beginner course on ethical hacking covering penetration testing, vulnerability assessment, and ethical considerations. Suitable for those interested in cybersecurity and ethical hacking practices."
+    },
+    {
+      "title": "Introduction to Data Science with R",
+      "description": "Learn data science fundamentals using R, including data manipulation, statistical analysis, and visualization techniques. Ideal for beginners looking to enter the field of data science.",
+      "instructor": "Dr. Sophia Wilson",
+      "duration": "10 weeks",
+      "price": 279.99,
+      "category": "Data Science",
+      "course_level": "Beginner",
+      "provider": "DataCamp",
+      "language": "English",
+      "isPaid": true,
+
+      "learning_outcomes": [
+        "Develop skills in data manipulation and preparation using R.",
+        "Apply statistical analysis techniques to data.",
+        "Create effective visualizations to communicate data insights."
+      ],
+      "brief_description": "An introductory course on data science with R, focusing on data manipulation, statistical analysis, and visualization. Perfect for beginners looking to start a career in data science."
+    },
+
+    {
+      "title": "Introduction to Blockchain Technology",
+      "description": "Learn the fundamentals of blockchain technology, including its architecture, consensus mechanisms, and applications beyond cryptocurrencies.",
+      "instructor": "Dr. Emily Foster",
+      "duration": "8 weeks",
+      "price": 269.99,
+      "category": "Blockchain",
+      "course_level": "Beginner",
+      "provider": "edX",
+      "language": "English",
+      "isPaid": true,
+
+      "learning_outcomes": [
+        "Grasp the fundamental concepts of blockchain technology.",
+        "Understand different consensus mechanisms used in blockchain.",
+        "Explore various applications of blockchain beyond digital currencies."
+      ],
+      "brief_description": "A beginner-level course on blockchain technology covering its basics, consensus mechanisms, and applications. Ideal for those new to blockchain and its potential uses."
+    },
+    {
+      "title": "Fundamentals of Cloud Computing",
+      "description": "Discover the basics of cloud computing, including service models, deployment types, and cloud architecture. Learn to leverage cloud platforms for scalable solutions.",
+      "instructor": "Dr. Thomas Baker",
+      "duration": "6 weeks",
+      "price": 199.99,
+      "category": "Cloud Computing",
+      "course_level": "Beginner",
+      "provider": "Coursera",
+      "language": "English",
+      "isPaid": true,
+
+      "learning_outcomes": [
+        "Understand the core service models and deployment types in cloud computing.",
+        "Learn the architecture and components of cloud platforms.",
+        "Apply cloud computing concepts to create scalable solutions."
+      ],
+      "brief_description": "An introductory course on cloud computing, focusing on service models, deployment types, and architecture. Suitable for beginners looking to understand cloud technologies."
+    },
+    {
+      "title": "Advanced SQL for Data Analysis",
+      "description": "Deepen your SQL skills with advanced techniques for data analysis, including complex queries, performance optimization, and data manipulation.",
+      "instructor": "Dr. Rachel Adams",
+      "duration": "8 weeks",
+      "price": 239.99,
+      "category": "Data Analysis",
+      "course_level": "Intermediate",
+      "provider": "DataCamp",
+      "language": "English",
+      "isPaid": true,
+
+      "learning_outcomes": [
+        "Master complex SQL querying techniques for advanced data analysis.",
+        "Optimize SQL queries for better performance.",
+        "Enhance data manipulation skills with advanced SQL functions."
+      ],
+      "brief_description": "An intermediate course on advanced SQL techniques for data analysis, focusing on complex queries, performance optimization, and data manipulation. Ideal for those with basic SQL knowledge seeking to enhance their skills."
+    },
+    {
+      "title": "Introduction to Natural Language Processing",
+      "description": "Explore the basics of natural language processing (NLP), including text processing, sentiment analysis, and language models.",
+      "instructor": "Dr. Mia Carter",
+      "duration": "10 weeks",
+      "price": 289.99,
+      "category": "Natural Language Processing",
+      "course_level": "Beginner",
+      "provider": "Udacity",
+      "language": "English",
+      "isPaid": true,
+
+      "learning_outcomes": [
+        "Understand basic concepts and techniques in natural language processing.",
+        "Apply text processing and sentiment analysis methods.",
+        "Explore and implement language models for various NLP tasks."
+      ],
+      "brief_description": "A beginner's course on natural language processing, covering text processing, sentiment analysis, and language models. Perfect for those new to NLP and its applications."
+    },
+    {
+      "title": "Introduction to Robotics",
+      "description": "Learn the basics of robotics, including robot design, sensors, actuators, and control systems. Explore practical applications and the future of robotics technology.",
+      "instructor": "Dr. Daniel Martinez",
+      "duration": "12 weeks",
+      "price": 349.99,
+      "category": "Robotics",
+      "course_level": "Beginner",
+      "provider": "edX",
+      "language": "English",
+      "isPaid": true,
+
+      "learning_outcomes": [
+        "Understand the basic concepts of robotics and robot design.",
+        "Learn about sensors, actuators, and their roles in robotics.",
+        "Explore control systems and programming for robotic applications."
+      ],
+      "brief_description": "An introductory course on robotics covering robot design, sensors, actuators, and control systems. Ideal for beginners interested in learning about robotics technology and applications."
+    },
+
+    {
+      "title": "Introduction to Quantum Computing",
+      "description": "Get introduced to quantum computing, including fundamental concepts, quantum algorithms, and the potential impacts on technology and society.",
+      "instructor": "Dr. Lucas Gray",
+      "duration": "8 weeks",
+      "price": 299.99,
+      "category": "Quantum Computing",
+      "course_level": "Beginner",
+      "provider": "Coursera",
+      "language": "English",
+      "isPaid": true,
+
+      "learning_outcomes": [
+        "Understand the basic principles of quantum computing.",
+        "Explore fundamental quantum algorithms and their uses.",
+        "Analyze the potential impacts of quantum computing on various fields."
+      ],
+      "brief_description": "A beginner course on quantum computing covering principles, algorithms, and potential impacts. Ideal for those new to the field of quantum technology."
+    },
+    {
+      "title": "Principles of Data Engineering",
+      "description": "Learn the core principles of data engineering, including data pipelines, data warehousing, and ETL processes. Prepare for building scalable data systems.",
+      "instructor": "Dr. Olivia Roberts",
+      "duration": "10 weeks",
+      "price": 329.99,
+      "category": "Data Engineering",
+      "course_level": "Intermediate",
+      "provider": "DataCamp",
+      "language": "English",
+      "isPaid": true,
+
+      "learning_outcomes": [
+        "Design and implement data pipelines for efficient data processing.",
+        "Understand data warehousing concepts and solutions.",
+        "Master ETL processes for integrating and managing data."
+      ],
+      "brief_description": "An intermediate course on data engineering focusing on data pipelines, warehousing, and ETL processes. Suitable for those with some experience in data science or engineering."
+    },
+    {
+      "title": "Advanced Machine Learning Techniques",
+      "description": "Dive deeper into advanced machine learning techniques, including ensemble methods, deep learning, and model optimization strategies.",
+      "instructor": "Dr. Ethan Lewis",
+      "duration": "12 weeks",
+      "price": 359.99,
+      "category": "Machine Learning",
+      "course_level": "Advanced",
+      "provider": "Udacity",
+      "language": "English",
+      "isPaid": true,
+
+      "learning_outcomes": [
+        "Implement ensemble methods to enhance machine learning models.",
+        "Apply advanced deep learning techniques for complex problems.",
+        "Optimize machine learning models to achieve superior performance."
+      ],
+      "brief_description": "An advanced course in machine learning covering ensemble methods, deep learning, and model optimization. Ideal for experienced practitioners looking to deepen their expertise."
+    },
+    {
+      "title": "Introduction to Ethical AI",
+      "description": "Examine the ethical considerations in artificial intelligence development, including fairness, transparency, and accountability in AI systems.",
+      "instructor": "Dr. Nora Mitchell",
+      "duration": "7 weeks",
+      "price": 249.99,
+      "category": "AI Ethics",
+      "course_level": "Intermediate",
+      "provider": "edX",
+      "language": "English",
+      "isPaid": true,
+
+      "learning_outcomes": [
+        "Analyze ethical issues related to fairness in AI.",
+        "Implement transparency practices in AI systems.",
+        "Develop frameworks for accountability and ethical guidelines in AI."
+      ],
+      "brief_description": "An intermediate course on ethical AI, focusing on fairness, transparency, and accountability in AI development. Suitable for those interested in the ethical aspects of AI technologies."
+    },
+    {
+      "title": "Foundations of Computer Vision",
+      "description": "Learn the fundamentals of computer vision, including image processing, object detection, and machine learning techniques for visual analysis.",
+      "instructor": "Dr. Amelia Carter",
+      "duration": "9 weeks",
+      "price": 299.99,
+      "category": "Computer Vision",
+      "course_level": "Beginner",
+      "provider": "Udacity",
+      "language": "English",
+      "isPaid": true,
+      "learning_outcomes": [
+        "Understand the basics of image processing and analysis.",
+        "Implement object detection techniques in computer vision projects.",
+        "Apply machine learning methods for visual data analysis."
+      ],
+      "brief_description": "A beginner course on computer vision covering image processing, object detection, and visual analysis techniques. Ideal for those starting in the field of computer vision."
+    }
+  ]
+}

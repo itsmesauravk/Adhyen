@@ -22,8 +22,48 @@ import Link from "next/link"
 const RegistrationPage = () => {
   const [isSubmitting, setIsSubmitting] = useState(false)
 
+  // Normal Account State
+  const [name, setName] = useState("")
+  const [email, setEmail] = useState("")
+  const [address, setAddress] = useState("")
+  const [contact, setContact] = useState("")
+  const [idDocument, setIdDocument] = useState<File | null>(null)
+
+  // Organization Account State
+  const [orgName, setOrgName] = useState("")
+  const [orgEmail, setOrgEmail] = useState("")
+  const [orgAddress, setOrgAddress] = useState("")
+  const [orgContact, setOrgContact] = useState("")
+  const [orgIdDocument, setOrgIdDocument] = useState<File | null>(null)
+
   const handleSubmission = async (accountType: string) => {
     setIsSubmitting(true)
+
+    // Log form details to the console
+    if (accountType === "Normal Account") {
+      console.log({
+        accountType,
+        name,
+        email,
+        address,
+        contact,
+        idDocument: idDocument?.name, // You may handle the file differently based on your needs
+      })
+      // const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/register`, {
+
+      //   }
+      // }
+      // )
+    } else if (accountType === "Organization Account") {
+      console.log({
+        accountType,
+        orgName,
+        orgEmail,
+        orgAddress,
+        orgContact,
+        orgIdDocument: orgIdDocument?.name, // You may handle the file differently based on your needs
+      })
+    }
 
     // Simulate form submission delay
     setTimeout(() => {
@@ -83,6 +123,8 @@ const RegistrationPage = () => {
                       placeholder="Firstname Lastname"
                       className="border-gray-300 focus:border-[#A435F0] focus:ring-[#A435F0]"
                       required
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
                     />
                   </div>
                   <div className="space-y-2">
@@ -95,6 +137,8 @@ const RegistrationPage = () => {
                       placeholder="example@gmail.com"
                       className="border-gray-300 focus:border-[#A435F0] focus:ring-[#A435F0]"
                       required
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
                     />
                   </div>
                   <div className="space-y-2">
@@ -107,6 +151,8 @@ const RegistrationPage = () => {
                       placeholder="123 Street, City"
                       className="border-gray-300 focus:border-[#A435F0] focus:ring-[#A435F0]"
                       required
+                      value={address}
+                      onChange={(e) => setAddress(e.target.value)}
                     />
                   </div>
                   <div className="space-y-2">
@@ -119,6 +165,8 @@ const RegistrationPage = () => {
                       placeholder="1234567890"
                       className="border-gray-300 focus:border-[#A435F0] focus:ring-[#A435F0]"
                       required
+                      value={contact}
+                      onChange={(e) => setContact(e.target.value)}
                     />
                   </div>
 
@@ -127,10 +175,19 @@ const RegistrationPage = () => {
                       ID Document
                     </Label>
                     <span className="text-gray-500 italic block">
-                      Upload your citizenship front and back (.pdf, max size:
+                      Upload your citizenship front and back (.jpg, max size:
                       5MB)
                     </span>
-                    <Input id="id" type="file" accept=".pdf" />
+                    <Input
+                      id="id"
+                      type="file"
+                      accept=".jpg"
+                      onChange={(e) => {
+                        if (e.target.files && e.target.files.length > 0) {
+                          setIdDocument(e.target.files[0])
+                        }
+                      }}
+                    />
                   </div>
                 </CardContent>
 
@@ -196,6 +253,8 @@ const RegistrationPage = () => {
                       placeholder="Organization Name"
                       className="border-gray-300 focus:border-[#A435F0] focus:ring-[#A435F0]"
                       required
+                      value={orgName}
+                      onChange={(e) => setOrgName(e.target.value)}
                     />
                   </div>
                   <div className="space-y-2">
@@ -208,6 +267,8 @@ const RegistrationPage = () => {
                       placeholder="organization@example.com"
                       className="border-gray-300 focus:border-[#A435F0] focus:ring-[#A435F0]"
                       required
+                      value={orgEmail}
+                      onChange={(e) => setOrgEmail(e.target.value)}
                     />
                   </div>
                   <div className="space-y-2">
@@ -220,18 +281,22 @@ const RegistrationPage = () => {
                       placeholder="456 Organization St, City"
                       className="border-gray-300 focus:border-[#A435F0] focus:ring-[#A435F0]"
                       required
+                      value={orgAddress}
+                      onChange={(e) => setOrgAddress(e.target.value)}
                     />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="contact" className="text-gray-700">
+                    <Label htmlFor="org-contact" className="text-gray-700">
                       Organization Contact
                     </Label>
                     <Input
-                      id="contact"
+                      id="org-contact"
                       type="text"
                       placeholder="1234567890"
                       className="border-gray-300 focus:border-[#A435F0] focus:ring-[#A435F0]"
                       required
+                      value={orgContact}
+                      onChange={(e) => setOrgContact(e.target.value)}
                     />
                   </div>
 
@@ -240,9 +305,18 @@ const RegistrationPage = () => {
                       Organization Registration Certificate
                     </Label>
                     <span className="text-gray-500 italic block">
-                      Upload your organization certificate (.pdf, max size: 5MB)
+                      Upload your organization certificate (.jpg, max size: 5MB)
                     </span>
-                    <Input id="org-id" type="file" accept=".pdf" />
+                    <Input
+                      id="org-id"
+                      type="file"
+                      accept=".jpg"
+                      onChange={(e) => {
+                        if (e.target.files && e.target.files.length > 0) {
+                          setOrgIdDocument(e.target.files[0])
+                        }
+                      }}
+                    />
                   </div>
                 </CardContent>
 

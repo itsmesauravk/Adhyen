@@ -54,6 +54,8 @@ const config = {
         },
         main: "#A435F0",
         mainhover: "#842dc2",
+        maindark: "#1B1B1B",
+        lightdark: "#404040",
       },
       borderRadius: {
         lg: "var(--radius)",

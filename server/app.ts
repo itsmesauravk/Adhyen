@@ -26,6 +26,7 @@ connectToDatabase()
 
 import userRoutes from "./router/user.routes"
 import providerRoutes from "./router/provider.routes"
+import superUserRoutes from "./router/superuser.routes"
 
 app.use(express.json())
 app.use(
@@ -36,6 +37,7 @@ app.use(
 )
 app.use("/api/v1/user", userRoutes)
 app.use("/api/v1/provider", providerRoutes)
+app.use("/api/v1/super-user", superUserRoutes)
 
 // Error handling middleware (always use after routes)
 app.use(handleError)

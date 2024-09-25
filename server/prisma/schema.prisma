@@ -67,3 +67,22 @@ model Provider {
 
 }
 
+
+
+// for super user
+model Superuser {
+  id                 Int       @id @default(autoincrement())
+  name               String
+  password           String
+  email              String    @unique
+  avatar             String   @default("https://www.kindpng.com/picc/m/24-248253_user-profile-default-image-png-clipart-png-download.png")
+  contact            String   @default("")
+  lastFivePasswords  String[] @default([])
+  twoFAEnabled       Boolean  @default(false)
+  wrongPassCounter   Int      @default(0)
+  isPassBlockEnable  Boolean  @default(false)
+  refreshToken       String   @default("")
+  otp                Int      @default(0)
+  createdAt          DateTime  @default(now())
+}
+

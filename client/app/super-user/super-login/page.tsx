@@ -1,7 +1,29 @@
+"use client"
 import Logo from "@/app/components/Logo"
-import React from "react"
+import { sign } from "crypto"
+import React, { useState } from "react"
+import { signIn } from "next-auth/react"
 
 const SuperLoginPage = () => {
+  // State for email and password
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+
+  // Handle form submission
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    const result = await signIn("credentials", {
+      email,
+      password,
+      redirect: false,
+    })
+    if (result) {
+      console.log(result)
+      console.log("success")
+      alert("Login successful")
+    }
+  }
+
   return (
     <div className="min-h-screen flex flex-col lg:flex-row">
       {/* Left side - 40% on large/medium, 100% on small/mobile */}
@@ -23,6 +45,8 @@ const SuperLoginPage = () => {
             </label>
             <input
               type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="w-full px-4 py-2 border rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-primaryDark"
               placeholder="Enter your email"
             />
@@ -35,6 +59,8 @@ const SuperLoginPage = () => {
             </label>
             <input
               type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               className="w-full px-4 py-2 border rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-primaryDark"
               placeholder="Enter your password"
             />
@@ -50,7 +76,8 @@ const SuperLoginPage = () => {
           {/* Login Button */}
           <button
             type="button"
-            className="w-full  text-white bg-main  font-bold shadow-md py-2 rounded-md hover:bg-mainhover transition"
+            onClick={handleSubmit}
+            className="w-full text-white bg-main font-bold shadow-md py-2 rounded-md hover:bg-mainhover transition"
           >
             Login
           </button>

@@ -3,11 +3,13 @@ import Logo from "@/app/components/Logo"
 import { sign } from "crypto"
 import React, { useState } from "react"
 import { signIn } from "next-auth/react"
+import { useRouter } from "next/navigation"
 
 const SuperLoginPage = () => {
   // State for email and password
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
+  const router = useRouter()
 
   // Handle form submission
   const handleSubmit = async (e: React.FormEvent) => {
@@ -17,10 +19,14 @@ const SuperLoginPage = () => {
       password,
       redirect: false,
     })
-    if (result) {
-      console.log(result)
-      console.log("success")
+
+    if (result?.ok) {
+      console.log("Login successful")
       alert("Login successful")
+      router.push("/super-user/dashboard")
+    } else {
+      console.error("Login failed:", result?.error)
+      alert("Login failed. Please check your credentials.")
     }
   }
 
@@ -40,10 +46,14 @@ const SuperLoginPage = () => {
 
           {/* Email Input */}
           <div>
-            <label className="block text-sm font-medium text-gray-600 mb-1">
+            <label
+              htmlFor="email"
+              className="block text-sm font-medium text-gray-600 mb-1"
+            >
               Email
             </label>
             <input
+              id="email"
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -54,10 +64,14 @@ const SuperLoginPage = () => {
 
           {/* Password Input */}
           <div>
-            <label className="block text-sm font-medium text-gray-600 mb-1">
+            <label
+              htmlFor="password"
+              className="block text-sm font-medium text-gray-600 mb-1"
+            >
               Password
             </label>
             <input
+              id="password"
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}

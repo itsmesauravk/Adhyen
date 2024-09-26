@@ -20,6 +20,7 @@ import { GiBookshelf } from "react-icons/gi"
 import { FaUsers } from "react-icons/fa"
 import { ImUserTie } from "react-icons/im"
 import { Button } from "@/components/ui/button"
+import { useSession } from "next-auth/react"
 
 // Updated chart data for users (male vs female)
 const userChartData = [
@@ -76,8 +77,23 @@ const earningsChartConfig = {
   earned: { label: "Earned", color: "hsl(var(--chart-1))" },
   given: { label: "Given", color: "hsl(var(--chart-2))" },
 }
+interface User {
+  name: string
+  email: string
+  id: string
+  token: string
+}
+interface Session {
+  user: User
+  expires: string
+}
 
-const Page = () => {
+const Page: React.FC<Session> = () => {
+  const { data: SessionData, status } = useSession()
+  const sessionData = SessionData as unknown as Session
+  if (status === "loading") return <div>Loading...</div>
+  if (status === "unauthenticated") return <div>Unauthenticated</div>
+
   return (
     <div className="flex">
       <Sidebar />
@@ -92,7 +108,7 @@ const Page = () => {
               className="w-12 h-12 rounded-full"
             />
             <div className="ml-4">
-              <h2 className="text-xl">John Doe</h2>
+              <h2 className="text-xl">{sessionData?.user?.name}</h2>
               <h2 className="text-xl">Admin</h2>
             </div>
           </div>

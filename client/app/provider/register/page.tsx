@@ -36,40 +36,70 @@ const RegistrationPage = () => {
   const [orgContact, setOrgContact] = useState("")
   const [orgIdDocument, setOrgIdDocument] = useState<File | null>(null)
 
+  console.log(idDocument)
+
   const handleSubmission = async (accountType: string) => {
     setIsSubmitting(true)
 
-    // Log form details to the console
-    if (accountType === "Normal Account") {
+    let formData = new FormData()
+
+    if (accountType === "normal") {
       console.log({
         accountType,
         name,
         email,
         address,
         contact,
-        idDocument: idDocument?.name, // You may handle the file differently based on your needs
+        idDocument,
       })
-      // const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/register`, {
 
-      //   }
-      // }
-      // )
-    } else if (accountType === "Organization Account") {
+      formData.append("name", name)
+      formData.append("email", email)
+      formData.append("address", address)
+      formData.append("contact", contact)
+      formData.append("providerType", accountType)
+      if (idDocument) formData.append("image", idDocument)
+    } else if (accountType === "organization") {
       console.log({
         accountType,
         orgName,
         orgEmail,
         orgAddress,
         orgContact,
-        orgIdDocument: orgIdDocument?.name, // You may handle the file differently based on your needs
+        orgIdDocument,
       })
+
+      formData.append("name", orgName)
+      formData.append("email", orgEmail)
+      formData.append("address", orgAddress)
+      formData.append("contact", orgContact)
+      formData.append("providerType", accountType)
+      if (orgIdDocument) formData.append("image", orgIdDocument)
     }
 
-    // Simulate form submission delay
-    setTimeout(() => {
+    try {
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/provider/register-provider`,
+        {
+          method: "POST",
+
+          body: formData,
+        }
+      )
+      const data = await response.json()
+
+      if (data.success) {
+        setIsSubmitting(false)
+        toast.success(data.message)
+      } else {
+        setIsSubmitting(false)
+        toast.error(data.message)
+      }
+    } catch (error) {
       setIsSubmitting(false)
-      toast.success(`${accountType} Request Has Been Submitted!`)
-    }, 1500)
+      toast.error("Failed to send request")
+      console.error(error)
+    }
   }
 
   return (
@@ -202,7 +232,7 @@ const RegistrationPage = () => {
                 <CardFooter>
                   <Button
                     className="w-full bg-[#A435F0] hover:bg-[#842dc2] text-white"
-                    onClick={() => handleSubmission("Normal Account")}
+                    onClick={() => handleSubmission("normal")}
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? "Submitting..." : "Send Request"}
@@ -331,7 +361,7 @@ const RegistrationPage = () => {
                 <CardFooter>
                   <Button
                     className="w-full bg-[#A435F0] hover:bg-[#842dc2] text-white"
-                    onClick={() => handleSubmission("Organization Account")}
+                    onClick={() => handleSubmission("organization")}
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? "Submitting..." : "Send Request"}
@@ -360,7 +390,7 @@ const RegistrationPage = () => {
             alt="Register Illustration"
             width={500}
             height={500}
-            priority={false} // Lazy loading for better performance
+            priority={false}
           />
         </div>
       </div>

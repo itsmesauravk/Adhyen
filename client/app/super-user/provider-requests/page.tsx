@@ -1,5 +1,6 @@
+"use client"
 import Sidebar from "@/app/components/super-components/Sidebar"
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button" // Assuming you're using Material UI for buttons
 
 const dummyData = [
@@ -10,6 +11,42 @@ const dummyData = [
 ]
 
 const Page = () => {
+  const [requests, setRequests] = useState([])
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState("")
+
+  const getRequestHandler = async () => {
+    try {
+      setLoading(true)
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/super-user/register-requests`,
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      )
+      const data = await response.json()
+      console.log(data.data)
+      if (data.success) {
+        setRequests(data.data)
+        setLoading(false)
+      } else {
+        setError(data.message)
+        setLoading(false)
+      }
+    } catch (error) {
+      console.log(error)
+      setError("Something went wrong")
+      setLoading(false)
+    }
+  }
+
+  useEffect(() => {
+    getRequestHandler()
+  }, [])
+
   return (
     <div className="flex">
       <Sidebar />
@@ -46,45 +83,46 @@ const Page = () => {
               </tr>
             </thead>
             <tbody>
-              {dummyData.map((provider, index) => (
-                <tr
-                  key={index}
-                  className={`border-b hover:bg-gray-50 ${
-                    index % 2 === 0 ? "bg-gray-50" : "bg-white"
-                  }`}
-                >
-                  <td className="px-6 py-4 font-semibold">{provider.name}</td>
-                  <td
-                    className={`px-6 py-4 font-semibold ${
-                      provider.type === "normal"
-                        ? "text-blue-600"
-                        : "text-orange-600"
+              {requests &&
+                requests.map((provider, index) => (
+                  <tr
+                    key={index}
+                    className={`border-b hover:bg-gray-50 ${
+                      index % 2 === 0 ? "bg-gray-50" : "bg-white"
                     }`}
                   >
-                    {provider.type}
-                  </td>
-                  <td className="px-6 py-4">{provider.status}</td>
-                  <td className="px-6 py-4">
-                    <div className="flex space-x-2">
-                      <Button variant="main" size="sm">
-                        View
-                      </Button>
-                      <Button
-                        size="sm"
-                        className="bg-white text-green-600 hover:bg-green-600 hover:text-white"
-                      >
-                        Approve
-                      </Button>
-                      <Button
-                        size="sm"
-                        className="bg-white text-red-600 hover:bg-red-600 hover:text-white"
-                      >
-                        Reject
-                      </Button>
-                    </div>
-                  </td>
-                </tr>
-              ))}
+                    <td className="px-6 py-4 font-semibold">{provider.name}</td>
+                    <td
+                      className={`px-6 py-4 font-semibold ${
+                        provider.providerType === "normal"
+                          ? "text-blue-600"
+                          : "text-orange-600"
+                      }`}
+                    >
+                      {provider.providerType}
+                    </td>
+                    <td className="px-6 py-4">{provider.status}</td>
+                    <td className="px-6 py-4">
+                      <div className="flex space-x-2">
+                        <Button variant="main" size="sm">
+                          View
+                        </Button>
+                        <Button
+                          size="sm"
+                          className="bg-white text-green-600 hover:bg-green-600 hover:text-white"
+                        >
+                          Approve
+                        </Button>
+                        <Button
+                          size="sm"
+                          className="bg-white text-red-600 hover:bg-red-600 hover:text-white"
+                        >
+                          Reject
+                        </Button>
+                      </div>
+                    </td>
+                  </tr>
+                ))}
             </tbody>
           </table>
         </div>

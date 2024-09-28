@@ -56,6 +56,7 @@ model Provider {
 
 
   verified          Boolean  @default(false)
+  status            String   @default("pending")
   createdAt         DateTime  @default(now())
   lastFivePasswords String[] @default([])
   twoFAEnabled      Boolean  @default(false)
@@ -86,3 +87,4 @@ model Superuser {
   createdAt          DateTime  @default(now())
 }
 
+  

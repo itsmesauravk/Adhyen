@@ -26,6 +26,24 @@ model User {
   refreshToken       String   @default("")
   otp                Int      @default(0)
   createdAt          DateTime  @default(now())
+
+  //relations
+  comments Comment[]
+  ratings Rating[]
+  courses UserCourse[]
+
+
+}
+
+//user enrolled courses
+model UserCourse {
+  id          Int      @id @default(autoincrement())
+  user        User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId      Int
+  course      Course @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  courseId    Int
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @default(now())
 }
 
 
@@ -66,6 +84,9 @@ model Provider {
   refreshToken      String   @default("")
   otp               Int      @default(0)
 
+  //relations
+  courses Course[]
+
 }
 
 
@@ -87,4 +108,106 @@ model Superuser {
   createdAt          DateTime  @default(now())
 }
 
+
+
+// for new course
+
+model Course {
+  id          Int      @id @default(autoincrement())
+  title        String
+  description String
+  isPaid       Boolean
+  instructor   String
+  duration     String
+  thumbnail    String
+  courseLevel  String
+  Language     String[]
+  price       Float
+  provider    Provider @relation(fields: [providerId], references: [id], onDelete: Cascade)
+  providerId  Int
+
+
+  views       Int      @default(0)
+  rating      Float    @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @default(now())
+  
+  enrolled    Int      @default(0)
+
+
+
+
+  //relations
+  topics Topic[]
+  users UserCourse[]
+  
+}
+
+
+// topic for courses
+
+model Topic {
+  id          Int      @id @default(autoincrement())
+  topicName        String
+  description String
+  course      Course @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  courseId     Int
+  instructor  String
+  learningOutcomes String[]
+
+  //relations
+  contents Contents[]
+  
+}
+
+
+// videos for topics
+
+model Contents {
+  id          Int      @id @default(autoincrement())
+  title        String
+  description String
+
+  topic      Topic @relation(fields: [topicId], references: [id], onDelete: Cascade)
+  topicId     Int
+
+  videoUrl    String
+
+  views       Int      @default(0)
+  likes       Int      @default(0)
+
+  comments    Comment[]
+  rating      Rating[]
+
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @default(now())
+
+
+
+}
+
+
+
+//comments  and ratings
+model Comment {
+  id          Int      @id @default(autoincrement())
+  comment     String
+  user        User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId      Int
+  content     Contents @relation(fields: [contentId], references: [id], onDelete: Cascade)
+  contentId   Int
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @default(now())
+}
+
+model Rating {
+  id          Int      @id @default(autoincrement())
+  rating      Int
+  user        User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId      Int
+  content     Contents @relation(fields: [contentId], references: [id], onDelete: Cascade)
+  contentId   Int
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @default(now())
+}
   

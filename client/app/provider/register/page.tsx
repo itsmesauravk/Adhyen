@@ -211,7 +211,7 @@ const RegistrationPage = () => {
                     <Input
                       id="id"
                       type="file"
-                      accept=".jpg"
+                      accept=".jpg, .jpeg, .png"
                       onChange={(e) => {
                         if (e.target.files && e.target.files.length > 0) {
                           setIdDocument(e.target.files[0])
@@ -340,7 +340,7 @@ const RegistrationPage = () => {
                     <Input
                       id="org-id"
                       type="file"
-                      accept=".jpg"
+                      accept=".jpg, .jpeg, .png"
                       onChange={(e) => {
                         if (e.target.files && e.target.files.length > 0) {
                           setOrgIdDocument(e.target.files[0])

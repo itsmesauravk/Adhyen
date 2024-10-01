@@ -20,33 +20,7 @@ interface LoginResponse {
   }
 }
 
-// Define the login function for super user
-// const loginSuperUser = async ({ email, password }: Credentials) => {
-//   try {
-//     const response = await fetch(
-//       `${process.env.NEXT_PUBLIC_API_URL}/super-user/super-login`,
-//       {
-//         method: "POST",
-//         headers: {
-//           "Content-Type": "application/json",
-//         },
-//         body: JSON.stringify({ email, password }),
-//       }
-//     )
-
-//     if (!response.ok) {
-//       throw new Error("Login failed")
-//     }
-
-//     const data = await response.json()
-//     console.log("data", data)
-//     return data
-//   } catch (error: any) {
-//     console.error("Login failed:", error)
-//     throw new Error(error.message)
-//   }
-// }
-
+// Login functions for different user types
 const loginSuperUser = async ({
   email,
   password,
@@ -64,7 +38,53 @@ const loginSuperUser = async ({
   )
 
   if (!response.ok) {
-    throw new Error("Login failed")
+    throw new Error("Super User Login failed")
+  }
+
+  return await response.json()
+}
+
+const loginUser = async ({
+  email,
+  password,
+}: {
+  email: string
+  password: string
+}): Promise<LoginResponse> => {
+  const response = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/user/login`,
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, password }),
+    }
+  )
+
+  if (!response.ok) {
+    throw new Error("User Login failed")
+  }
+
+  return await response.json()
+}
+
+const loginProvider = async ({
+  email,
+  password,
+}: {
+  email: string
+  password: string
+}): Promise<LoginResponse> => {
+  const response = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/provider/login`,
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, password }),
+    }
+  )
+
+  if (!response.ok) {
+    throw new Error("Provider Login failed")
   }
 
   return await response.json()
@@ -76,8 +96,9 @@ export const authOptions: NextAuthOptions = {
       clientId: process.env.GOOGLE_ID!,
       clientSecret: process.env.GOOGLE_SECRET!,
     }),
+    // Super User Login
     CredentialsProvider({
-      name: "Credentials",
+      name: "Super User Login",
       credentials: {
         email: { label: "Email", type: "email" },
         password: { label: "Password", type: "password" },
@@ -102,7 +123,71 @@ export const authOptions: NextAuthOptions = {
             }
           }
         } catch (error) {
-          console.error("Login error:", error)
+          console.error("Super User Login error:", error)
+        }
+        return null
+      },
+    }),
+    // User Login
+    CredentialsProvider({
+      name: "User Login",
+      credentials: {
+        email: { label: "Email", type: "email" },
+        password: { label: "Password", type: "password" },
+      },
+      async authorize(credentials) {
+        if (!credentials) {
+          throw new Error("No credentials provided")
+        }
+
+        try {
+          const user = await loginUser({
+            email: credentials.email,
+            password: credentials.password,
+          })
+
+          if (user.success) {
+            return {
+              id: user.data.id.toString(),
+              name: user.data.name,
+              email: user.data.email,
+              token: user.token,
+            }
+          }
+        } catch (error) {
+          console.error("User Login error:", error)
+        }
+        return null
+      },
+    }),
+    // Provider Login
+    CredentialsProvider({
+      name: "Provider Login",
+      credentials: {
+        email: { label: "Email", type: "email" },
+        password: { label: "Password", type: "password" },
+      },
+      async authorize(credentials) {
+        if (!credentials) {
+          throw new Error("No credentials provided")
+        }
+
+        try {
+          const user = await loginProvider({
+            email: credentials.email,
+            password: credentials.password,
+          })
+
+          if (user.success) {
+            return {
+              id: user.data.id.toString(),
+              name: user.data.name,
+              email: user.data.email,
+              token: user.token,
+            }
+          }
+        } catch (error) {
+          console.error("Provider Login error:", error)
         }
         return null
       },
@@ -129,7 +214,7 @@ export const authOptions: NextAuthOptions = {
     },
   },
   pages: {
-    signIn: "/super-user/super-login",
+    signIn: "/auth/login",
   },
   secret: process.env.NEXTAUTH_SECRET!,
 }

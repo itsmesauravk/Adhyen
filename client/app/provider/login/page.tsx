@@ -7,21 +7,43 @@ import { Label } from "@/components/ui/label"
 import toast from "react-hot-toast"
 import Image from "next/image"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
+import { signIn } from "next-auth/react"
 
 const LoginPage = () => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
 
-  const handleLogin = (e) => {
-    e.preventDefault()
+  const router = useRouter()
 
-    // Perform login logic here
-    if (email === "admin@example.com" && password === "password") {
+  const handleLogin = async (e: React.FormEvent) => {
+    e.preventDefault()
+    const result = await signIn("Provider Login", {
+      email,
+      password,
+      redirect: false,
+    })
+
+    if (result?.ok) {
+      console.log("Login successful")
       toast.success("Login successful!")
+      router.push("/provider/dashboard")
     } else {
+      console.error("Login failed:", result?.error)
       toast.error("Invalid credentials!")
     }
   }
+
+  // const handleLogin = (e: React.FormEvent) => {
+  //   e.preventDefault()
+
+  //   // Perform login logic here
+  //   if (email === "admin@example.com" && password === "password") {
+  //     toast.success("Login successful!")
+  //   } else {
+  //     toast.error("Invalid credentials!")
+  //   }
+  // }
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100 py-10 px-6">

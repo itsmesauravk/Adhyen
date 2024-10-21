@@ -119,7 +119,7 @@ const LoginPage = () => {
             </form>
             <div className="flex items-center justify-center space-x-2">
               <span className="text-sm text-gray-600">
-                Don't have an account?
+                Don&apos;t have an account?
               </span>
               <Link
                 href="/register"

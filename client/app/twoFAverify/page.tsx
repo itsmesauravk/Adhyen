@@ -102,7 +102,7 @@ const TwoFactorAuthPage = () => {
           <div className="flex items-center justify-center mt-4"></div>
           <div className="flex items-center justify-center space-x-2 mt-4">
             <span className="text-sm text-gray-600">
-              Didn't receive an OTP?
+              Didn&apos;t receive an OTP?
             </span>
             <Link
               href="/resend-otp"

@@ -8,7 +8,7 @@ import toast from "react-hot-toast"
 import Image from "next/image"
 import Link from "next/link"
 
-const page: React.FC = (): JSX.Element => {
+const Page: React.FC = (): JSX.Element => {
   const [email, setEmail] = useState<string>("")
 
   const handleSendOtp = (e: React.FormEvent<HTMLFormElement>): void => {
@@ -87,4 +87,4 @@ const page: React.FC = (): JSX.Element => {
   )
 }
 
-export default page
+export default Page
